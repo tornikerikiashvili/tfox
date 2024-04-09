@@ -1,0 +1,68 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ resource }}\Pages;
+use {{ resource }}\RelationManagers;
+use App\Models\{{ model }};
+use Filament\Forms;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Tabs\Tab;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Palindroma\Core\Filament\Resource;
+
+class {{ resourceClass }} extends Resource
+{
+    protected static ?string $model = {{ modelClass }}::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-collection';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+{{ formSchema }}
+            ]);
+    }
+
+    public static function translatableFields(Tab $tab): Tab
+    {
+        return $tab->schema([
+
+        ]);
+    }
+
+    public static function metaFields(Card $card): Card
+    {
+        return $card->schema([
+        ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+{{ tableColumns }}
+            ])
+            ->filters([
+{{ tableFilters }}
+            ])
+            ->actions([
+{{ tableActions }}
+            ])
+            ->bulkActions([
+{{ tableBulkActions }}
+            ]);
+    }
+{{ relations }}
+    public static function getPages(): array
+    {
+        return [
+{{ pages }}
+        ];
+    }{{ eloquentQuery }}
+}
