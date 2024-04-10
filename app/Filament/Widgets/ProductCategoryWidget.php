@@ -12,7 +12,7 @@ class ProductCategoryWidget extends BaseWidget
     protected static string $model = ModelsProductCategory::class;
 
     // you can customize the maximum depth of your tree
-    protected static int $maxDepth = 2;
+    protected static int $maxDepth = 3;
 
     protected ?string $treeTitle = 'ProductCategory';
 

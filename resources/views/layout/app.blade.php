@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        @livewireStyles
         <meta charset="utf-8">
+        <base href={{ config('app.url') }}/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>XEN</title>
@@ -12,6 +14,7 @@
 		<!-- styles -->
         <link href="assets/css/plugins.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        @stack('headStyles')
 	</head>
 	<body class="loader">
 		<!-- loading start -->
@@ -48,6 +51,6 @@
 
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
-
+    @livewireScripts
   </body>
 </html>

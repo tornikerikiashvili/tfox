@@ -59,12 +59,12 @@ class ProductsResource extends ContentResource
     public static function translatableFields(Tab $tab): Tab
     {
         return $tab->schema([
-            Forms\Components\TextInput::make('name.main')->label('Product Name'),
+            Forms\Components\TextInput::make('name')->label('Product Name'),
             Fieldset::make('Title')
                     ->schema([
-                        Forms\Components\TextInput::make('name.one')->label('Line One'),
-                        Forms\Components\TextInput::make('name.two')->label('Line Two'),
-                        Forms\Components\TextInput::make('name.three')->label('Line Three'),
+                        Forms\Components\TextInput::make('title.one')->label('Line One'),
+                        Forms\Components\TextInput::make('title.two')->label('Line Two'),
+                        Forms\Components\TextInput::make('title.three')->label('Line Three'),
                     ])->columns(3),
             RichEditor::make('content'),
             Repeater::make('specifications')

@@ -14,7 +14,10 @@
 
                 <!-- slide start -->
                     @foreach ($categories as $category)
-                        <a href="project.html" class="swiper-slide hover-box animsition-link pointer-large">
+                    @php
+                        $childrenCat = Arr::first(App\Models\ProductCategory::where('parent_id', data_get($category, 'id'))->orderBy('order')->select('id')->get());
+                    @endphp
+                        <a href="{{App::getLocale() . '/products?category=' . data_get($category, 'id') . '&children=' . data_get($childrenCat, 'id')}}" class="swiper-slide hover-box animsition-link pointer-large">
 
                             <div class="hidden-box">
                                 <img class="hover-img" src="{{data_get($category, 'metadata.cover_image.url', '/assets/images/backgrounds/business-calligraphy-chinese-lanterns-1455969.jpg')}}" alt="project">

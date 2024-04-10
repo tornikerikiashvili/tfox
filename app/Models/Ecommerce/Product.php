@@ -14,12 +14,14 @@ class Product extends ContentModel
 
     public array $translatable = [
         'name',
+        'title',
         'content',
         'specifications',
     ];
 
     protected $fillable = [
         'name',
+        'title',
         'slug',
         'content',
         'specifications',
@@ -36,6 +38,7 @@ class Product extends ContentModel
 
     protected $casts = [
         'name' => 'json',
+        'title' => 'json',
         'slug' => 'string',
         'name' => 'content',
         'specifications' => 'json',
