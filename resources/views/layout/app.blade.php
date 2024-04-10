@@ -21,7 +21,7 @@
               color:white;
             }
 
-            .large-title, .large-title-bold span, .medium-title {
+            .large-title, .large-title-bold span, .medium-title, .nav-btn {
                 font-weight: 400;
             }
 

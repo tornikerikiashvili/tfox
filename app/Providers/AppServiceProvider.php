@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Cache;
 use Filament\Forms\Components\Tabs\Tab;
 use Illuminate\Support\ServiceProvider;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 use App\View\Composers\HeaderViewComposer;
 use Z3d0X\FilamentFabricator\Facades\FilamentFabricator;
 use RyanChandler\FilamentNavigation\Facades\FilamentNavigation;
@@ -44,14 +45,6 @@ class AppServiceProvider extends ServiceProvider
         Filament::serving(function () {
             FilamentNavigation::addItemType('External Link', [
 
-                Radio::make('status')
-                    ->options([
-                        'main' => 'Left Top',
-                        'second' => 'Left Bottom',
-                        'third' => 'Right',
-                    ])->inline()->label('Inner Position:'),
-
-
 
                 Tabs::make('Translations')->schema(
                     collect(config('palindroma.supported_locales'))
@@ -67,6 +60,8 @@ class AppServiceProvider extends ServiceProvider
                         })
                         ->toArray()
                 ),
+
+                FileUpload::make('image'),
                 TextInput::make('url')
                     ->label(__('filament-navigation::filament-navigation.attributes.url'))
                     ->required(),
