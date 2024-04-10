@@ -77,7 +77,7 @@ class PartnersResource extends SimpleResource
         return $table
         ->reorderable('order_column')
             ->columns([
-                MediaColumn::make('image')->square()->width(150)->height(100),
+                MediaColumn::make('image.main')->square()->width(150)->height(100),
                 Tables\Columns\TextColumn::make('title'),
             ])
             ->filters([

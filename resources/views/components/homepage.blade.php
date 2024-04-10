@@ -1,7 +1,7 @@
 <div>
 
     <x-sections.slider :slides="$slides"/>
-    <x-sections.categories :categories="$categories"/>
+    <x-sections.categories :categories="$categories" :content="$content"/>
 
 
     <!-- section start -->
@@ -33,9 +33,9 @@
                                 </h3>
                                 <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
 
-                                <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
+                                {{-- <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
                                     <a href="project.html" class="arrow-btn pointer-large animsition-link">{{__('_read_more')}}</a>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div><!-- column end -->
@@ -75,9 +75,9 @@
                                 </h3>
                                 <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
 
-                                <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
+                                {{-- <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
                                     <a href="project.html" class="arrow-btn pointer-large animsition-link">{{__('_read_more')}}</a>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div><!-- column end -->
@@ -105,9 +105,9 @@
                                 </h3>
                                 <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
 
-                                <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
+                                {{-- <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
                                     <a href="project.html" class="arrow-btn pointer-large animsition-link">{{__('_read_more')}}</a>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div><!-- column end -->
@@ -147,9 +147,9 @@
                                 </h3>
                                 <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
 
-                                <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
+                                {{-- <div data-animation-child class="arrow-btn-box top-margin-30 fade-anim-box tr-delay05" data-animation="fade-anim">
                                     <a href="project.html" class="arrow-btn pointer-large animsition-link">{{__('_read_more')}}</a>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div><!-- column end -->
@@ -194,8 +194,8 @@
     <div class="container">
         <!-- text-center start -->
         <div data-animation-container class="text-center">
-            <h2 data-animation-child class="large-title text-height-10 text-color-1 overlay-anim-box2" data-animation="overlay-anim2">{{data_get($content, 'title')}}</h2><br>
-            <p data-animation-child class="fade-anim-box tr-delay02 text-color-1 xsmall-title-oswald top-margin-5" data-animation="fade-anim">{{data_get($content, 'teaser')}}</p>
+            <h2 data-animation-child class="large-title text-height-10 text-color-1 overlay-anim-box2" data-animation="overlay-anim2">{{data_get($content, 'news_title')}}</h2><br>
+            <p data-animation-child class="fade-anim-box tr-delay02 text-color-1 xsmall-title-oswald top-margin-5" data-animation="fade-anim">{{data_get($content, 'news_teaser')}}</p>
         </div><!-- text-center end -->
 
         <!-- flex-container start -->

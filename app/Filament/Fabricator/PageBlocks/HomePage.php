@@ -38,16 +38,14 @@ class HomePage extends ContentComponentBlock
                     ->searchable()->multiple(),
                 ])->columns(1),
 
-                Section::make('About Block')
+                Section::make('Products Swiper')
                     ->schema([
                         Fieldset::make('Title')
                     ->schema([
-                        TextInput::make('about_title_one')->label('Title Line One'),
-                        TextInput::make('about_title_two')->label('Title Line Two'),
+                        TextInput::make('product_title')->label('Title'),
+                        TextInput::make('product_subtitle')->label('SubTitle'),
                     ])->columns(2),
-
-                        Textarea::make('about_content')->label('Content Left'),
-                        Textarea::make('about_content_2')->label('Content Right')
+                        Textarea::make('product_teaser')->label('Teaser'),
                     ])->columns(1),
 
                 Section::make('Projects')->schema([

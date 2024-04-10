@@ -3,20 +3,60 @@
         .product_parent_category .filter-button-flip {
             font-size: 21px;
         }
+
+        .page_cover {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .page_cover img {
+            height: 200px;
+        }
+
+        .title-fill:after, .title-fill.title-fill-anim:before, .title-fill.title-fill-anim:after {
+            background-color: transparent;
+        }
+
+        .overlay {
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          position: absolute;
+          opacity: 0.3;
+          z-index: 1;
+        }
+
+        .page_cover_title {
+            z-index: 2;
+        }
+
+        .page_cover_title .title-fill:after {
+            color:white;
+        }
        </style>
     @endpush
+<div>
+    <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
+        <div class="page_cover_title text-center">
+            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="Recent Works">Recent Works</h2><br>
+        </div>
+        <div class="overlay"></div>
+    </div>
 
     <!-- dark-bg-2 start -->
     <section id="down" class="dark-bg-2 top-bottom-padding-120">
         <!-- container start -->
         <div class="container">
-            <div class="text-center">
-                <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="Recent Works">Recent Works</h2><br>
-            </div>
+
 
             <!-- filter-buttons start -->
             @if(empty($childCategories))
-                <div class="filter-buttons top-padding-90">
+                <div class="filter-buttons">
                         <button class="filter-button-box pointer-small active" data-filter="*">
                             <span class="filter-button-flip" data-text="{{__('_all')}}">{{__('_all')}}</span>
                         </button>
@@ -29,11 +69,12 @@
             @endif
 
             @if(!empty($childCategories))
-                    <div wire:ignore class="filter-buttons top-padding-90 product_parent_category">
+                    <div wire:ignore class="filter-buttons product_parent_category">
+
                         @foreach ($categories as $category)
-                            <button wire:click="setChildren({{data_get($category, 'id')}})" class=" {{$children == data_get($category, 'id') ? 'active' : ''}} filter-button-box pointer-small">
+                            <a href="{{App::getLocale() . '/products?category=' . request()->query('category') . '&children=' . data_get($category, 'id')}}" class=" {{$children == data_get($category, 'id') ? 'active' : ''}} animsition-link pointer-large filter-button-box pointer-small">
                                 <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
-                            </button>
+                            </a>
                         @endforeach
                     </div>
 
@@ -70,3 +111,4 @@
             </div><!-- works end -->
         </div><!-- container end -->
     </section><!-- dark-bg-2 end -->
+</div>

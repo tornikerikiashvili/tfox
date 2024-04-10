@@ -13,7 +13,7 @@ class Products extends Component
      */
     public function __construct(public $content)
     {
-        //
+
     }
 
     /**

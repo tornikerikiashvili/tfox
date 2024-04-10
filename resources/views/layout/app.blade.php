@@ -6,7 +6,7 @@
         <base href={{ config('app.url') }}/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>XEN</title>
+        <title>Tfox</title>
 
 		<!-- fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7COswald:300,400,500,600,700" rel="stylesheet" type="text/css">
@@ -15,6 +15,37 @@
         <link href="assets/css/plugins.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
         @stack('headStyles')
+        <style>
+
+            .border-btn-red .border-btn:before {
+              color:white;
+            }
+
+            .large-title, .large-title-bold span, .medium-title {
+                font-weight: 400;
+            }
+
+
+        .to-top-btn {
+            display:none;
+        }
+
+        .pointer {
+            width: 0px;
+            height: 0px;
+            background: #f05523;
+            opacity: 0.5;
+        }
+
+        .pointer.large {
+            width: 65px;
+            height: 65px;
+            background: rgba(239,13,51,.15);
+            -webkit-box-shadow: 0 0 30px #f05523;
+            box-shadow: 0 0 30px #f05523;
+            opacity: 0.5;
+        }
+        </style>
 	</head>
 	<body class="loader">
 		<!-- loading start -->
@@ -22,12 +53,12 @@
 		    <img class="logo-loading" src="assets/images/logo/logo-loader.png" alt="logo">
 	    </div><!-- loading end -->
 
-		<!-- pointer start -->
+		{{-- <!-- pointer start -->
 		<div class="pointer" id="pointer">
 			<i class="fas fa-long-arrow-alt-right"></i>
 			<i class="fas fa-search"></i>
 			<i class="fas fa-link"></i>
-		</div><!-- pointer end -->
+		</div><!-- pointer end --> --}}
 
 		<!-- to-top-btn start -->
 		<a class="to-top-btn pointer-small" href="#up">

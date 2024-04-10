@@ -1,3 +1,20 @@
+@push('headStyles')
+    <style>
+
+        .border-btn-red.border-btn-box {
+            border: 1px solid #f4f4f4;
+        }
+
+        .slider_overlay {
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          position: absolute;
+          opacity: 0.3;
+        }
+
+    </style>
+@endpush
 <section class="home-slider" id="up">
     <!-- swiper-wrapper start -->
       <div class="swiper-wrapper">
@@ -6,7 +23,10 @@
         @foreach ($slides as $slide)
           <div class="swiper-slide flex-min-height-box home-slide {{data_get($slide, 'metadata.red') == true ? 'red-slide' : ''}}">
               <!-- slide-bg -->
-              <div class="slide-bg overlay-loading2 overlay-dark-bg-1" style="background-image:url('{{data_get($slide, 'images.desk.url')}}')"></div>
+
+              <div class="slide-bg overlay-loading2 overlay-dark-bg-1" style="background-image:url('{{data_get($slide, 'images.desk.url')}}')">
+                <div class="slider_overlay"></div>
+            </div>
               <!-- home-slider-content start -->
               <div class="home-slider-content flex-min-height-inner {{data_get($slide, 'metadata.red') == true ? 'dark-bg-1' : 'dark-bg-1'}}">
                   <!-- flex-container start -->
@@ -86,7 +106,7 @@
       <div class="swiper-pagination"></div>
 
       <!-- scroll-btn start -->
-    <a href="#down" class="scroll-btn pointer-large">
+    <a href="{{App::getLocale() . '#down'}}" class="scroll-btn pointer-large">
         <div class="scroll-arrow-box">
             <span class="scroll-arrow"></span>
         </div>
