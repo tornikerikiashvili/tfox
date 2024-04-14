@@ -1783,6 +1783,11 @@ body.in .loading {
 	margin: 20px 0 0 40px;
 }
 
+html:lang(ka) .logo {
+	width: 185px;
+	margin: 20px 0 0 40px;
+}
+
 .logo-img-box {
 	position: relative;
 	overflow: hidden;

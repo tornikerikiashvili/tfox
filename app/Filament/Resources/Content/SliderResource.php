@@ -81,7 +81,7 @@ class SliderResource extends SimpleResource
     public static function metaFields(Card $card): Card
     {
         return $card->schema([
-            Toggle::make('metadata.red')
+            Toggle::make('metadata.red')->label('left')
         ]);
     }
 
@@ -91,7 +91,7 @@ class SliderResource extends SimpleResource
             ->columns([
                 MediaColumn::make('images.desk')->label('Image Desktop')->square()->width(150)->height(100),
                 MediaColumn::make('images.mob')->label('Image Mobile')->square()->width(150)->height(100),
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('title.main'),
             ])
 
             ->filters([

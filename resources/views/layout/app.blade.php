@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @livewireStyles
         <meta charset="utf-8">
         <base href={{ config('app.url') }}/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/bower_components/archyedt-thin/css/archyedt-thin.min.css">
 
         <title>Tfox</title>
 
@@ -14,6 +15,7 @@
 		<!-- styles -->
         <link href="assets/css/plugins.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
         @stack('headStyles')
         <style>
 

@@ -15,13 +15,20 @@ use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Palindroma\Core\Filament\Tables\MediaColumn;
 use Palindroma\Core\Forms\Components\MediaPicker;
+use Palindroma\Core\Filament\Resources\ContentResource;
 use App\Filament\Resources\ProductCategoryResource\Pages;
 
-class ProductCategoryResource extends Resource
+class ProductCategoryResource extends ContentResource
 {
     protected static ?string $model = ProductCategory::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+
+    protected static ?string $slug = 'content/product-categories';
+
+    protected static ?string $navigationLabel = 'Product Categories';
+
+    protected static ?string $navigationGroup = 'Products';
 
     public static function form(Form $form): Form
     {

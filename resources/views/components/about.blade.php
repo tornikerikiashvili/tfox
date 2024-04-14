@@ -113,11 +113,11 @@
 					<div class="four-columns bottom-padding-60">
 						<div data-animation-container class="content-right-margin-20 team-title-box">
 							<h2 data-animation-child class="small-title-oswald overlay-anim-box2 red-color" data-animation="overlay-anim2">{{data_get($content, 'team_subtitle')}}</h2>
-							<h3 class="title-style text-color-4">
+							<h2 class="title-style text-color-4">
 								<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($content, 'team_title_one')}}</span><br>
 								<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($content, 'team_title_two')}}</span><br>
 								<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay03" data-animation="overlay-anim2">{{data_get($content, 'team_title_three')}}</span>
-							</h3>
+							</h2>
 						</div>
 					</div><!-- column end -->
 					<!-- column start -->

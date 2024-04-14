@@ -5,7 +5,7 @@
             height: 100%;
             background-color: black;
             position: absolute;
-            opacity: 0.2;
+            opacity: 0.3;
             transition: 0.5s;
             z-index: 1;
         }

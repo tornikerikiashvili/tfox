@@ -247,6 +247,4 @@
             <span></span>
         </a>
     </div><!-- video-content-bg end -->
-
-
 </div>

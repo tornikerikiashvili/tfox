@@ -3,12 +3,25 @@
     <!-- header-flex-box start -->
     <div class="header-flex-box">
         <!-- logo start -->
-        <a href="index.html" class="logo pointer-large animsition-link">
+
+        @if (App::getLocale() == 'ka')
+        <a href="/" class="logo pointer-large animsition-link">
             <div class="logo-img-box">
-                <img class="logo-white" src="assets/images/logo/logo-white.png" alt="logo">
-                <img class="logo-black" src="assets/images/logo/logo-black.png" alt="logo">
+                <img class="logo-white" src="assets/images/logo/logo-white-ge.png" alt="logo">
+                <img class="logo-black" src="assets/images/logo/logo-black-ge.png" alt="logo">
             </div>
-        </a><!-- logo end -->
+        </a>
+        @else
+            <a href="/" class="logo pointer-large animsition-link">
+                <div class="logo-img-box">
+                    <img class="logo-white" src="assets/images/logo/logo-white.png" alt="logo">
+                    <img class="logo-black" src="assets/images/logo/logo-black.png" alt="logo">
+                </div>
+            </a>
+        @endif
+
+
+        <!-- logo end -->
 
         <!-- menu-open start -->
         <div class="menu-open pointer-large">

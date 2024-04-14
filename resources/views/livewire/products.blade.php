@@ -38,6 +38,15 @@
         .page_cover_title .title-fill:after {
             color:white;
         }
+
+        .filter_cat_divider {
+            width: 10px;
+            height: 10px;
+            background-color: #f05523;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
        </style>
     @endpush
 <div>
@@ -64,6 +73,9 @@
                         <button class="filter-button-box pointer-small" data-filter=".{{data_get($category, 'id')}}">
                             <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
                         </button>
+                        @if (!$loop->last)
+                        <div class="filter_cat_divider"></div>
+                      @endif
                     @endforeach
                 </div>
             @endif
@@ -86,6 +98,10 @@
                         <button class="filter-button-box pointer-small" data-filter=".{{data_get($category, 'id')}}">
                             <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
                         </button>
+                        @if (!$loop->last)
+                          <div class="filter_cat_divider"></div>
+                        @endif
+
                     @endforeach
                  </div>
             @endif

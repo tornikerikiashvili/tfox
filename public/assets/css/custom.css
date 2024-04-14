@@ -1,0 +1,38 @@
+/* Georgian Fonts */
+@import url("//cdn.web-fonts.ge/fonts/bpg-boxo-boxo/css/bpg-boxo-boxo.min.css");
+
+@font-face {
+    font-family: 'ArchyEDT-Thin';
+     src: url('../webfonts/archyedt-thin-webfont.woff2') format('woff2'),
+          url('../webfonts/archyedt-thin-webfont.woff') format('woff');
+
+}
+
+
+html:lang(ka) h2, html:lang(ka) .nav-box a span, html:lang(ka) span.filter-button-flip {
+    font-family: "ArchyEDT-Thin", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+html:lang(ka) span.filter-button-flip {
+    font-size:21px;
+}
+
+html:lang(ka) h2 span {
+    font-weight: 700;
+}
+
+html:lang(ka) p, html:lang(ka) .border-btn {
+    font-family: "BPG Boxo-Boxo", sans-serif;
+}
+
+html:lang(ka) .portfolio-slider2-content h2 {
+    font-size: 55px;
+}
+
+html:lang(ka) article h3, html:lang(ka) h3 {
+    font-family: "BPG Boxo-Boxo", sans-serif;
+    font-size: 21px;
+}
+
