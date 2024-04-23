@@ -111,7 +111,7 @@
             <span class="scroll-arrow"></span>
         </div>
         <div class="scroll-btn-flip-box">
-            <span class="scroll-btn-flip" data-text="Scroll">Scroll</span>
+            <span class="scroll-btn-flip" data-text="{{__('_scroll')}}">{{__('_scroll')}}</span>
         </div>
      </a><!-- scroll-btn end -->
 </section><!-- home-slider end -->

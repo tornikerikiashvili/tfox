@@ -4,6 +4,7 @@ namespace App\Filament\Fabricator\PageBlocks;
 
 
 
+use App\Models\Content\Partner;
 use App\Models\Ecommerce\Product;
 use App\Models\Content\TeamMember;
 use Filament\Forms\Components\Select;
@@ -49,16 +50,15 @@ class About extends ContentComponentBlock
                     ])->columns(1),
                 ])->columns(1),
 
-                Section::make('Team')->schema([
+                Section::make('Clients')->schema([
                     Fieldset::make('Title')
                     ->schema([
-                        TextInput::make('team_title_one')->label('Line One'),
-                        TextInput::make('team_title_two')->label('Line Two'),
-                        TextInput::make('team_title_three')->label('Line Three'),
+                        TextInput::make('partners_title_one')->label('Line One'),
+                        TextInput::make('partners_title_two')->label('Line Two'),
+                        TextInput::make('partners_title_three')->label('Line Three'),
                     ])->columns(3),
-                    TextInput::make('team_subtitle')->label('Subtitle'),
-                    Select::make('team')->label('Choose Team Member')
-                    ->options(fn() => TeamMember::all()->pluck('title', 'id'))
+                    Select::make('clients')->label('Choose Partners')
+                    ->options(fn() => Partner::all()->pluck('title', 'id'))
                     ->searchable()->multiple(),
                 ])->columns(1),
 

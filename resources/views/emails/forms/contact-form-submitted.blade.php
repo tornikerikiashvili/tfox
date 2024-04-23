@@ -1,11 +1,9 @@
 
-    <h3>Contact Form Submissions</h3>
-
-    * Full name: {{ data_get($form, 'name') }}
+    <p>* Full name: {{ data_get($form, 'name') }}</p>
     <br>
-    * Email: {{ data_get($form, 'email') }}
+    <p>* Email: {{ data_get($form, 'email') }}</p>
     <br>
-    * Phone: {{ data_get($form, 'phone') }}
+    <p>* Phone: {{ data_get($form, 'phone_number') }}</p>
     <br>
-    * Message: {{ data_get($form, 'comment') }}
+    <p>* Message: {{ data_get($form, 'comment') }}</p>
 

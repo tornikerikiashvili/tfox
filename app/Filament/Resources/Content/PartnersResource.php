@@ -27,6 +27,8 @@ class PartnersResource extends SimpleResource
 
     protected static ?string $navigationIcon = 'heroicon-o-photograph';
 
+    protected static ?string $navigationLabel = 'Clients & Partners';
+
     protected static ?string $recordTitleAttribute = 'title';
 
     protected static ?string $slug = 'content/partners';

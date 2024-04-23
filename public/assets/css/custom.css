@@ -23,7 +23,7 @@ html:lang(ka) h2 span {
     font-weight: 700;
 }
 
-html:lang(ka) p, html:lang(ka) .border-btn {
+html:lang(ka) p, html:lang(ka) .border-btn, html:lang(ka) .scroll-btn-flip, html:lang(ka) .flip-btn  {
     font-family: "BPG Boxo-Boxo", sans-serif;
 }
 
@@ -34,5 +34,9 @@ html:lang(ka) .portfolio-slider2-content h2 {
 html:lang(ka) article h3, html:lang(ka) h3 {
     font-family: "BPG Boxo-Boxo", sans-serif;
     font-size: 21px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 

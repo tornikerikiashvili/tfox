@@ -38,12 +38,12 @@
 	  			</div><!-- flex-min-height-inner end -->
 
 	  			<!-- scroll-btn start -->
-				<a href="#down" class="scroll-btn pointer-large">
+				<a href="{{App::getLocale() . '/about#down'}}" class="scroll-btn pointer-large">
 					<div class="scroll-arrow-box">
 						<span class="scroll-arrow"></span>
 					</div>
 					<div class="scroll-btn-flip-box">
-						<span class="scroll-btn-flip" data-text="Scroll">Scroll</span>
+						<span class="scroll-btn-flip" data-text="{{__('_scroll')}}">{{__('_scroll')}}</span>
 					</div>
 				 </a><!-- scroll-btn end -->
 			</section><!-- page-head end -->
@@ -105,41 +105,32 @@
 
 
 
-            <!-- section start -->
-			<section class="dark-bg-2">
-				<!-- flex-container start -->
-				<div class="flex-container container bottom-padding-60 top-padding-120">
-					<!-- column start -->
-					<div class="four-columns bottom-padding-60">
-						<div data-animation-container class="content-right-margin-20 team-title-box">
-							<h2 data-animation-child class="small-title-oswald overlay-anim-box2 red-color" data-animation="overlay-anim2">{{data_get($content, 'team_subtitle')}}</h2>
-							<h2 class="title-style text-color-4">
-								<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($content, 'team_title_one')}}</span><br>
-								<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($content, 'team_title_two')}}</span><br>
-								<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay03" data-animation="overlay-anim2">{{data_get($content, 'team_title_three')}}</span>
-							</h2>
-						</div>
-					</div><!-- column end -->
-					<!-- column start -->
+             <!-- section start -->
+    <section class="dark-bg-2">
+        <!-- container start -->
+        <div class="container small top-bottom-padding-120">
+            <!-- medium-title start -->
+            <h2 data-animation-container class="medium-title">
+                <span data-animation-child class="title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_one')}}">{{data_get($content, 'partners_title_one')}}</span><br>
+                <span data-animation-child class="title-fill tr-delay01" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_two')}}">{{data_get($content, 'partners_title_two')}}</span><br>
+                <span data-animation-child class="title-fill tr-delay02" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_three')}}">{{data_get($content, 'partners_title_three')}}</span>
+            </h2><!-- medium-title end -->
 
-
-                    @foreach ($team as $item)
-                        <div class="four-columns bottom-padding-60">
-                            <a data-animation-container href="#" class="content-left-right-margin-10 hover-box pointer-large d-block">
-                                <div data-animation-child class="overlay-anim-box2 overlay-dark-bg-1 team-img-box" data-animation="overlay-anim2">
-                                    <img class="hover-img" src="{{data_get($item, 'image.url')}}" alt="Balanchaev Balancha">
-                                </div>
-                                <div class="team-content">
-                                    <h4 data-animation-child class="small-title-oswald text-color-4 hover-content fade-anim-box tr-delay01" data-animation="fade-anim">{{data_get($item, 'title')}}</h4><br>
-                                    <p data-animation-child class="p-letter-style text-color-4 hover-content fade-anim-box tr-delay02" data-animation="fade-anim">{{data_get($item, 'teaser')}}</p>
-                                </div>
-                            </a>
+            <!-- client-list start -->
+            <ul class="client-list d-flex-wrap top-padding-60">
+               @foreach ($partners as $partner)
+                <li>
+                    <a href="#" class="pointer-large d-block">
+                        <div class="brand-box">
+                            <img src="{{data_get($partner, 'image.main.url')}}" alt="Brand" class="hover-opac-img">
+                            <img src="{{data_get($partner, 'image.hover.url')}}" alt="Brand" class="opac-img">
                         </div>
-                    @endforeach
-                    <!-- column end -->
-
-				</div><!-- flex-container end -->
-			</section><!-- section end -->
+                    </a>
+                </li>
+               @endforeach
+            </ul><!-- client-list end -->
+        </div><!-- container end -->
+    </section><!-- section end -->
 
 
             <section class="light-bg-1 top-padding-60" data-midnight="black">
