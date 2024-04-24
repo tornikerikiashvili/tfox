@@ -33,22 +33,22 @@ class Contact extends ContentComponentBlock
                     FileUpload::make('page_cover')->label('Cover Image'),
                 ])->columns(1),
 
-                // Section::make('content')->schema([
-                //     Fieldset::make('Mission')->schema([
-                //         TextInput::make('about_mission_title')->label('Mission Title'),
-                //         Textarea::make('about_mission_text')->label('Mission Text'),
-                //     ])->columns(1),
+                Section::make('content')->schema([
+                    Fieldset::make('Contact Info')->schema([
+                        TextInput::make('contact_phone')->label('Phone'),
+                        TextInput::make('contact_email')->label('Email'),
+                        TextInput::make('contact_address')->label('Address'),
+                    ])->columns(1),
 
-                //     Fieldset::make('Goal')->schema([
-                //         TextInput::make('about_goal_title')->label('Goal Title'),
-                //         Textarea::make('about_goal_text')->label('Goal Text'),
-                //     ])->columns(1),
+                    Fieldset::make('Google Map')->schema([
+                        Textarea::make('contact_map_code')->label('Contact Map Code'),
+                    ])->columns(1),
 
-                //     Fieldset::make('Values')->schema([
-                //         TextInput::make('about_values_title')->label('Values Title'),
-                //         Textarea::make('about_values_text')->label('Values Text'),
-                //     ])->columns(1),
-                // ])->columns(1),
+                ])->columns(1),
+
+                Section::make('Contact Form BAckground')->schema([
+                    FileUpload::make('contact_form_bg')->label('Bg image'),
+                ])->columns(1),
 
                 // Section::make('Clients')->schema([
                 //     Fieldset::make('Title')

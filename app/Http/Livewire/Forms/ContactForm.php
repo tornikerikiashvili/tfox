@@ -10,6 +10,7 @@ use App\Settings\CommunicationsSettings;
 class ContactForm extends Component
 {
 
+
     public $name;
 
     public $phone;
@@ -19,6 +20,8 @@ class ContactForm extends Component
     public $comment;
 
     public $success = null;
+
+    public $myHoneypot;
 
     protected $rules = [
         'name' => 'required|string',
@@ -38,6 +41,10 @@ class ContactForm extends Component
 
     public function submit()
     {
+        if($this->myHoneypot) {
+            return false;
+        };
+
         $this->validate();
 
 

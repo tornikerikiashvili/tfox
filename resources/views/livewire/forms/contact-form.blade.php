@@ -67,11 +67,14 @@
 }
      </style>
  @endpush
+ <div>
+ <h4 class="small-title-oswald text-color-4 text-center">{{ $success ? __('_your_message_sent') : __('_get_in_touch') }}</h4>
 
 
- <form id="contact_form" wire:submit.prevent="submit" class="flex-container top-padding-90" method="post" name="formobrsv" id="send_form">
+ <form @if ($success) style="display: none;" @endif id="contact_form" wire:submit.prevent="submit" class="flex-container top-padding-90" method="post" name="formobrsv" id="send_form">
     <!-- column start -->
     <div class="four-columns">
+        <x-honeypot />
         <div class="content-right-margin-10 input-box">
                <input wire:model="name" type="text" name="first_name" id="first_name" required class="form-input pointer-small">
                <label wire:ignore for="first_name" class="form-label">{{__('_name')}}</label>
@@ -100,7 +103,7 @@
            <label for="message" class="form-label">{{__('_comment')}}</label>
     </div><!-- column end -->
     <!-- column start -->
-    <div class="submit_container twelve-columns text-center top-padding-90">
+    <div wire:ignore class="submit_container twelve-columns text-center top-padding-90">
         <button id="send" class="border-btn-box pointer-large">
             <span class="border-btn-inner">
                   <span class="border-btn" data-text="{{__('_submit')}}">{{__('_submit')}}</span>
@@ -114,6 +117,7 @@
 {{-- @if(!$errors->any())
 <h1>Wait...</h1>
 @endif --}}
+</div>
 
 @push('bodyScripts')
 
