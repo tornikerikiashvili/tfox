@@ -18,7 +18,8 @@ class Products extends AbstractComponent
     public $products;
     public $children;
     public $childCategories = [];
-    protected $queryString = ['category','children'];
+    public $filter;
+    protected $queryString = ['category','children','filter'];
 
     public function mount(){
         $this->categories = ContentResource::collection(ProductCategory::where('parent_id', $this->category)->orderBy('order')->get())->response()->getData()->data;
@@ -35,6 +36,9 @@ class Products extends AbstractComponent
     }
 
 
+    public function setCatCat($id){
+        $this->filter = $id;
+    }
 
     public function setChildren($id){
         $this->children = $id;

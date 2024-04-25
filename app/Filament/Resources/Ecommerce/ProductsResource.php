@@ -12,6 +12,7 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Tabs\Tab;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
 use Palindroma\Core\Filament\Tables\MediaColumn;
@@ -66,7 +67,7 @@ class ProductsResource extends ContentResource
                         Forms\Components\TextInput::make('title.two')->label('Line Two'),
                         Forms\Components\TextInput::make('title.three')->label('Line Three'),
                     ])->columns(3),
-            RichEditor::make('content'),
+            Textarea::make('content'),
             Repeater::make('specifications')
                 ->schema([
                     TextInput::make('title'),

@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\TestApi;
+
 use App\Http\Middleware\SetAppLocale;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\AuctionsController;
-use App\Http\Controllers\AnnouncementsController;
+use App\Http\Controllers\InnersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +30,7 @@ Route::prefix('/{locale}')
     ->where(['locale' => '[a-zA-Z]{2}'])
     ->middleware(SetAppLocale::class)
     ->group(function () {
+        Route::get('/product/{id}', [InnersController::class, 'product']);
         Route::get('/{slug?}', PageController::class)->where('slug', '.*');
     });
 

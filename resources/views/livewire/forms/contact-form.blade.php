@@ -7,7 +7,7 @@
 
         .lds-facebook {
   /* change color here */
-  color: #1c4c5b
+  color: #f15922;
 }
 .lds-facebook,
 .lds-facebook div {

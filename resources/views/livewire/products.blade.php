@@ -70,7 +70,7 @@
                             <span class="filter-button-flip" data-text="{{__('_all')}}">{{__('_all')}}</span>
                         </button>
                     @foreach ($categories as $category)
-                        <button class="filter-button-box pointer-small" data-filter=".{{data_get($category, 'id')}}">
+                        <button wire:click="setCatCat({{data_get($category, 'id')}})" class="filter-button-box pointer-small {{$filter == data_get($category, 'id') ? 'active' : ''}}" data-filter=".{{data_get($category, 'id')}}">
                             <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
                         </button>
                         @if (!$loop->last)
@@ -108,9 +108,9 @@
             <!-- filter-buttons end -->
 
             <!-- works start -->
-            <div class="works">
+            <div wire:ignore class="works">
                 @foreach ($products as $product)
-                    <a href="project.html" class="animsition-link grid-item {{data_get($product, 'category_id')}}">
+                    <a href="{{App::getLocale() . '/product/' . data_get($product, 'id')}}" class="animsition-link grid-item {{data_get($product, 'category_id')}}">
                         <div class="work_item pointer-large hover-box hidden-box">
                             <img class="hover-img" src="{{data_get($product, 'cover_image.url')}}" alt="">
                             <div class="works-content">
@@ -128,3 +128,22 @@
         </div><!-- container end -->
     </section><!-- dark-bg-2 end -->
 </div>
+
+@push('bodyScripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentCat = {{ Illuminate\Support\Js::from($filter) }};
+
+            // Find the button with data-filter
+            const filterButton = document.querySelector('button[data-filter=".' + currentCat + '"]');
+
+            // Trigger click event if button found
+            if (filterButton) {
+                setTimeout(function() {
+                filterButton.click();
+             }, 100);
+
+            }
+        });
+    </script>
+@endpush

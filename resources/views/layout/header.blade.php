@@ -5,14 +5,14 @@
         <!-- logo start -->
 
         @if (App::getLocale() == 'ka')
-        <a href="/" class="logo pointer-large animsition-link">
+        <a href="{{App::getLocale()}}" class="logo pointer-large animsition-link">
             <div class="logo-img-box">
                 <img class="logo-white" src="assets/images/logo/logo-white-ge.png" alt="logo">
                 <img class="logo-black" src="assets/images/logo/logo-black-ge.png" alt="logo">
             </div>
         </a>
         @else
-            <a href="/" class="logo pointer-large animsition-link">
+            <a href="{{App::getLocale()}}" class="logo pointer-large animsition-link">
                 <div class="logo-img-box">
                     <img class="logo-white" src="assets/images/logo/logo-white.png" alt="logo">
                     <img class="logo-black" src="assets/images/logo/logo-black.png" alt="logo">
