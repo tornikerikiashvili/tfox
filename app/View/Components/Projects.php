@@ -17,7 +17,7 @@ class Projects extends Component
 
     public function __construct(public $content)
     {
-        $this->projects = ContentResource::collection(Project::all())->response()->getData()->data;
+       
     }
 
     /**
