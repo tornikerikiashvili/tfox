@@ -12,12 +12,12 @@
         <div class="three-columns bottom-padding-60">
             <div class="content-left-right-margin-10">
                 <ul class="footer-menu text-color-4">
-                    <li><a class="pointer-large animsition-link small-title-oswald hover-color active" href="index.html">Home</a></li>
-                    <li><a class="pointer-large animsition-link small-title-oswald hover-color" href="about.html">About</a></li>
-                    <li><a class="pointer-large animsition-link small-title-oswald hover-color" href="services.html">Services</a></li>
-                    <li><a class="pointer-large animsition-link small-title-oswald hover-color" href="portfolio.html">Portfolio</a></li>
-                    <li><a class="pointer-large animsition-link small-title-oswald hover-color" href="blog.html">Blog</a></li>
-                    <li><a class="pointer-large animsition-link small-title-oswald hover-color" href="contact.html">Contact</a></li>
+
+                    @foreach (data_get($page, 'navigations.1.items') as $item)
+                      <li>
+                        <a class="pointer-large animsition-link small-title-oswald hover-color" href="{{App::getLocale() . data_get($item, 'data.url')}}">{{data_get($item, 'data.title')}}</a>
+                      </li>
+                    @endforeach
                 </ul>
             </div>
         </div><!-- column end -->
@@ -25,9 +25,16 @@
         <div class="four-columns bottom-padding-60">
             <div class="content-left-right-margin-10 footer-center-mobile">
                 <ul class="footer-information text-color-4">
-                    <li><i class="far fa-envelope"></i><a href="#" class="xsmall-title-oswald">email@xen_agency.com</a></li>
-                    <li><i class="fas fa-mobile-alt"></i><a href="#" class="xsmall-title-oswald">+23 8 8532 7834</a></li>
-                    <li><i class="fas fa-map-marker-alt"></i><a href="#" class="xsmall-title-oswald text-height-17">PO Box 223158 Oliver Street<br><span>East Victoria 2006 UK</span></a></li>
+                    <li><i class="far fa-envelope"></i><a href="mailto:{{data_get($page, 'communications.contacts.email')}}" class="xsmall-title-oswald">{{data_get($page, 'communications.contacts.email')}}</a></li>
+                    <li><i class="fas fa-mobile-alt"></i><a href="tel:{{data_get($page, 'communications.contacts.phone')}}" class="xsmall-title-oswald">{{data_get($page, 'communications.contacts.phone')}}</a></li>
+                    @if(App::getLocale() == 'ka')
+                       <li><i class="fas fa-map-marker-alt"></i><a target="_blank" href="{{data_get($page, 'communications.contacts.direction_link')}}" class="xsmall-title-oswald text-height-17">{{data_get($page, 'communications.contacts.address')}}</a></li>
+                    @else
+                       <li><i class="fas fa-map-marker-alt"></i><a target="_blank" href="{{data_get($page, 'communications.contacts.direction_link')}}" class="xsmall-title-oswald text-height-17">{{data_get($page, 'communications.contacts.address_en')}}</a></li>
+                    @endif
+
+
+
                 </ul>
             </div>
         </div><!-- column end -->
@@ -35,37 +42,21 @@
         <div class="three-columns bottom-padding-60">
             <div class="content-left-margin-10">
                 <ul class="footer-social">
-                    <li>
-                        <div class="flip-btn-box">
-                            <a href="#" class="flip-btn pointer-small" data-text="Instagram">Instagram</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flip-btn-box">
-                            <a href="#" class="flip-btn pointer-small" data-text="Facebook">Facebook</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flip-btn-box">
-                            <a href="#" class="flip-btn pointer-small" data-text="Spotify">Spotify</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flip-btn-box">
-                            <a href="#" class="flip-btn pointer-small" data-text="Vimeo">Vimeo</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flip-btn-box">
-                            <a href="#" class="flip-btn pointer-small" data-text="Behance">Behance</a>
-                        </div>
-                    </li>
+                    @foreach (data_get($page, 'communications.socials.links') as $social)
+                        <li>
+                            <div class="flip-btn-box">
+                                <a target="_blank" href="{{data_get($social, 'link')}}" class="flip-btn pointer-small" data-text="{{data_get($social, 'title')}}">{{data_get($social, 'title')}}</a>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div><!-- column end -->
         <!-- column start -->
         <div class="twelve-columns">
-            <p class="p-letter-style text-color-4 footer-copyright">&copy; Copyright 2019 XEN. Theme by <a href="#">Jinna Gik</a></p>
+            <p class="p-letter-style text-color-4 footer-copyright">&copy; Copyright 2024 Tfox.ge</a></p>
         </div><!-- column end -->
     </div><!-- flex-container end -->
 </footer><!-- footer end -->
+
+

@@ -31,6 +31,7 @@ Route::prefix('/{locale}')
     ->middleware(SetAppLocale::class)
     ->group(function () {
         Route::get('/product/{id}', [InnersController::class, 'product']);
+        Route::get('/article/{id}', [InnersController::class, 'news']);
         Route::get('/{slug?}', PageController::class)->where('slug', '.*');
     });
 

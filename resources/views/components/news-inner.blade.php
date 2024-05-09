@@ -21,56 +21,76 @@
         align-items:center;
     }
 
+    .entry-content p {
+        font-size: 16px;
+        line-height: 1.8;
+        font-weight: 600;
+        letter-spacing: 0px;
+        font-family: 'Open Sans', sans-serif;
+        color: #262626;
+    }
+    .entry-content blockquote {
+        margin-top: 30px;
+        padding: 20px;
+        position: relative;
+        background: #f05523;
+
+    }
+
+    .entry-content blockquote p {
+        margin: 0;
+    }
+
+    .entry-content blockquote:before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background: #f05523;
+        position: absolute;
+        right: 30px;
+        bottom: -11px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+
+
  </style>
 @endpush
+
 <!-- blog start -->
 <div id="down" class="blog container bottom-padding-30 top-padding-120 light-bg-1" data-midnight="black">
     <!-- flex-container start -->
     <div class="flex-container">
         <!-- column start -->
-        <div class="eight-columns latest-news">
+					<div class="eight-columns">
+						<!-- single-post-content start -->
+						<div class="light-bg-2">
+							<a class="photo-popup pointer-zoom" href="assets/images/blog/bodypaint-female-girl-50595.jpg">
+								<img src="{{data_get($news, 'cover_image.url')}}" alt="title">
+							</a>
+							<!-- content-margin-block start -->
+							<div class="content-margin-block">
+								<!-- entry-content start -->
+								<article class="entry-content">
+									{!!data_get($news, 'content')!!}
+								</article><!-- entry-content end -->
 
-            @foreach ($newsList as $item)
+								<!-- post-share start -->
+								<div class="post-share">
+									<span class="xsmall-title-oswald text-color-2">{{__('_share')}}: </span>
+									<ul class="post-share-social text-color-1">
+										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-instagram"></i></a></li>
+										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-pinterest-p"></i></a></li>
+										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-behance"></i></a></li>
+									</ul>
+								</div><!-- post-share end -->
+							</div><!-- content-margin-block end -->
+						</div><!-- single-post-content end -->
 
-                <!-- blog-entry start -->
-                <article class="bottom-padding-90">
-                    <div class="light-bg-2">
-                        <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="pointer-large animsition-link hover-box d-block">
-                            <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
-                                <img class="hover-img" src="{{data_get($item, 'cover_image.url')}}" alt="blog img">
-                            </div>
-                            <div class="content-padding-l-r-20" data-animation-container>
-                                <h3 class="title-style text-color-1 top-margin-30 blog-title">
-                                    <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2" data-animation="overlay-anim2">{{data_get($item, 'title.one')}}</span><br>
-                                    @if (data_get($item, 'title.two'))
-                                     <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay01" data-animation="overlay-anim2">{{data_get($item, 'title.two')}}</span><br>
-                                    @endif
-                                    @if (data_get($item, 'title.three'))
-                                     <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay02" data-animation="overlay-anim2">{{data_get($item, 'title.three')}}</span>
-                                    @endif
-
-                                </h3>
-                                <p data-animation-child class="fade-anim-box hover-content tr-delay03 p-style-medium text-color-2" data-animation="fade-anim">{{data_get($item, 'teaser')}}</p>
-                            </div>
-                        </a>
-                        <div class="content-padding-l-r-20 content-padding-bottom-20" data-animation-container>
-                            <div data-animation-child class="blog-autor-date top-margin-30 fade-anim-box tr-delay02 text-color-1" data-animation="fade-anim">
-                                <a style="visibility:hidden" class="xsmall-title-oswald pointer-small hover-color" href="#">Balanchaev Balancha</a>
-                                <a class="xsmall-title-oswald pointer-small hover-color" href="#">{{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('d')}} {{__(\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('M'))}}, {{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('Y')}}</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- blog-entry end -->
-            @endforeach
-
-            <!-- loading more btn start -->
-            <div class="bottom-padding-90 text-center">
-                <div class="arrow-btn-box">
-                    <a href="#" class="arrow-btn pointer-large">Loading more</a>
-                </div>
-            </div><!-- loading more btn end -->
-        </div><!-- column end -->
+					</div><!-- column end -->
         <!-- column start -->
         <aside class="four-columns bottom-padding-90">
             <!-- sidebar start -->
@@ -90,9 +110,9 @@
                         <h4 class="p-style-bold-up red-color">{{__('_categories')}}</h4>
                         <ul class="top-margin-30 red-color">
                             @foreach ($categories as $cat )
-                            <li>
-                                <a href="{{App::getLocale() . '/news?categoryId=' . data_get($cat, 'id')}}" class="pointer-small small-title-oswald {{ data_get($cat, 'id') == $categoryId ? 'act' : ''}}">{{data_get($cat, 'extra_attributes.title')}}</a>
-                            </li>
+                             <li>
+                               <a href="{{App::getLocale() . '/news?categoryId=' . data_get($cat, 'id')}}" class="pointer-small small-title-oswald ">{{data_get($cat, 'extra_attributes.title')}}</a>
+                             </li>
                             @endforeach
                         </ul>
                     </div><!-- widget-categories end -->

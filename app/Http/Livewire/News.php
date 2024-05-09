@@ -13,6 +13,7 @@ use Palindroma\Core\Http\Resources\ContentResource;
 class News extends AbstractComponent
 {
     public $news;
+    public $recentnews;
     public $categories;
     public $categoryId;
     public $keyword;
@@ -28,6 +29,10 @@ class News extends AbstractComponent
         }
 
         $this->news = cache::get('news_' . App::getLocale());
+
+        $this->recentnews = collect(cache::get('news_' . App::getLocale()))->filter(function ($item) {
+            return data_get($item, 'is_published') === true;
+        })->all();
 
     }
 

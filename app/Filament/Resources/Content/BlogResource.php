@@ -75,7 +75,7 @@ class BlogResource extends ContentResource
     public static function metaFields(Card $card): Card
     {
         return $card->schema([
-            Forms\Components\Checkbox::make('is_published')->label('Published'),
+            Forms\Components\Checkbox::make('is_published')->label('featured'),
             Forms\Components\Select::make('category_id')
                 ->relationship('category', 'name', fn($query) => $query->where('type', 'blog_category'))
                 ->createOptionForm([

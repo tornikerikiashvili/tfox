@@ -62,10 +62,9 @@ class Communications extends SettingsPage
                     Grid::make(3)->schema([
                         TextInput::make('contacts.email')->label('E-mail'),
                         TextInput::make('contacts.phone')->label('Phone Number'),
-                        TextInput::make('contacts.phone_2')->label('Phone Number'),
                         TextInput::make('contacts.address')->label('Address Geo'),
                         TextInput::make('contacts.address_en')->label('Address Eng'),
-                        TextInput::make('contacts.address_ru')->label('Address Rus'),
+                        TextInput::make('contacts.direction_link')->label('Map Direction'),
                         Fieldset::make('Emails For Form Communication')
                             ->schema([
                                 Grid::make()
@@ -84,7 +83,7 @@ class Communications extends SettingsPage
                                 ->schema([
                         Repeater::make('socials.links')
                                 ->schema([
-                                    TextInput::make('svg.menu')->label('Svg For Menu'),
+                                    TextInput::make('title')->label('title'),
                                     TextInput::make('link'),
 
                         ])
