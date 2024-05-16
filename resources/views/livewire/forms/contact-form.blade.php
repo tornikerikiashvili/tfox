@@ -68,7 +68,7 @@
      </style>
  @endpush
  <div>
- <h4 class="small-title-oswald text-color-4 text-center">{{ $success ? __('_your_message_sent') : __('_get_in_touch') }}</h4>
+ <h3 class="small-title-oswald text-color-4 text-center">{{ $success ? __('_your_message_sent') : __('_get_in_touch') }}</h3>
 
 
  <form @if ($success) style="display: none;" @endif id="contact_form" wire:submit.prevent="submit" class="flex-container top-padding-90" method="post" name="formobrsv" id="send_form">

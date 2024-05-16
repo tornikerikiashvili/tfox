@@ -31,7 +31,9 @@ html:lang(ka) h2 span {
     font-weight: 700;
 }
 
-html:lang(ka) p, html:lang(ka) .border-btn, html:lang(ka) .scroll-btn-flip, html:lang(ka) .flip-btn, .footer-menu li a, .inner_content ul li {
+html:lang(ka) p, html:lang(ka) .border-btn, html:lang(ka) .scroll-btn-flip,
+html:lang(ka) .flip-btn, .footer-menu li a, .inner_content ul li,
+.footer-information a, #contact_form input {
     font-family: "bpg-le-studio", sans-serif;
 }
 
