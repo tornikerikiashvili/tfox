@@ -2,6 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @livewireStyles
+        @if (data_get($page, 'settings.seo.disableIndexing') == true)
+            <meta name="robots" content="noindex">
+            <meta name="robots" content="nofollow">
+        @endif
         <meta charset="utf-8">
         <base href={{ config('app.url') }}/>
         <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -17,6 +17,7 @@ use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
+use Palindroma\Core\Forms\Components\SEOForm;
 use Palindroma\Core\Filament\Tables\MediaColumn;
 use Palindroma\Core\Forms\Components\MediaPicker;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -74,6 +75,9 @@ class ProjectsResource extends ContentResource
             Forms\Components\Textarea::make('teaser'),
             RichEditor::make('content_top')->label('Content'),
             // RichEditor::make('content_bottom'),
+            Forms\Components\Section::make('SEO Settings')->schema([
+                SEOForm::make('seo_settings'),
+            ])
         ]);
     }
 

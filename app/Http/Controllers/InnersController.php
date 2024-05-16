@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
 use App\Settings\CommunicationsSettings;
 use App\Models\Content\News as ModelNews;
+use Palindroma\Core\Settings\GeneralSettings;
 use Palindroma\Core\Http\Resources\PageResource;
 use Palindroma\Core\Http\Resources\ContentResource;
 use Palindroma\Core\Http\Resources\NavigationResource;
@@ -25,6 +26,7 @@ class InnersController extends Controller
         $additional = [];
         $additional['navigations'] = NavigationResource::collection(Navigation::all());
         $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
+        $additional['settings'] = app(GeneralSettings::class)->toArrayForFrontend();
 
         $page = Page::first();
 
@@ -41,6 +43,7 @@ class InnersController extends Controller
         $additional = [];
         $additional['navigations'] = NavigationResource::collection(Navigation::all());
         $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
+        $additional['settings'] = app(GeneralSettings::class)->toArrayForFrontend();
 
         $page = Page::first();
 
@@ -69,6 +72,7 @@ class InnersController extends Controller
         $additional = [];
         $additional['navigations'] = NavigationResource::collection(Navigation::all());
         $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
+        $additional['settings'] = app(GeneralSettings::class)->toArrayForFrontend();
 
         $page = Page::first();
 

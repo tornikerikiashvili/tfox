@@ -1,18 +1,25 @@
 @extends('layout.app')
 
 @section('meta')
+    @if (App::getLocale() === 'en')
+      <title> {{data_get($project, 'seo_settings.meta_title', data_get($project, 'title.main') )}} | {{data_get($page, 'settings.seo.title_en')}} </title>
+    @else
+      <title>{{data_get($project, 'seo_settings.meta_title', data_get($project, 'title.main'))}} | {{data_get($page, 'settings.seo.title_ge')}} </title>
+    @endif
 
-  @php
-      dd($project);
-  @endphp
-  <meta name="title" property="title" content="{{data_get($page, 'data.blocks.0.data.resource.seo_settings.meta_title', data_get($page, 'data.blocks.0.data.resource.title', data_get($page, 'data.seo_settings.meta_title')))}}"/>
-  <meta name="description"  property="description" content="{{data_get($page, 'data.blocks.0.data.resource.seo_settings.meta_description', data_get($page, 'data.blocks.0.data.resource.teaser', data_get($page, 'data.seo_settings.meta_description')))}}"/>
+  <meta name="title" property="title" content="{{data_get($project, 'seo_settings.meta_title', data_get($project, 'title.main'))}}"/>
+  <meta name="description"  property="description" content="{{data_get($project, 'seo_settings.meta_description')}}"/>
   <meta property='pageUrl' content='{{url()->current()}}'/>
   <meta property='url' content='{{url()->current()}}'/>
 
-  <meta property="og:title" content="{{data_get($page, 'data.blocks.0.data.resource.seo_settings.og_title', data_get($page, 'data.blocks.0.data.resource.title', data_get($page, 'data.seo_settings.og_title')))}}">
-  <meta property="og:description" content="{{data_get($page, 'data.blocks.0.data.resource.seo_settings.og_description', data_get($page, 'data.blocks.0.data.resource.teaser', data_get($page, 'data.seo_settings.og_description')))}}">
-  <meta property="og:image" content="{{'/storage/' . data_get($page, 'data.blocks.0.data.resource.seo_settings.image',  data_get($page, 'data.seo_settings.image'))}}">
+  <meta property="og:title" content="{{data_get($project, 'seo_settings.og_title', data_get($project, 'title.main'))}}">
+  <meta property="og:description" content="{{data_get($project, 'seo_settings.og_description')}}">
+  @if (data_get($project, 'seo_settings.image'))
+  <meta property="og:image" content="{{'/storage/' . data_get($project, 'seo_settings.image')}}">
+  @else
+  <meta property="og:image" content="{{data_get($project, 'cover_image.url')}}">
+  @endif
+
   <meta property="og:url" content="{{url()->current()}}">
 @endsection
 
