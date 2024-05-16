@@ -53,6 +53,7 @@
                                   <a href="{{App::getLocale() . data_get($slide, 'cta_button.link')}}" class="arrow-btn pointer-large">{{data_get($slide, 'cta_button.title')}}</a>
                                 </div>
                             @endif
+
                         </div>
                       @else
                       <div class="six-columns six-offset">
