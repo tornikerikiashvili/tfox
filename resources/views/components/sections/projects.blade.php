@@ -1,5 +1,4 @@
-
- <!-- section start -->
+<!-- section start -->
  <section class="light-bg-1 bottom-padding-30 top-padding-120" data-midnight="black">
 
     <!-- container start -->
@@ -37,9 +36,9 @@
                     </div><!-- column end -->
                     <!-- column start -->
                     <div id="selector1" class="six-columns top-padding-60">
-                        <div  class="portfolio-content-bg-box pointer-large hover-box hidden-box">
+                        <a href="{{App::getLocale() . '/project/' . data_get($project, 'id')}}" class="animsition-link  portfolio-content-bg-box pointer-large hover-box hidden-box">
                             <div data-src="{{data_get($project, 'cover_image.url')}}" class="item portfolio-content-bg hover-img overlay-anim-box2 light-bg-1" data-animation="overlay-anim2" style="background-image:url({{data_get($project, 'cover_image.url')}})"></div>
-                        </div>
+                        </a>
                     </div><!-- column end -->
                 </div><!-- flex-container end -->
             </div><!-- portfolio-content-inner end -->
@@ -56,7 +55,7 @@
                 <div class="flex-container reverse container small">
                     <!-- column start -->
                     <div class="six-columns top-padding-60">
-                        <a href="project.html" class="portfolio-content-bg-box pointer-large hover-box hidden-box animsition-link">
+                        <a href="{{App::getLocale() . '/project/' . data_get($project, 'id')}}" class="portfolio-content-bg-box pointer-large hover-box hidden-box animsition-link">
                             <div class="portfolio-content-bg hover-img overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2" style="background-image:url({{data_get($project, 'cover_image.url')}})"></div>
                         </a>
                     </div><!-- column end -->
@@ -109,7 +108,7 @@
                     </div><!-- column end -->
                     <!-- column start -->
                     <div class="six-columns top-padding-60">
-                        <a href="project.html" class="portfolio-content-bg-box pointer-large hover-box hidden-box animsition-link">
+                        <a href="{{App::getLocale() . '/project/' . data_get($project, 'id')}}" class="portfolio-content-bg-box pointer-large hover-box hidden-box animsition-link">
                             <div class="portfolio-content-bg hover-img overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2" style="background-image:url({{data_get($project, 'cover_image.url')}})"></div>
                         </a>
                     </div><!-- column end -->
@@ -128,7 +127,7 @@
                 <div class="flex-container reverse container small">
                     <!-- column start -->
                     <div class="six-columns top-padding-60">
-                        <a href="project.html" class="portfolio-content-bg-box pointer-large hover-box hidden-box animsition-link">
+                        <a href="{{App::getLocale() . '/project/' . data_get($project, 'id')}}" class="portfolio-content-bg-box pointer-large hover-box hidden-box animsition-link">
                             <div class="portfolio-content-bg hover-img overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2" style="background-image:url({{data_get($project, 'cover_image.url')}})"></div>
                         </a>
                     </div><!-- column end -->

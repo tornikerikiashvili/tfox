@@ -72,13 +72,8 @@ class ProjectsResource extends ContentResource
                     ])->columns(3),
             Forms\Components\TextInput::make('type'),
             Forms\Components\Textarea::make('teaser'),
-            RichEditor::make('content_top'),
-            Repeater::make('options')
-                    ->schema([
-                        TextInput::make('title'),
-                    ])
-                    ->columns(1),
-            RichEditor::make('content_bottom'),
+            RichEditor::make('content_top')->label('Content'),
+            // RichEditor::make('content_bottom'),
         ]);
     }
 

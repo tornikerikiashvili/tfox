@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Arr;
 use App\Models\Content\News;
 use Illuminate\Http\Request;
+use App\Models\Content\Project;
 use App\Models\ProductCategory;
 use Palindroma\Core\Models\Tag;
 use Palindroma\Core\Models\Page;
@@ -60,5 +61,23 @@ class InnersController extends Controller
         })->all();
 
         return view('news-inner', ['news' => $news, 'page' => $page, 'categories' => $categories, 'recentnews' => $recentnews]);
+    }
+
+
+
+    public function project($locale,$id){
+        $additional = [];
+        $additional['navigations'] = NavigationResource::collection(Navigation::all());
+        $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
+
+        $page = Page::first();
+
+        $page = PageResource::make($page)->additional($additional)->response()->getData();
+
+        $project = Arr::first(ContentResource::collection(Project::where('id', $id)->get())->response()->getData()->data);
+
+        $categories = ContentResource::collection(Tag::where('type', 'blog_category')->get())->response()->getData()->data;
+
+        return view('project-inner', ['project' => $project, 'page' => $page, 'categories' => $categories]);
     }
 }

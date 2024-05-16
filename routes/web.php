@@ -32,6 +32,7 @@ Route::prefix('/{locale}')
     ->group(function () {
         Route::get('/product/{id}', [InnersController::class, 'product']);
         Route::get('/article/{id}', [InnersController::class, 'news']);
+        Route::get('/project/{id}', [InnersController::class, 'project']);
         Route::get('/{slug?}', PageController::class)->where('slug', '.*');
     });
 

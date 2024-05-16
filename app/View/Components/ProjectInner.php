@@ -3,23 +3,25 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use App\Models\Content\Project;
-use Palindroma\Core\Http\Resources\ContentResource;
 
-class Projects extends Component
+class ProjectInner extends Component
 {
-    /**
+/**
      * Create a new component instance.
      *
      * @return void
      */
-    public $projects;
 
-    public function __construct(public $content)
+    public $project;
+    public $categories;
+    public $general;
+    public $recentnews;
+
+    public function __construct($project,$general)
     {
-        $this->projects = ContentResource::collection(Project::all())->response()->getData()->data;
+        $this->project = $project;
+        $this->general = $general;
     }
-
     /**
      * Get the view / contents that represent the component.
      *
@@ -27,6 +29,6 @@ class Projects extends Component
      */
     public function render()
     {
-        return view('components.projects');
+        return view('components.project-inner');
     }
 }
