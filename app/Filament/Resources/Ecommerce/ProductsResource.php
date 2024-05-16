@@ -67,12 +67,9 @@ class ProductsResource extends ContentResource
                         Forms\Components\TextInput::make('title.two')->label('Line Two'),
                         Forms\Components\TextInput::make('title.three')->label('Line Three'),
                     ])->columns(3),
-            Textarea::make('content'),
-            Repeater::make('specifications')
-                ->schema([
-                    TextInput::make('title'),
-                ])
-                ->columns(2)
+            RichEditor::make('content'),
+            RichEditor::make('specifications')
+
         ]);
     }
 

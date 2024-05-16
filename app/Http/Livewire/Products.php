@@ -15,6 +15,7 @@ class Products extends AbstractComponent
 
     public $category = 5;
     public $categories;
+    public $currentCategory;
     public $products;
     public $children;
     public $childCategories = [];
@@ -22,6 +23,7 @@ class Products extends AbstractComponent
     protected $queryString = ['category','children','filter'];
 
     public function mount(){
+        $this->currentCategory = ContentResource::collection(ProductCategory::where('id', $this->category)->orderBy('order')->get())->response()->getData()->data;
         $this->categories = ContentResource::collection(ProductCategory::where('parent_id', $this->category)->orderBy('order')->get())->response()->getData()->data;
         $catIds = collect($this->categories)->pluck('id');
 

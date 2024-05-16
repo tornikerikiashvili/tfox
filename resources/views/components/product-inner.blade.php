@@ -1,3 +1,48 @@
+@push('headStyles')
+   <style>
+    .inner_specifications ul {
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-family: 'Oswald', sans-serif;
+        margin-right: 20px;
+        color: white;
+    }
+
+    .inner_specifications ul li {
+        margin-top: 13px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .inner_specifications ul li:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #f05523;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.inner_content p, .inner_content ul li {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: white;
+}
+.inner_content strong {
+   color: #f05523;
+}
+    </style>
+@endpush
 <div>
 
     		<!-- flex-min-height-box start -->
@@ -6,28 +51,6 @@
 				<div class="flex-min-height-inner">
 					<!-- flex-container start -->
 					<div class="flex-container container small top-padding-120 bottom-padding-60 project-content">
-						<!-- column start -->
-						<div class="four-columns bottom-padding-60">
-							<div class="content-right-margin-20">
-								<ul class="text-color-4 xsmall-title-oswald list-dots">
-									@foreach (data_get($product, 'specifications') as $item)
-                                      <li>{{data_get($item, 'title')}}</li>
-                                    @endforeach
-
-								</ul>
-							</div>
-						</div><!-- column end -->
-						<!-- column start -->
-						<div class="eight-columns bottom-padding-60">
-							<div class="content-left-margin-20">
-                                <h2 class="title-style text-color-4">
-                                    {{data_get($product, 'name')}}
-                                </h2>
-                               </br>
-								<p class="p-style-large text-color-4">{{data_get($product, 'content')}}</p>
-							</div>
-						</div><!-- column end -->
-
                         @foreach (data_get($product, 'gallery') as $item)
                         <!-- column start -->
 					<div class="four-columns bottom-padding-60">
@@ -38,6 +61,19 @@
 						</div>
 					</div><!-- column end -->
                     @endforeach
+
+
+						<div class="inner_content twelve-columns bottom-padding-60">
+							<div >
+                                <h2 class="title-style text-color-4">
+                                    {{data_get($product, 'name')}}
+                                </h2>
+                               </br>
+							{!!data_get($product, 'content')!!}
+							</div>
+						</div><!-- column end -->
+
+
 
 					</div><!-- flex-container end -->
 				</div><!-- flex-min-height-inner end -->

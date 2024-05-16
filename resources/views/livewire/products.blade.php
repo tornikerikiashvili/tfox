@@ -51,8 +51,8 @@
     @endpush
 <div>
     <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
-        <div class="page_cover_title text-center">
-            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="Recent Works">Recent Works</h2><br>
+        <div wire:ignore class="page_cover_title text-center">
+            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get(Arr::first($currentCategory), 'title')}}">{{data_get(Arr::first($currentCategory), 'title')}}</h2><br>
         </div>
         <div class="overlay"></div>
     </div>
@@ -66,7 +66,7 @@
             <!-- filter-buttons start -->
             @if(empty($childCategories))
                 <div class="filter-buttons">
-                        <button class="filter-button-box pointer-small active" data-filter="*">
+                        <button wire:click="setCatCat({{'null'}})" class="filter-button-box pointer-small {{$filter == null ? 'active' : ''}}" data-filter="*">
                             <span class="filter-button-flip" data-text="{{__('_all')}}">{{__('_all')}}</span>
                         </button>
                     @foreach ($categories as $category)
@@ -114,7 +114,7 @@
                         <div class="work_item pointer-large hover-box hidden-box">
                             <img class="hover-img" src="{{data_get($product, 'cover_image.url')}}" alt="">
                             <div class="works-content">
-                                <span class="small-title-oswald red-color work-title-overlay">{{data_get($product, 'category_id')}}</span>
+                                {{-- <span class="small-title-oswald red-color work-title-overlay">{{"Brand Name"}}</span> --}}
                                 <h3 class="title-style text-color-4">
                                     <span class="work-title-overlay work-title-delay01">{{data_get($product, 'title.one')}}</span><br>
                                     <span class="work-title-overlay work-title-delay02">{{data_get($product, 'title.two')}}</span><br>

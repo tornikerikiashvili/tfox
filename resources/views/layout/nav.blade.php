@@ -1,4 +1,20 @@
 
+    <style>
+        .lang-link {
+            font-size: 21px;
+            padding: 0 5px;
+        }
+
+        .lang-li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 15px;
+            transition: 1s ease;
+        }
+
+    </style>
+
 <!-- nav-container start -->
 <nav class="nav-container dark-bg-1">
     <!-- nav-logo start -->
@@ -14,6 +30,7 @@
 
     <!-- nav-logo end -->
 
+
     <!-- menu-close -->
     <div class="menu-close pointer-large"></div>
 
@@ -26,6 +43,10 @@
 
     <!-- nav-menu start -->
     <ul class="nav-menu dark-bg-1">
+        <li style="color:white" class="lang-li">
+            <a class="lang-link nav-link" style="{{App::getLocale() == 'en' ? 'color:#f15922' : 'white'}}" href="en/{{data_get(Route::getCurrentRoute()->parameters(), 'slug')}}">{{'EN'}}</a>/
+            <a class="lang-link nav-link" style="{{App::getLocale() == 'ka' ? 'color:#f15922' : 'white'}}" href="ka/{{data_get(Route::getCurrentRoute()->parameters(), 'slug')}}">{{'GE'}}</a>
+        </li>
         <!-- nav-box start -->
    @foreach (data_get($page, 'navigations.0.items') as $item)
       @if(!empty(data_get($item, 'children')))

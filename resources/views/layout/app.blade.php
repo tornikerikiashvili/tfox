@@ -85,6 +85,11 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
     @stack('bodyScripts')
+    <script>
+         $('.nav-box').click(function(){
+            $('.lang-li').css('opacity', '0')
+        })
+    </script>
     @livewireScripts
   </body>
 </html>

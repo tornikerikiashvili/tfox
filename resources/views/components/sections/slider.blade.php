@@ -48,9 +48,11 @@
                             <div class="small-title-oswald text-height-20 d-flex-wrap top-margin-20">
                                 <span class="slider-title-fill slider-tr-delay04 top-margin-10" data-text="{{data_get($slide, 'teaser')}}">{{data_get($slide, 'teaser')}}</span>
                             </div>
-                            <div class="arrow-btn-box slider-fade slider-tr-delay06 top-margin-30">
-                            <a href="{{App::getLocale() . data_get($slide, 'cta_button.link')}}" class="arrow-btn pointer-large">{{data_get($slide, 'cta_button.title')}}</a>
-                        </div>
+                            @if (data_get($slide, 'cta_button.link'))
+                                <div class="arrow-btn-box slider-fade slider-tr-delay06 top-margin-30">
+                                  <a href="{{App::getLocale() . data_get($slide, 'cta_button.link')}}" class="arrow-btn pointer-large">{{data_get($slide, 'cta_button.title')}}</a>
+                                </div>
+                            @endif
                         </div>
                       @else
                       <div class="six-columns six-offset">
@@ -72,13 +74,16 @@
                               <p class="p-style-bold-up text-height-20 d-flex-wrap">
                                   <span class="slider-title-fill slider-tr-delay04" data-text="{{data_get($slide, 'teaser')}}">{{data_get($slide, 'teaser')}}</span>
                               </p>
-                              <div class="slider-fade slider-tr-delay07 top-margin-30">
-                                  <div class="border-btn-box border-btn-red pointer-large">
+                              @if (data_get($slide, 'cta_button.link'))
+                                <div class="slider-fade slider-tr-delay07 top-margin-30">
+                                    <div class="border-btn-box border-btn-red pointer-large">
                                     <div class="border-btn-inner">
-                                          <a href="{{App::getLocale() . data_get($slide, 'cta_button.link')}}" class="border-btn" data-text="{{data_get($slide, 'cta_button.title')}}">{{data_get($slide, 'cta_button.title')}}</a>
+                                            <a href="{{App::getLocale() . data_get($slide, 'cta_button.link')}}" class="border-btn" data-text="{{data_get($slide, 'cta_button.title')}}">{{data_get($slide, 'cta_button.title')}}</a>
                                     </div>
                                 </div>
-                              </div>
+                                </div>
+                              @endif
+
                           </div>
                       </div><!-- column end -->
                       @endif
