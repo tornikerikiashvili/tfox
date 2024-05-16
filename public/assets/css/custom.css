@@ -1,5 +1,4 @@
 /* Georgian Fonts */
-@import url("//cdn.web-fonts.ge/fonts/bpg-boxo-boxo/css/bpg-boxo-boxo.min.css");
 
 @font-face {
     font-family: 'ArchyEDT-Thin';
@@ -7,6 +6,15 @@
           url('../webfonts/archyedt-thin-webfont.woff') format('woff');
 
 }
+
+@font-face {
+    font-family: 'bpg-le-studio';
+     src: url('../webfonts/bpg-le-studio-02-webfont.woff2') format('woff2'),
+          url('../webfonts/bpg-le-studio-02-webfont.woff') format('woff');
+
+}
+
+
 
 
 html:lang(ka) h2, html:lang(ka) .nav-box a span, html:lang(ka) span.filter-button-flip {
@@ -23,8 +31,8 @@ html:lang(ka) h2 span {
     font-weight: 700;
 }
 
-html:lang(ka) p, html:lang(ka) .border-btn, html:lang(ka) .scroll-btn-flip, html:lang(ka) .flip-btn  {
-    font-family: "BPG Boxo-Boxo", sans-serif;
+html:lang(ka) p, html:lang(ka) .border-btn, html:lang(ka) .scroll-btn-flip, html:lang(ka) .flip-btn, .footer-menu li a, .inner_content ul li {
+    font-family: "bpg-le-studio", sans-serif;
 }
 
 html:lang(ka) .portfolio-slider2-content h2 {
@@ -32,7 +40,7 @@ html:lang(ka) .portfolio-slider2-content h2 {
 }
 
 html:lang(ka) article h3, html:lang(ka) h3 {
-    font-family: "BPG Boxo-Boxo", sans-serif;
+    font-family: "bpg-le-studio", sans-serif;
     font-size: 21px;
 }
 

@@ -19,69 +19,69 @@
 
 $(function() {
     "use strict";
-    
+
     /* 1. Custom mouse cursor */
-	document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-		e.style.left = n.clientX + "px", 
-		e.style.top = n.clientY + "px"
-    });
-    var 
+	// document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+	// 	e.style.left = n.clientX + "px",
+	// 	e.style.top = n.clientY + "px"
+    // });
+    var
         e = document.getElementById("pointer");
-        
+
 	$(document).mousemove(function(e){
-		
+
 		$(".red-bg")
-		.on("mouseenter", function() {	 
-			$('.pointer').addClass("black")	  
+		.on("mouseenter", function() {
+			$('.pointer').addClass("black")
 		})
-		.on("mouseleave", function() {	  
-			$('.pointer').removeClass("black")	  
+		.on("mouseleave", function() {
+			$('.pointer').removeClass("black")
 		})
-		
+
 		$(".pointer-large, .swiper-button-next, .swiper-button-prev, .mfp-arrow-left, .mfp-arrow-right, .home-slider .swiper-pagination-bullet")
-		.on("mouseenter", function() {	 
-			$('.pointer').addClass("large")	  
+		.on("mouseenter", function() {
+			$('.pointer').addClass("large")
 		})
-		.on("mouseleave", function() {	  
-			$('.pointer').removeClass("large")	  
+		.on("mouseleave", function() {
+			$('.pointer').removeClass("large")
 		})
-		
+
 		$(".pointer-small, .testimonials-slider .swiper-pagination-bullet, .portfolio-slider .swiper-pagination-bullet")
-		.on("mouseenter", function() {	 
-			$('.pointer').addClass("small")	  
+		.on("mouseenter", function() {
+			$('.pointer').addClass("small")
 		})
-		.on("mouseleave", function() {	  
-			$('.pointer').removeClass("small")	  
+		.on("mouseleave", function() {
+			$('.pointer').removeClass("small")
 		})
-		
+
 		$(".mfp-img, .pointer-right")
-		.on("mouseenter", function() {	 
-			$('.pointer').addClass("right")	  
+		.on("mouseenter", function() {
+			$('.pointer').addClass("right")
 		})
-		.on("mouseleave", function() {	  
-			$('.pointer').removeClass("right")	  
+		.on("mouseleave", function() {
+			$('.pointer').removeClass("right")
 		})
-		
+
 		$(".pointer-zoom")
-		.on("mouseenter", function() {	 
-			$('.pointer').addClass("zoom")	  
+		.on("mouseenter", function() {
+			$('.pointer').addClass("zoom")
 		})
-		.on("mouseleave", function() {	  
-			$('.pointer').removeClass("zoom")	  
+		.on("mouseleave", function() {
+			$('.pointer').removeClass("zoom")
 		})
-		
+
 		$(".pointer-open")
-		.on("mouseenter", function() {	 
-			$('.pointer').addClass("open")	  
+		.on("mouseenter", function() {
+			$('.pointer').addClass("open")
 		})
-		.on("mouseleave", function() {	  
-			$('.pointer').removeClass("open")	  
+		.on("mouseleave", function() {
+			$('.pointer').removeClass("open")
 		})
-		
+
 	});
-	
+
 	$(document).ready(function() {
-	
+
 		/* 2. Animsition preloader */
 		$(".animsition-overlay").animsition({
 		    inClass: 'overlay-slide-in-right',
@@ -105,22 +105,22 @@ $(function() {
 		    overlayParentElement : 'body',
 		    transition: function(url){ window.location.href = url; }
 		});
-			
+
 		$('body').on('animsition.outStart', function(){
 			$('body').removeClass('active');
 			$('body').addClass('out');
 		})
-		
+
 		$('body').on('animsition.inEnd', function(){
 			$('body').addClass('active');
 			$('body').addClass('in');
-			setTimeout(function () {      
-			    $("body").addClass("anim"); 
+			setTimeout(function () {
+			    $("body").addClass("anim");
 			}, 1000);
-			
+
 			/* 3. Swiper slider */
 			var interleaveOffset = 0.5;
-	
+
 			var mySwiper = new Swiper ('.home-slider', {
 				spaceBetween: 0,
 			  	speed: 1500,
@@ -147,7 +147,7 @@ $(function() {
 							var innerTranslate = slideProgress * innerOffset;
 							swiper.slides[i].querySelector(".slide-bg").style.transform =
 				          	"translate3d(" + innerTranslate + "px, 0, 0)";
-				      	}      
+				      	}
 				    },
 				    touchStart: function() {
 				      	var swiper = this;
@@ -165,7 +165,7 @@ $(function() {
 				    }
 			  	}
 			});
-				
+
 			var swiper = new Swiper ('.testimonials-slider', {
 			  	speed: 1200,
 			    autoplay: {
@@ -179,7 +179,7 @@ $(function() {
 					clickable: true
 		      	}
 		    });
-			    
+
 		    var swiper = new Swiper ('.about-slider', {
 			  	slidesPerView: 2,
 			  	spaceBetween: 30,
@@ -196,7 +196,7 @@ $(function() {
 				    }
 				}
 		    });
-		    
+
 		    var mySwiper = new Swiper(".portfolio-slider", {
 				direction: "vertical",
 				navigation: {
@@ -216,7 +216,7 @@ $(function() {
 			  		sensitivity: 1
 	  			}
 			});
-	
+
 			var mySwiper = new Swiper(".portfolio-column-slider", {
 				slidesPerView: 3,
 				navigation: {
@@ -239,7 +239,7 @@ $(function() {
 					sensitivity: 1
 	  			}
 			});
-		    
+
 		    var swiper = new Swiper ('.portfolio-slider2', {
 			  	slidesPerView: 2,
 			  	spaceBetween: 30,
@@ -259,7 +259,7 @@ $(function() {
 				    }
 				}
 		    });
-		    
+
 		    /* 4. Isotope filter */
 			function projectFilter() {
 				var $gridt = $('.works');
@@ -276,48 +276,48 @@ $(function() {
 				});
 			};
 			projectFilter();
-	
+
 		});
-		    
+
 	    /* 5. Midnight */
 	    $('.fixed-header').midnight();
-		
+
 		/* 6. Navigation open/close */
 		$( ".menu-open" ).on( "click", function() {
 		  	$('.menu-open, .nav-container').addClass('active');
 		});
-		
+
 		$( ".menu-close" ).on( "click", function() {
 		  	$('.menu-open, .nav-container').removeClass('active');
 		});
-		
+
 		/* 7. Drop-down menu */
 		$('.dropdown-open').on("click",function(){
 		    $(this).find('.dropdown').addClass('active');
 		    $('.nav-link').addClass('done');
 		    $('.dropdown-close').addClass('active');
 		});
-		
-		$('.dropdown-close').on("click",function(){    
+
+		$('.dropdown-close').on("click",function(){
 		    $('.dropdown').removeClass('active');
 		    $('.nav-link').removeClass('done');
 		    $('.dropdown-close').removeClass('active');
 		});
-	
+
 	});
-		
+
 	/* 8. Change menu background */
-	$(document).on('mouseover', '.nav-bg-change', function(){		
+	$(document).on('mouseover', '.nav-bg-change', function(){
 		$(this).addClass('active').siblings().removeClass('active')
 	});
-	
+
 	/* 9. ScrollAnimations */
 	var $containers = $('[data-animation]:not([data-animation-child]), [data-animation-container]');
 	$containers.scrollAnimations();
-	
+
 	/* 10. Headroom */
 	$(".fixed-header").headroom();
-	
+
 	/* 11. Magnific popup */
 	$('.photo-popup').magnificPopup({
 	  	type: 'image',
@@ -340,7 +340,7 @@ $(function() {
 	    	}
 	  	}
 	});
-	
+
 	$('.popup-youtube').magnificPopup({
 		disableOn: 700,
 		type: 'iframe',
@@ -348,10 +348,10 @@ $(function() {
 		removalDelay: 160,
 		preloader: false
 	});
-	
+
 	/* 12. Scroll to id */
 	$('.to-top-btn, .scroll-btn').mPageScroll2id();
-	
+
 	/* 13. Touch, no touch */
 	var supports = (function() {
 	    var d = document.documentElement,
@@ -368,13 +368,13 @@ $(function() {
 	        }
 	    }
 	})();
-	
+
 	/* 14. fixed footer */
-	$('footer').footerReveal({ 
+	$('footer').footerReveal({
 		shadow: false,
 		zIndex : 1
 	});
-	
+
 	/* 15. Progress bar */
 	$(".progress-zero").each(function(){
 		$(this).find(".progress-full").animate({

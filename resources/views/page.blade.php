@@ -1,20 +1,5 @@
 @extends('layout.app')
 
-{{-- @if (App::getLocale() === 'en')
-  @section('title',  data_get($page, 'settings.seo.title_en'))
-@else
-  @section('title',  data_get($page, 'settings.seo.title_ge'))
-@endif
-
-@section('meta:title', data_get($page, 'data.blocks.0.data.resource.seo_settings.meta_title', data_get($page, 'data.blocks.0.data.resource.title', data_get($page, 'data.seo_settings.meta_title'))))
-@section('meta:description', data_get($page, 'data.blocks.0.data.resource.seo_settings.meta_description', data_get($page, 'data.blocks.0.data.resource.teaser', data_get($page, 'data.seo_settings.meta_description'))))
-
-@section('og:title', data_get($page, 'data.blocks.0.data.resource.seo_settings.og_title', data_get($page, 'data.blocks.0.data.resource.title', data_get($page, 'data.seo_settings.og_title'))))
-@section('og:description', data_get($page, 'data.blocks.0.data.resource.seo_settings.og_description', data_get($page, 'data.blocks.0.data.resource.teaser', data_get($page, 'data.seo_settings.og_description'))))
-
-@if (data_get($page, 'data.blocks.0.data.resource.seo_settings.image',  data_get($page, 'data.seo_settings.image')))
- @section('og:image', '/storage/' . data_get($page, 'data.blocks.0.data.resource.seo_settings.image',  data_get($page, 'data.seo_settings.image')))
-@endif --}}
 
 @section('meta')
 @if (App::getLocale() === 'en')
