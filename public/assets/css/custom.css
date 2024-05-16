@@ -50,3 +50,16 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
+
+
+#contact_form .border-btn {
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 12px;
+	line-height: 60px;
+	font-weight: 400;
+	position: relative;
+	color: transparent;
+	padding: 0;
+}
