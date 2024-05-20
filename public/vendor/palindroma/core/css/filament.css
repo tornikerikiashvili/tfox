@@ -7,7 +7,8 @@
 
 
 body > div.filament-app-layout.flex.h-full.w-full.overflow-x-clip > aside > header > div > a,
-body > div.filament-app-layout.flex.h-full.w-full.overflow-x-clip > div.filament-main.w-screen.flex-1.flex-col.gap-y-6.rtl\:lg\:pl-0.hidden.h-full.transition-all.filament-main-sidebar-open.lg\:pl-\[var\(--sidebar-width\)\].rtl\:lg\:pr-\[var\(--sidebar-width\)\] > div.filament-main-footer.shrink-0.py-4 > div > a {
+body > div.filament-app-layout.flex.h-full.w-full.overflow-x-clip > div.filament-main.w-screen.flex-1.flex-col.gap-y-6.rtl\:lg\:pl-0.hidden.h-full.transition-all.filament-main-sidebar-open.lg\:pl-\[var\(--sidebar-width\)\].rtl\:lg\:pr-\[var\(--sidebar-width\)\] > div.filament-main-footer.shrink-0.py-4 > div > a,
+body > div.filament-login-page.flex.min-h-screen.items-center.justify-center.bg-gray-100.py-12.text-gray-900 > div > div > div.flex.w-full.justify-center {
     display:none;
 }
 
