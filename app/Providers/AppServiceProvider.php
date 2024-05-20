@@ -77,10 +77,10 @@ class AppServiceProvider extends ServiceProvider
 
             FilamentFabricator::registerSchemaSlot('sidebar.after', function () {
                 return [
-                    Card::make()
-                        ->schema([
-                            Toggle::make('metadata.has_breadcrumb')->label('Page Header'),
-                        ]),
+                    // Card::make()
+                    //     ->schema([
+                    //         Toggle::make('metadata.has_breadcrumb')->label('Page Header'),
+                    //     ]),
                 ];
             });
         });
