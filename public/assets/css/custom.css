@@ -62,3 +62,13 @@ input:-webkit-autofill {
 	color: transparent;
 	padding: 0;
 }
+
+.news_component_title {
+  line-height: 30px;
+  font-size:16px!important;
+}
+
+.main_news_title span {
+    font-weight: 900;
+    line-height: 30px;;
+}

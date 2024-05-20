@@ -5,7 +5,7 @@
         }
 
         .page_cover {
-            height: 200px;
+            height: 150px;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -47,13 +47,55 @@
             display: inline-block;
             margin-bottom: 3px;
         }
+
+        .top-bottom-padding-120 {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .filter-button-flip:after {
+            color: #f15922;
+        }
+
+
+
+        @media screen and (max-width: 767px) {
+            .product_item img {
+            opacity: 0.7;
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter_cat_divider {
+            margin-bottom: 8px;
+        }
+
+        .top-bottom-padding-120 {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .all_cat_button {
+            margin-bottom:17px;
+            font-weight: bold;
+        }
+        .page_cover_title {
+            display:none;
+        }
+        }
+
+
        </style>
     @endpush
 <div>
     <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
-        <div wire:ignore class="page_cover_title text-center">
-            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get(Arr::first($currentCategory), 'title')}}">{{data_get(Arr::first($currentCategory), 'title')}}</h2><br>
-        </div>
+
         <div class="overlay"></div>
     </div>
 
@@ -62,11 +104,14 @@
         <!-- container start -->
         <div class="container">
 
+            <div wire:ignore class="text-center bottom-padding-50">
+                <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get(Arr::first($currentCategory), 'title')}}">{{data_get(Arr::first($currentCategory), 'title')}}</h2><br>
+            </div>
 
             <!-- filter-buttons start -->
             @if(empty($childCategories))
                 <div class="filter-buttons">
-                        <button wire:click="setCatCat({{'null'}})" class="filter-button-box pointer-small {{$filter == null ? 'active' : ''}}" data-filter="*">
+                        <button wire:click="setCatCat({{'null'}})" class="all_cat_button filter-button-box pointer-small {{$filter == null ? 'active' : ''}}" data-filter="*">
                             <span class="filter-button-flip" data-text="{{__('_all')}}">{{__('_all')}}</span>
                         </button>
                     @foreach ($categories as $category)
@@ -111,8 +156,8 @@
             <div wire:ignore class="works">
                 @foreach ($products as $product)
                     <a href="{{App::getLocale() . '/product/' . data_get($product, 'id')}}" class="animsition-link grid-item {{data_get($product, 'category_id')}}">
-                        <div class="work_item pointer-large hover-box hidden-box">
-                            <img class="hover-img" src="{{data_get($product, 'cover_image.url')}}" alt="">
+                        <div class="product_item work_item pointer-large hover-box hidden-box">
+                            <img class="hover-img" src="{{data_get($product, 'cover_image.url', '/assets/images/news/noimage.webp')}}" alt="">
                             <div class="works-content">
                                 {{-- <span class="small-title-oswald red-color work-title-overlay">{{"Brand Name"}}</span> --}}
                                 <h3 class="title-style text-color-4">

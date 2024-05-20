@@ -72,6 +72,9 @@
 							</a>
 							<!-- content-margin-block start -->
 							<div class="content-margin-block">
+                                <h3 class="main_news_title title-style text-color-1 top-margin-30 blog-title">
+                                    <span class="hover-content" >{{data_get($news, 'title')}}</span>
+                                </h3>
 								<!-- entry-content start -->
 								<article class="entry-content">
 									{!!data_get($news, 'content')!!}
@@ -81,10 +84,8 @@
 								<div class="post-share">
 									<span class="xsmall-title-oswald text-color-2">{{__('_share')}}: </span>
 									<ul class="post-share-social text-color-1">
-										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-instagram"></i></a></li>
-										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-pinterest-p"></i></a></li>
-										<li><a class="pointer-small hover-color" href="#"><i class="fab fa-behance"></i></a></li>
+										<li><a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='  + encodeURIComponent(document.URL), '', '_blank, width=500, height=500, resizable=yes, scrollbars=yes'); return false;" class="pointer-small hover-color" href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a  onclick="window.open('https://linkedin.com/shareArticle?url=' + encodeURIComponent(document.URL), '', '_blank, width=500, height=500, resizable=yes, scrollbars=yes'); return false;" class="pointer-small hover-color" href="#"><i class="fab fa-linkedin-in"></i></a></li>
 									</ul>
 								</div><!-- post-share end -->
 							</div><!-- content-margin-block end -->
@@ -130,7 +131,7 @@
                                             <img src="{{data_get($item, 'cover_image.url')}}" alt="title">
                                         </a>
                                         <div class="recent-desc">
-                                            <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title.main')}}</a>
+                                            <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>
                                             <div class="p-style-xsmall text-color-4 text-height-10 top-margin-5">{{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('d')}} {{__(\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('M'))}}, {{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('Y')}}</div>
                                         </div>
                                     </div>

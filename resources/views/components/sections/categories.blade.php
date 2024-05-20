@@ -13,6 +13,18 @@
         .portfolio-slider2 .portfolio-slider2-content {
             z-index: 2;
         }
+
+        @media screen and (max-width: 767px) {
+            .top-bottom-padding-90 {
+                padding-bottom: 40px;
+                padding-top: 40px;
+            }
+
+            .top-bottom-padding-120 {
+                padding-bottom: 60px;
+                padding-top: 60px;
+            }
+        }
         </style>
     @endpush
 
@@ -21,8 +33,14 @@
         <!-- container start -->
         <div data-animation-container class="text-center container small">
             <h2 data-animation-child class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'product_title')}}">{{data_get($content, 'product_title')}}</h2><br>
-            <p data-animation-child class="tr-delay02 xsmall-title-oswald top-margin-5 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'product_subtitle')}}">{{data_get($content, 'product_subtitle')}}</p><br>
-            <p data-animation-child class="text-color-5 p-style-small fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($content, 'product_teaser')}}</p>
+            @if (data_get($content, 'product_subtitle'))
+              <p data-animation-child class="tr-delay02 xsmall-title-oswald top-margin-5 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'product_subtitle')}}">{{data_get($content, 'product_subtitle')}}</p><br>
+            @endif
+
+            @if (data_get($content, 'product_teaser'))
+              <p data-animation-child class="text-color-5 p-style-small fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($content, 'product_teaser')}}</p>
+            @endif
+
         </div><!-- container end -->
 
         <!-- portfolio-slider2 start -->

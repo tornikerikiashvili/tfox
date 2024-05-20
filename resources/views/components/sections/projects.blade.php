@@ -1,3 +1,12 @@
+@push('headStyles')
+    <style>
+     @media screen and (max-width: 767px) {
+        .top-padding-120 {
+            padding-top: 60px;
+        }
+     }
+    </style>
+@endpush
 <!-- section start -->
  <section class="light-bg-1 bottom-padding-30 top-padding-120" data-midnight="black">
 

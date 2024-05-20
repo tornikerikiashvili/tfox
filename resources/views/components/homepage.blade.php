@@ -54,10 +54,8 @@
                         <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
                             <img class="hover-img" src="{{data_get($item, 'cover_image.url')}}" alt="blog img">
                         </div>
-                        <h3 class="title-style text-color-1 top-margin-30 blog-title content-padding-l-r-20">
-                            <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay01" data-animation="overlay-anim2">{{data_get($item, 'title.one')}}</span><br>
-                            <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay02" data-animation="overlay-anim2">{{data_get($item, 'title.two')}}</span><br>
-                            <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay03" data-animation="overlay-anim2">{{data_get($item, 'title.three')}}</span>
+                        <h3 class="news_component_title title-style text-color-1 top-margin-30 blog-title content-padding-l-r-20">
+                            <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay01" data-animation="overlay-anim2">{{data_get($item, 'title')}}</span>
                         </h3>
                     </a>
                     <div class="content-padding-bottom-20 content-padding-l-r-20">

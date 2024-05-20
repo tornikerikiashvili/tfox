@@ -9,6 +9,7 @@ use Filament\Resources\Table;
 use App\Models\Ecommerce\Product;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Tabs;
+use Filament\Tables\Filters\Filter;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Tabs\Tab;
@@ -92,13 +93,14 @@ class ProductsResource extends ContentResource
                 ->width(150)
                 ->height(100),
 
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
 
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('category')->label('Categories')
+                ->relationship('category', 'title'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

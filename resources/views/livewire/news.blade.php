@@ -39,22 +39,15 @@
                             <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
                                 <img class="hover-img" src="{{data_get($item, 'cover_image.url')}}" alt="blog img">
                             </div>
-                            <div class="content-padding-l-r-20" data-animation-container>
-                                <h3 class="title-style text-color-1 top-margin-30 blog-title">
-                                    <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2" data-animation="overlay-anim2">{{data_get($item, 'title.one')}}</span><br>
-                                    @if (data_get($item, 'title.two'))
-                                     <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay01" data-animation="overlay-anim2">{{data_get($item, 'title.two')}}</span><br>
-                                    @endif
-                                    @if (data_get($item, 'title.three'))
-                                     <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay02" data-animation="overlay-anim2">{{data_get($item, 'title.three')}}</span>
-                                    @endif
-
+                            <div class="content-padding-l-r-20" >
+                                <h3 class="main_news_title title-style text-color-1 top-margin-30 blog-title">
+                                    <span class=" hover-content" >{{data_get($item, 'title')}}</span>
                                 </h3>
-                                <p data-animation-child class="fade-anim-box hover-content tr-delay03 p-style-medium text-color-2" data-animation="fade-anim">{{data_get($item, 'teaser')}}</p>
+                                <p  class="hover-content p-style-medium text-color-2" >{{data_get($item, 'teaser')}}</p>
                             </div>
                         </a>
-                        <div class="content-padding-l-r-20 content-padding-bottom-20" data-animation-container>
-                            <div data-animation-child class="blog-autor-date top-margin-30 fade-anim-box tr-delay02 text-color-1" data-animation="fade-anim">
+                        <div class="content-padding-l-r-20 content-padding-bottom-20" >
+                            <div class="blog-autor-date top-margin-30 text-color-1">
                                 <a style="visibility:hidden" class="xsmall-title-oswald pointer-small hover-color" href="#">Balanchaev Balancha</a>
                                 <a class="xsmall-title-oswald pointer-small hover-color" href="#">{{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('d')}} {{__(\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('M'))}}, {{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('Y')}}</a>
                             </div>
@@ -65,11 +58,11 @@
             @endforeach
 
             <!-- loading more btn start -->
-            <div class="bottom-padding-90 text-center">
+            {{-- <div class="bottom-padding-90 text-center">
                 <div class="arrow-btn-box">
                     <a href="#" class="arrow-btn pointer-large">Loading more</a>
                 </div>
-            </div><!-- loading more btn end -->
+            </div><!-- loading more btn end --> --}}
         </div><!-- column end -->
         <!-- column start -->
         <aside class="four-columns bottom-padding-90">
