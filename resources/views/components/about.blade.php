@@ -8,8 +8,8 @@
          margin-top: 50px;
     }
 
-    .about_text p {
-
+    .goals_title {
+        text-wrap: unset;
     }
 </style>
 
@@ -61,7 +61,7 @@
 							<!-- column start -->
 							<div class="four-columns">
 								<div class="content-right-margin-20">
-									<h2 data-animation-child class="title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_mission_title')}}">{{data_get($content, 'about_mission_title')}}</h2>
+									<h2 data-animation-child class="goals_title title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_mission_title')}}">{{data_get($content, 'about_mission_title')}}</h2>
 								</div>
 							</div>
 							<div class="eight-columns">
@@ -75,7 +75,7 @@
 							<!-- column start -->
 							<div class="four-columns">
 								<div class="content-right-margin-20">
-									<h2 data-animation-child class="title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_goal_title')}}">{{data_get($content, 'about_goal_title')}}</h2>
+									<h2 data-animation-child class="goals_title title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_goal_title')}}">{{data_get($content, 'about_goal_title')}}</h2>
 								</div>
 							</div>
 							<div class="eight-columns">
@@ -89,7 +89,7 @@
 							<!-- column start -->
 							<div class="four-columns">
 								<div class="content-right-margin-20">
-									<h2 data-animation-child class="title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_values_title')}}">{{data_get($content, 'about_values_title')}}</h2>
+									<h2 data-animation-child class="goals_title title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_values_title')}}">{{data_get($content, 'about_values_title')}}</h2>
 								</div>
 							</div>
 							<div class="eight-columns">
@@ -139,7 +139,7 @@
 				<div data-animation-container class="container small bottom-padding-60">
 
 					<div class="about_text top-margin-30">
-						<h2 data-animation-child class=" text-color-2 text-height-20 fade-anim-box tr-delay01" data-animation="fade-anim">{{data_get($content, 'about_title')}}</h2>
+						<h2 data-animation-child class=" text-color-2 medium-title fade-anim-box tr-delay01" data-animation="fade-anim">{{data_get($content, 'about_title')}}</h2>
 						<p data-animation-child class="p-style-large text-color-1 fade-anim-box tr-delay02" data-animation="fade-anim">{!!data_get($content, 'about_text')!!}</p>
 
 

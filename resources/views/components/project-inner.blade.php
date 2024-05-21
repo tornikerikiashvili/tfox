@@ -30,7 +30,7 @@
         <div class="four-columns bottom-padding-60">
             <div class="content-right-margin-20">
                 <h2 class="title-style text-color-1">
-                    {{data_get($project, 'title.main')}}
+                    {{data_get($project, 'title')}}
                 </h2>
             </div>
         </div><!-- column end -->

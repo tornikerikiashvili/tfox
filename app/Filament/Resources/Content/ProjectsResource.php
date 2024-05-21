@@ -64,13 +64,8 @@ class ProjectsResource extends ContentResource
     public static function translatableFields(Tab $tab): Tab
     {
         return $tab->schema([
-            Forms\Components\TextInput::make('title.main')->label('Project Name'),
-            Fieldset::make('Title')
-                    ->schema([
-                        Forms\Components\TextInput::make('title.one')->label('Line One'),
-            Forms\Components\TextInput::make('title.two')->label('Line Two'),
-            Forms\Components\TextInput::make('title.three')->label('Line Three'),
-                    ])->columns(3),
+            Forms\Components\TextInput::make('title')->label('Project Name'),
+
             Forms\Components\TextInput::make('type'),
             Forms\Components\Textarea::make('teaser'),
             RichEditor::make('content_top')->label('Content'),

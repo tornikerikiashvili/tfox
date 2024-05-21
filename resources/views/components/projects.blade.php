@@ -67,7 +67,7 @@
                             <img class="hover-img" src="{{data_get($project, 'cover_image.url')}}" alt="Digital products">
                         </div>
                         <div class="expertise content-padding-l-r-20 content-padding-bottom-20">
-                            <h3 data-animation-child class="small-title-oswald text-color-1 hover-content fade-anim-box tr-delay01" data-animation="fade-anim">{{data_get($project, 'title.main')}}</h3><br>
+                            <h3 data-animation-child class="small-title-oswald text-color-1 hover-content fade-anim-box tr-delay01" data-animation="fade-anim">{{data_get($project, 'title')}}</h3>
                             <p data-animation-child class="p-style-xsmall text-color-1 hover-content fade-anim-box tr-delay02" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
                         </div>
                     </a>
