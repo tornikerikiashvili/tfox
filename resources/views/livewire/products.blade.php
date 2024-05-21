@@ -27,7 +27,7 @@
           height: 100%;
           background-color: black;
           position: absolute;
-          opacity: 0.3;
+          opacity: 0.4;
           z-index: 1;
         }
 
@@ -57,10 +57,23 @@
             color: #f15922;
         }
 
+        .page_cover_title_mobile {
+                display:none;
+            }
 
+            @media screen and (max-width: 991px) {
+                .page_cover_title {
+             display:none;
+            }
+
+            .page_cover_title_mobile {
+                display:block;
+            }
+            }
 
         @media screen and (max-width: 767px) {
-            .product_item img {
+
+        .product_item img {
             opacity: 0.7;
         }
 
@@ -90,23 +103,62 @@
         }
         }
 
+        .brands_list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand_logo_container {
+            padding: 10px;
+            width: auto;
+            height: 30px;
+            margin-bottom: 25px;
+        }
+
+        .brand_logo_container img {
+            width: 100%;
+            height: 100%;
+        }
+
+       .product_item .title-style span {
+            font-size: 21px!important;
+            line-height: 1.5!important;
+        }
+
 
        </style>
     @endpush
 <div>
     <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
-
+        <div wire:ignore class="page_cover_title text-center">
+            <h2 class="medium-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get(Arr::first($currentCategory), 'title')}}">{{data_get(Arr::first($currentCategory), 'title')}}</h2><br>
+        </div>
         <div class="overlay"></div>
     </div>
-
     <!-- dark-bg-2 start -->
     <section id="down" class="dark-bg-2 top-bottom-padding-120">
         <!-- container start -->
         <div class="container">
 
-            <div wire:ignore class="text-center bottom-padding-50">
-                <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get(Arr::first($currentCategory), 'title')}}">{{data_get(Arr::first($currentCategory), 'title')}}</h2><br>
+            <div wire:ignore class="page_cover_title_mobile text-center bottom-padding-50">
+                <h2 class="medium-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get(Arr::first($currentCategory), 'title')}}">{{data_get(Arr::first($currentCategory), 'title')}}</h2><br>
             </div>
+
+
+                {{-- <div class="brands_list">
+
+                    <div class="brand_logo_container">
+                        <img src="/assets/images/brands/webermt.png">
+                    </div>
+                    <div class="brand_logo_container">
+                        <img src="/assets/images/brands/thrakon.png">
+                    </div>
+                    <div class="brand_logo_container">
+                        <img src="/assets/images/brands/weha.png">
+                    </div>
+                </div> --}}
+
 
             <!-- filter-buttons start -->
             @if(empty($childCategories))
@@ -161,9 +213,7 @@
                             <div class="works-content">
                                 {{-- <span class="small-title-oswald red-color work-title-overlay">{{"Brand Name"}}</span> --}}
                                 <h3 class="title-style text-color-4">
-                                    <span class="work-title-overlay work-title-delay01">{{data_get($product, 'title.one')}}</span><br>
-                                    <span class="work-title-overlay work-title-delay02">{{data_get($product, 'title.two')}}</span><br>
-                                    <span class="work-title-overlay work-title-delay03">{{data_get($product, 'title.three')}}</span>
+                                    <span class="work-title-overlay work-title-delay01">{{data_get($product, 'name')}}</span>
                                 </h3>
                             </div>
                         </div>

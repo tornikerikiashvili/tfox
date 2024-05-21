@@ -1,13 +1,26 @@
 @push('headStyles')
     <style>
         .page_cover {
-            height: 200px;
+            height: 150px;
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+        }
+
+        .overlay {
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          position: absolute;
+          opacity: 0.4;
+          z-index: 1;
+        }
+
+        .page_cover_title {
+            z-index: 2;
         }
 
         .title-fill:after, .title-fill.title-fill-anim:before, .title-fill.title-fill-anim:after {
@@ -39,13 +52,38 @@
         .contact-infos span {
             line-height: 50px;
         }
+
+        @media screen and (max-width: 991px) {
+                .page_cover_title {
+             display:none;
+            }
+
+            .container_one {
+                flex-direction: column;
+            }
+
+            .container_one .contact-infos {
+                text-align: center;
+            }
+
+            }
+
+            .contact-infos span {
+                     text-transform: lowercase;
+                     font-size: 21px;
+            }
+
+            .container_one {
+                align-items: center;
+            }
+
     </style>
 @endpush
 
 <div>
     <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
-        <div class="page_cover_title text-center">
-            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title_one')}}">{{data_get($content, 'page_cover_title_one')}}</h2><br>
+        <div wire:ignore class="page_cover_title text-center">
+            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
         </div>
         <div class="overlay"></div>
     </div>
@@ -58,19 +96,15 @@
         <div class="container adress_container bottom-padding-60">
 
             <!-- flex-container start -->
-            <div class="flex-container top-padding-90 contact-box">
+            <div class="container_one flex-container top-padding-90 contact-box">
                 <!-- column start -->
                 <div class="four-columns bottom-padding-60">
                     <div data-animation-container class="content-right-margin-20">
-                        <p data-animation-child class="small-title-oswald red-color overlay-anim-box2" data-animation="overlay-anim2">{{__('_contacts')}}</p>
                         <p class="contact-infos title-style text-color-4">
-                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($content, 'contact_phone')}}</span><br>
-										<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($content, 'contact_email')}}</span><br>
-
+                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay01" data-animation="overlay-anim2">{{__('_phone')}}: {{data_get($content, 'contact_phone')}}</span><br>
+							<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{__('_email')}}: {{data_get($content, 'contact_email')}}</span><br>
+                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{__('_address')}}: {{data_get($content, 'contact_address')}}</span>
                         </p>
-                        <h6 data-animation-child class="flip-btn-box fade-anim-box tr-delay04" data-animation="fade-anim">
-                            <a href="#" class="flip-btn pointer-large" data-text="{{data_get($content, 'contact_address')}}">{{data_get($content, 'contact_address')}}</a>
-                        </h6>
                     </div>
                 </div><!-- column end -->
                 <!-- column start -->

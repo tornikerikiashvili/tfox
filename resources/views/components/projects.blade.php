@@ -1,8 +1,8 @@
 @push('headStyles')
     <style>
 
-        .page_cover {
-            height: 200px;
+.page_cover {
+            height: 150px;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -20,12 +20,12 @@
         }
 
         .overlay {
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            position: absolute;
-            opacity: 0.3;
-            z-index: 1;
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          position: absolute;
+          opacity: 0.4;
+          z-index: 1;
         }
 
         .page_cover_title {
@@ -36,6 +36,21 @@
             color:white;
         }
 
+         .page_cover_title_mobile {
+                display:none;
+            }
+
+            @media screen and (max-width: 991px) {
+                .page_cover_title {
+             display:none;
+            }
+
+            .page_cover_title_mobile {
+                display:block;
+            }
+            }
+
+
     </style>
 
 @endpush
@@ -43,7 +58,7 @@
 
 <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
     <div wire:ignore class="page_cover_title text-center">
-        <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{__('_projects')}}">{{__('_projects')}}</h2><br>
+        <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
     </div>
     <div class="overlay"></div>
 </div>
@@ -54,8 +69,11 @@
 <!-- section start -->
 <section class="light-bg-1" data-midnight="black">
     <!-- container start -->
-    <div class="container bottom-padding-60 top-padding-120">
+    <div class="container bottom-padding-60 top-padding-60">
         <!-- text-center start -->
+        <div wire:ignore class="page_cover_title_mobile text-center">
+            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
+        </div>
 
         <!-- flex-container start -->
         <div class="flex-container response-999 top-padding-60">

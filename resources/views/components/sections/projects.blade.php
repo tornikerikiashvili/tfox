@@ -10,6 +10,12 @@
         font-size: 21px;
         line-height: 1.5;
      }
+
+     .product_parent_category .filter-button-flip {
+            font-size: 21px;
+        }
+
+
     </style>
 @endpush
 <!-- section start -->

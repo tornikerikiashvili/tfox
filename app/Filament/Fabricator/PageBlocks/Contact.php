@@ -27,10 +27,10 @@ class Contact extends ContentComponentBlock
             ->schema([
 
                 Section::make('Page Cover')->schema([
-                    Fieldset::make('Title')->schema([
-                        TextInput::make('page_cover_title_one')->label('Line One'),
-                        TextInput::make('page_cover_title_two')->label('Line Two'),
-                    ])->columns(2),
+
+                        TextInput::make('page_cover_title')->label('Page Cover'),
+
+
                     FileUpload::make('page_cover')->label('Cover Image'),
                 ])->columns(1),
 

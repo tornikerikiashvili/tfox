@@ -69,8 +69,6 @@ class About extends ContentComponentBlock
                         Textarea::make('about_text')->label('About Text'),
                 ])->columns(1),
 
-
-
         ]);
     }
 }

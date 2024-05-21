@@ -78,3 +78,11 @@ input:-webkit-autofill {
         opacity: 0.3;
     }
   }
+
+  .menu-open {
+    margin: 40px 40px 0 0;
+  }
+
+  .pointer-large {
+    cursor:pointer;
+  }
