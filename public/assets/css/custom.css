@@ -17,7 +17,7 @@
 
 
 
-html:lang(ka) h2, html:lang(ka) .nav-box a span, html:lang(ka) span.filter-button-flip {
+html:lang(ka) h2, html:lang(ka) .nav-box a span, html:lang(ka) span.filter-button-flip, html:lang(ka) .page_cover_title_line_two {
     font-family: "ArchyEDT-Thin", sans-serif;
     letter-spacing: 1px;
     font-weight: 700;
@@ -41,19 +41,14 @@ html:lang(ka) .portfolio-slider2-content h2 {
     font-size: 55px;
 }
 
-article h3, h3 {
-    font-size: 21px;
-}
 
 html:lang(ka) article h3, html:lang(ka) h3 {
     font-family: "bpg-le-studio", sans-serif;
-    font-size: 21px;
 }
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
-
 
 
 #contact_form .border-btn {
@@ -76,3 +71,9 @@ input:-webkit-autofill {
     font-weight: 900;
     line-height: 30px;;
 }
+
+@media screen and (max-width: 999px) {
+    .page-head-bg {
+        opacity: 0.3;
+    }
+  }

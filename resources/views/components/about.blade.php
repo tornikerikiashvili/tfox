@@ -28,10 +28,11 @@
 			  			<!-- column start -->
 			  			<div class="six-columns six-offset">
 				  			<div class="content-left-margin-40">
-					  			<h2 class="overlay-loading2 tr-delay03 medium-title red-color">{{data_get($content, 'page_cover_title_one')}}</h2>
+
 				  				<h3 class="large-title-bold text-color-4">
-									<span class="overlay-loading2 overlay-light-bg-1 tr-delay04">{{data_get($content, 'page_cover_title_two')}}</span>
+									<span class="page_cover_title_line_two overlay-loading2 overlay-light-bg-1 tr-delay04">{{data_get($content, 'page_cover_title_two')}}</span>
 								</h3>
+                                <h2 class="overlay-loading2 tr-delay03 medium-title red-color">{{data_get($content, 'page_cover_title_one')}}</h2>
 				  			</div>
 			  			</div><!-- column end -->
 		  			</div><!-- flex-container end -->
