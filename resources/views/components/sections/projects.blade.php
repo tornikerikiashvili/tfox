@@ -5,6 +5,11 @@
             padding-top: 60px;
         }
      }
+
+     .project_item_title {
+        font-size: 21px;
+        line-height: 1.5;
+     }
     </style>
 @endpush
 <!-- section start -->
@@ -138,7 +143,7 @@
                     <div data-animation-container class="six-columns">
                         <div class="content-left-margin-40">
                             <span class="small-title-oswald red-color overlay-anim-box2" data-animation="overlay-anim2">{{data_get($project, 'type')}}</span>
-                            <h3 class="title-style text-color-1">
+                            <h3 class="project_item_title title-style text-color-1">
                                 <span data-animation-child class="overlay-anim-box2 light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($project, 'title.one')}}</span><br>
                                 <span data-animation-child class="overlay-anim-box2 light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($project, 'title.two')}}</span><br>
                                 <span data-animation-child class="overlay-anim-box2 light-bg-1 tr-delay03" data-animation="overlay-anim2">{{data_get($project, 'title.three')}}</span>

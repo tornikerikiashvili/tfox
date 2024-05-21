@@ -106,20 +106,10 @@
                         </form>
                     </div><!-- form search end --> --}}
 
-                    <!-- widget-categories start -->
-                    <div class="top-padding-30 widget-categories bottom-padding-90">
-                        <h4 class="p-style-bold-up red-color">{{__('_categories')}}</h4>
-                        <ul class="top-margin-30 red-color">
-                            @foreach ($categories as $cat )
-                             <li>
-                               <a href="{{App::getLocale() . '/news?categoryId=' . data_get($cat, 'id')}}" class="pointer-small small-title-oswald ">{{data_get($cat, 'extra_attributes.title')}}</a>
-                             </li>
-                            @endforeach
-                        </ul>
-                    </div><!-- widget-categories end -->
+
 
                     <!-- recent posts start -->
-                    <div class="bottom-padding-90">
+                    <div class="bottom-padding-30 top-padding-30">
                         <h4 class="p-style-bold-up red-color">{{__('_recent_news')}}</h4>
                         <!-- recent posts content start -->
                         <div class="top-margin-30">
