@@ -46,7 +46,7 @@
     </div><!-- flex-container end -->
 
 </div><!-- light-bg-1 end -->
-<div class="text-center top-bottom-padding-120 red-bg" data-midnight="black">
+<div class="text-center red-bg" data-midnight="black">
     <a href="{{App::getLocale() . '/projects'}}" class="pointer-large animsition-link overlay-btn-box">
         <span class="overlay-btn" data-text="{{__('_all')}}">{{__('_all')}}</span>
     </a>

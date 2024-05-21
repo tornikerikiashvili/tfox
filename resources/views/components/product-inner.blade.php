@@ -79,7 +79,7 @@
 				</div><!-- flex-min-height-inner end -->
 			</div><!-- flex-min-height-box end -->
 
-            <div class="text-center top-bottom-padding-120 red-bg" data-midnight="black">
+            <div class="text-center red-bg" data-midnight="black">
 				<a href="{{App::getLocale() . '/products?category=' . data_get($categories, data_get($product, 'category_id')) . '&filter=' . data_get($product, 'category_id')}}" class="pointer-large animsition-link overlay-btn-box">
 					<span class="overlay-btn" data-text="{{__('_back')}}">{{__('_back')}}</span>
 				</a>
