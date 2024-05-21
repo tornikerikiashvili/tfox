@@ -21,12 +21,77 @@
         align-items:center;
     }
 
+
+    .page_cover {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .overlay {
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          position: absolute;
+          opacity: 0.4;
+          z-index: 1;
+        }
+
+        .page_cover_title {
+            z-index: 2;
+        }
+
+        .title-fill:after, .title-fill.title-fill-anim:before, .title-fill.title-fill-anim:after {
+            background-color: transparent;
+        }
+
+        .page_cover img {
+            height: 200px;
+        }
+
+        .page_cover_title .title-fill:after {
+            color:white;
+        }
+
+        .page_cover_title_mobile {
+                display:none;
+            }
+
+            @media screen and (max-width: 991px) {
+                .page_cover_title {
+             display:none;
+            }
+
+            .page_cover_title_mobile {
+                display:block;
+            }
+            }
+
  </style>
 @endpush
+
+<div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
+    <div wire:ignore class="page_cover_title text-center">
+        <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
+    </div>
+    <div class="overlay"></div>
+</div>
+
+
+
 <!-- blog start -->
-<div id="down" class="blog container bottom-padding-30 top-padding-120 light-bg-1" data-midnight="black">
+<div id="down" class="blog container bottom-padding-30 top-padding-60 light-bg-1" data-midnight="black">
+
+    <div wire:ignore class="bottom-padding-60 page_cover_title_mobile text-center">
+        <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
+    </div>
     <!-- flex-container start -->
     <div class="flex-container">
+
         <!-- column start -->
         <div class="eight-columns latest-news">
 

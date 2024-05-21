@@ -25,7 +25,7 @@ class Products extends ContentComponentBlock
 
                 Section::make('Products')->schema([
                     Select::make('products')->label('Choose products')
-                    ->options(fn() => Product::all()->pluck('title.main', 'id'))
+                    ->options(fn() => Product::all()->pluck('name', 'id'))
                     ->searchable()->multiple(),
                 ])->columns(1),
 

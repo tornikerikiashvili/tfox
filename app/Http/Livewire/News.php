@@ -12,6 +12,7 @@ use Palindroma\Core\Http\Resources\ContentResource;
 
 class News extends AbstractComponent
 {
+    public $content;
     public $news;
     public $recentnews;
     public $categories;
