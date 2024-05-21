@@ -62,6 +62,11 @@
             }
 
             @media screen and (max-width: 991px) {
+
+                .top-padding-120 {
+                padding-top: 60px;
+            }
+
                 .page_cover_title {
              display:none;
             }
@@ -70,6 +75,8 @@
                 display:block;
             }
             }
+
+
 
  </style>
 @endpush
@@ -84,7 +91,7 @@
 
 
 <!-- blog start -->
-<div id="down" class="blog container bottom-padding-30 top-padding-60 light-bg-1" data-midnight="black">
+<div id="down" class="blog container bottom-padding-30 top-padding-120 light-bg-1" data-midnight="black">
 
     <div wire:ignore class="bottom-padding-60 page_cover_title_mobile text-center">
         <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
