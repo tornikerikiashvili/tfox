@@ -34,7 +34,7 @@ html:lang(ka) h2 span {
 
 html:lang(ka) p, html:lang(ka) .border-btn, html:lang(ka) .scroll-btn-flip,
 html:lang(ka) .flip-btn, .footer-menu li a, .inner_content ul li,
-.footer-information a, #contact_form label, #contact_form input {
+.footer-information a, #contact_form label, #contact_form input, .under_construction p {
     font-family: "bpg-le-studio", sans-serif;
 }
 
@@ -85,4 +85,18 @@ input:-webkit-autofill {
 
   .pointer-large {
     cursor:pointer;
+  }
+
+  .under_construction {
+    height: 50px;
+    background-color: #f15922;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .under_construction p {
+    height: 100%;
+      color: white;
+      pointer-events: none;
   }

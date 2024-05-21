@@ -57,6 +57,7 @@
             <p class="p-letter-style text-color-4 footer-copyright">&copy; 2024 Tfox.ge</a></p>
         </div><!-- column end -->
     </div><!-- flex-container end -->
+    <div class="under_construction"><p>{{__('_under_construction')}}</p></div>
 </footer><!-- footer end -->
 
 
