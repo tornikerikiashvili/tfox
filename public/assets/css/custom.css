@@ -41,6 +41,10 @@ html:lang(ka) .portfolio-slider2-content h2 {
     font-size: 55px;
 }
 
+article h3, h3 {
+    font-size: 21px;
+}
+
 html:lang(ka) article h3, html:lang(ka) h3 {
     font-family: "bpg-le-studio", sans-serif;
     font-size: 21px;
