@@ -69,9 +69,12 @@
                                     <span class="hidden-box d-block text-height-10">
                                         <span class="portfolio-slider-fade portfolio-slider-tr-02">{{data_get($category, 'slide_title.two')}}</span>
                                     </span>
-                                    <span class="hidden-box d-block text-height-10">
-                                        <span class="portfolio-slider-fade portfolio-slider-tr-03">{{data_get($category, 'slide_title.three')}}</span>
-                                    </span>
+                                    @if (data_get($category, 'slide_title.three'))
+                                        <span class="hidden-box d-block text-height-10">
+                                            <span class="portfolio-slider-fade portfolio-slider-tr-03">{{data_get($category, 'slide_title.three')}}</span>
+                                        </span>
+                                    @endif
+
                                 </h2>
                             </div>
 
