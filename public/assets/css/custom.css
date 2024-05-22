@@ -105,6 +105,10 @@ input:-webkit-autofill {
         opacity: 0.3;
     }
 
+    .home-slider h2 .slider-title-fill {
+        padding-right:5px;
+    }
+
   }
 
 
