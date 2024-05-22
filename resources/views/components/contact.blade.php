@@ -49,10 +49,26 @@
             opacity: 0.9;
         }
 
+        .contact-infos {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .contact-infos span:nth-child(1) {
+            padding-right: 10px;
+            color: #f15922;
+        }
+
+        .contact-infos span:nth-child(2) {
+            padding-right: 10px;
+            font-weight: bold;
+        }
+
         .contact-infos span {
             line-height: 50px;
             text-transform: lowercase;
-                     font-size: 21px;
+            font-size: 21px;
 
         }
 
@@ -61,6 +77,13 @@
         }
 
         @media screen and (max-width: 991px) {
+
+            .contact-infos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
 
             .contact-infos span {
               line-height: 30px;
@@ -107,10 +130,21 @@
                 <div class="four-columns bottom-padding-60">
                     <div data-animation-container class="content-right-margin-20">
                         <p class="contact-infos title-style text-color-4">
-                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay01" data-animation="overlay-anim2">{{__('_phone')}}: {{data_get($content, 'contact_phone')}}</span><br>
-							<span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{__('_email')}}: {{data_get($content, 'contact_email')}}</span><br>
-                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{__('_address')}}: {{data_get($content, 'contact_address')}}</span>
+                            <span>{{__('_phone')}}:</span>
+                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($content, 'contact_phone')}}</span>
                         </p>
+                        <p class="contact-infos title-style text-color-4">
+                            <span>{{__('_email')}}:</span>
+                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($content, 'contact_email')}}</span>
+                        </p>
+                        <p class="contact-infos title-style text-color-4">
+                            <span>{{__('_address')}}:</span>
+                            <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($content, 'contact_address')}}</span>
+                        </p>
+
+
+
+
                     </div>
                 </div><!-- column end -->
                 <!-- column start -->

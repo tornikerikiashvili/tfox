@@ -57,8 +57,6 @@ class Contact extends ContentComponentBlock
                     FileUpload::make('contact_form_bg')->label('Bg image'),
                 ])->columns(1),
 
-
-
         ]);
     }
 }
