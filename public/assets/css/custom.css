@@ -105,11 +105,28 @@ input:-webkit-autofill {
         opacity: 0.3;
     }
 
+  }
+
+
+  @media screen and (max-width: 768px) {
+
     .footer_contacts {
        display: flex;
        flex-direction: column;
        align-items: center;
        justify-content: center;
+    }
+
+    .footer_contacts li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_contacts li i {
+       margin-bottom: 5px;
+       text-align: center;
     }
 
   }
