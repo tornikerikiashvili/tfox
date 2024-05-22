@@ -51,9 +51,22 @@
 
         .contact-infos span {
             line-height: 50px;
+            text-transform: lowercase;
+                     font-size: 21px;
+
+        }
+
+        .container_one {
+            align-items: center;
         }
 
         @media screen and (max-width: 991px) {
+
+            .contact-infos span {
+              line-height: 30px;
+              font-size: 16px;
+            }
+
                 .page_cover_title {
              display:none;
             }
@@ -68,14 +81,7 @@
 
             }
 
-            .contact-infos span {
-                     text-transform: lowercase;
-                     font-size: 21px;
-            }
 
-            .container_one {
-                align-items: center;
-            }
 
     </style>
 @endpush

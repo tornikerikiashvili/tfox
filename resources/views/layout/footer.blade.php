@@ -24,7 +24,7 @@
         <!-- column start -->
         <div class="four-columns bottom-padding-60">
             <div class="content-left-right-margin-10 footer-center-mobile">
-                <ul class="footer-information text-color-4">
+                <ul class="footer_contacts footer-information text-color-4">
                     <li><i class="far fa-envelope"></i><a href="mailto:{{data_get($page, 'communications.contacts.email')}}" class="xsmall-title-oswald">{{data_get($page, 'communications.contacts.email')}}</a></li>
                     <li><i class="fas fa-mobile-alt"></i><a href="tel:{{data_get($page, 'communications.contacts.phone')}}" class="xsmall-title-oswald">{{data_get($page, 'communications.contacts.phone')}}</a></li>
                     @if(App::getLocale() == 'ka')

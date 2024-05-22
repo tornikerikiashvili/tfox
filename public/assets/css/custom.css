@@ -73,11 +73,6 @@ input:-webkit-autofill {
     line-height: 30px;;
 }
 
-@media screen and (max-width: 999px) {
-    .page-head-bg {
-        opacity: 0.3;
-    }
-  }
 
   .menu-open {
     margin: 40px 40px 0 0;
@@ -99,4 +94,22 @@ input:-webkit-autofill {
     height: 100%;
       color: white;
       pointer-events: none;
+  }
+
+  .footer_contacts li a {
+    text-transform: lowercase;
+  }
+
+  @media screen and (max-width: 999px) {
+    .page-head-bg {
+        opacity: 0.3;
+    }
+
+    .footer_contacts {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+
   }
