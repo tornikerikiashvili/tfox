@@ -41,6 +41,21 @@
 .inner_content strong {
    color: #f05523;
 }
+
+
+@media screen and (max-width: 768px) {
+    .inner_content p, .inner_content ul li {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: bold;
+    }
+
+.inner_content ul li {
+       margin-left: 15px;
+       list-style-type:disc;
+    }
+}
+
     </style>
 @endpush
 <div>
