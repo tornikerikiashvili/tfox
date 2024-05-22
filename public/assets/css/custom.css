@@ -114,6 +114,14 @@ input:-webkit-autofill {
 
   @media screen and (max-width: 768px) {
 
+    .portfolio-content-bg {
+        height: 300px;
+    }
+
+    .portfolio-slider2-content h2 {
+      font-size: 21px!important;
+    }
+
     .footer_contacts {
        display: flex;
        flex-direction: column;

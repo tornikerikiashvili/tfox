@@ -4519,7 +4519,7 @@ body.anim .scroll-arrow-box {
 }
 
 .overlay-dark-bg-2:before {
-	background: #1b2a2f !important;
+	background: transparent !important;
 }
 
 .overlay-red-bg:before {
