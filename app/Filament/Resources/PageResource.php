@@ -54,6 +54,12 @@ class PageResource extends \Z3d0X\FilamentFabricator\Resources\PageResource
             ->toString());
     }
 
+    public static function canCreate(): bool
+   {
+      return false;
+   }
+
+
     public static function getModel(): string
     {
         return Page::class;
@@ -157,32 +163,32 @@ class PageResource extends \Z3d0X\FilamentFabricator\Resources\PageResource
 
 
 
-                                    DropInAction::make('copy-translations')
-                                        ->disableLabel()
-                                        ->execute(function (Closure $get, Closure $set) {
-                                            return Action::make('copy-translations')
-                                                ->icon('heroicon-o-translate')
-                                                ->label('Copy Translations')
-                                                ->form([
-                                                    Select::make('from')
-                                                        ->label('From')
-                                                        ->options(collect(config('palindroma.supported_locales'))->mapWithKeys(fn($locale) => [$locale => Str::ucfirst($locale)]))
-                                                        ->required(),
-                                                    Select::make('to')
-                                                        ->label('To')
-                                                        ->options(collect(config('palindroma.supported_locales'))->mapWithKeys(fn($locale) => [$locale => Str::ucfirst($locale)]))
-                                                        ->required(),
-                                        ])
+                                //     DropInAction::make('copy-translations')
+                                //         ->disableLabel()
+                                //         ->execute(function (Closure $get, Closure $set) {
+                                //             return Action::make('copy-translations')
+                                //                 ->icon('heroicon-o-translate')
+                                //                 ->label('Copy Translations')
+                                //                 ->form([
+                                //                     Select::make('from')
+                                //                         ->label('From')
+                                //                         ->options(collect(config('palindroma.supported_locales'))->mapWithKeys(fn($locale) => [$locale => Str::ucfirst($locale)]))
+                                //                         ->required(),
+                                //                     Select::make('to')
+                                //                         ->label('To')
+                                //                         ->options(collect(config('palindroma.supported_locales'))->mapWithKeys(fn($locale) => [$locale => Str::ucfirst($locale)]))
+                                //                         ->required(),
+                                //         ])
 
-                                        ->action(function (array $data) use ($get, $set): void {
-                                            $translatableAttributes = $get("resourceTranslations");
+                                //         ->action(function (array $data) use ($get, $set): void {
+                                //             $translatableAttributes = $get("resourceTranslations");
 
-                                            $sourceData = array_filter($translatableAttributes[$data['from']] ?? []);
-                                            $targetData = array_filter($translatableAttributes[$data['to']] ?? []);
+                                //             $sourceData = array_filter($translatableAttributes[$data['from']] ?? []);
+                                //             $targetData = array_filter($translatableAttributes[$data['to']] ?? []);
 
-                                            $set("resourceTranslations.{$data['to']}", $sourceData);
-                                        });
-                                }),
+                                //             $set("resourceTranslations.{$data['to']}", $sourceData);
+                                //         });
+                                // }),
                             ]),
 
                         Group::make()->schema(FilamentFabricator::getSchemaSlot('sidebar.after')),

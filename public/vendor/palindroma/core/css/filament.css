@@ -19,3 +19,7 @@ body > div.filament-login-page.flex.min-h-screen.items-center.justify-center.bg-
 .bg-primary-600 {
     background-color: #ff7949;
 }
+
+body > div.filament-app-layout.flex.h-full.w-full.overflow-x-clip > div.filament-main.w-screen.flex-1.flex-col.gap-y-6.rtl\:lg\:pl-0.hidden.h-full.transition-all.filament-main-sidebar-open.lg\:pl-\[var\(--sidebar-width\)\].rtl\:lg\:pr-\[var\(--sidebar-width\)\] > div.filament-main-content.mx-auto.w-full.flex-1.px-4.md\:px-6.lg\:px-8.w-full > div > div > header > div.filament-page-actions.flex.flex-wrap.items-center.gap-4.justify-start.shrink-0 > button.filament-button.filament-button-size-md.inline-flex.items-center.justify-center.py-1.gap-1.font-medium.rounded-lg.border.transition-colors.outline-none.focus\:ring-offset-2.focus\:ring-2.focus\:ring-inset.min-h-\[2\.25rem\].px-4.text-sm.text-white.shadow.focus\:ring-white.border-transparent.bg-danger-600.hover\:bg-danger-500.focus\:bg-danger-700.focus\:ring-offset-danger-700.filament-page-button-action {
+    display:none;
+}
