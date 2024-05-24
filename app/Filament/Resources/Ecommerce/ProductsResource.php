@@ -77,7 +77,7 @@ class ProductsResource extends ContentResource
     public static function metaFields(Card $card): Card
     {
         return $card->schema([
-            Forms\Components\Checkbox::make('is_published')->label('Published'),
+            Forms\Components\Checkbox::make('metadata.is_published')->label('Published'),
             Forms\Components\Select::make('category_id')
             ->relationship('category', 'title'),
             Forms\Components\DateTimePicker::make('published_at')->label('Published At'),

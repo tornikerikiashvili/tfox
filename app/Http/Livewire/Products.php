@@ -31,9 +31,9 @@ class Products extends AbstractComponent
 
         if(!empty($this->childCategories)){
             $childCatIds = collect($this->childCategories)->pluck('id');
-            $this->products = ContentResource::collection(Product::whereIn('category_id', $childCatIds)->get())->response()->getData()->data;
+            $this->products = ContentResource::collection(Product::whereIn('category_id', $childCatIds)->where('metadata->is_published', true)->get())->response()->getData()->data;
         } else {
-            $this->products = ContentResource::collection(Product::whereIn('category_id', $catIds)->get())->response()->getData()->data;
+            $this->products = ContentResource::collection(Product::whereIn('category_id', $catIds)->where('metadata->is_published', true)->get())->response()->getData()->data;
         }
     }
 
