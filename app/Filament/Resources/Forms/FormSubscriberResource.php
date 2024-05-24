@@ -26,7 +26,7 @@ class FormSubscriberResource extends FormResource
 
     protected static ?string $navigationLabel = 'Subscribers';
 
-    public static ?string $permissionGroup = 'site-content';
+    public static ?string $permissionGroup = 'tite-content';
 
     protected static ?string $modelLabel = "Subscriber";
 

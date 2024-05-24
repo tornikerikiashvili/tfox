@@ -20,7 +20,7 @@ class FormFeedbackResource extends FormResource
 
     protected static bool $shouldRegisterNavigation = true;
 
-    public static ?string $permissionGroup = 'site-content';
+    public static ?string $permissionGroup = 'tite-content';
 
     protected static ?string $recordTitleAttribute = 'name';
 
