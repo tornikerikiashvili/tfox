@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
+use App\Filament\SimpleResource;
 use App\Models\Ecommerce\Product;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Tabs;
@@ -21,7 +22,7 @@ use Palindroma\Core\Forms\Components\MediaPicker;
 use Palindroma\Core\Filament\Resources\ContentResource;
 use App\Filament\Resources\Ecommerce\ProductsResource\Pages;
 
-class ProductsResource extends ContentResource
+class ProductsResource extends SimpleResource
 {
     protected static ?string $model = Product::class;
 
@@ -68,8 +69,7 @@ class ProductsResource extends ContentResource
                         Forms\Components\TextInput::make('title.two')->label('Line Two'),
                         Forms\Components\TextInput::make('title.three')->label('Line Three'),
                     ])->columns(3),
-            RichEditor::make('content'),
-            RichEditor::make('specifications')
+            RichEditor::make('content')
 
         ]);
     }
