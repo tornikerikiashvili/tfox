@@ -1,7 +1,7 @@
 	@push('headStyles')
        <style>
-        .filter-button-box {
-            margin-bottom:0!important;
+        .filter-buttons div, .filter-buttons button {
+            margin-bottom:10px!important;
         }
         .work-title-overlay:before {
           background-color: #f05523;
