@@ -28,6 +28,9 @@
 
         .product_parent_category .filter-button-flip {
             font-size: 21px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
 
         /* .filter_cats {
@@ -167,6 +170,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        .product_parent_category {
+            flex-direction: row;
         }
 
         .filter_cat_divider {
