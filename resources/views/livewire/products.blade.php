@@ -108,6 +108,42 @@
             justify-content: center;
         }
 
+        .clear_btn_container button {
+            margin-bottom: 0;
+            color: white;
+        }
+
+        .clear_btn_container button span {
+            margin:0 5px;
+        }
+
+        .all_cat_button svg {
+            float:left;
+            transition:0.5s ease;
+        }
+
+        .all_cat_button:hover svg {
+            transform: rotateZ(45deg);
+        }
+
+
+
+        .all_cat_button span {
+          float:right;
+          margin: 0 5px;
+        }
+
+        .all_cat_button span:after {
+           display:none;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
             @media screen and (max-width: 991px) {
                 .page_cover_title {
              display:none;
@@ -195,6 +231,7 @@
 
                 <div class="brands_list">
 
+
                  @if ($brands)
                   @foreach ($brands as $item)
 
@@ -243,6 +280,31 @@
                     </div>
 
                 <div class="filter-buttons">
+
+                    <button wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small" data-filter="*">
+
+                        <svg fill="white" height="21px" width="21px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 512 512" xml:space="preserve">
+                   <g>
+                       <g>
+                           <path d="M437.018,74.987c-99.968-99.977-262.067-99.977-362.035,0c-99.977,99.959-99.977,262.059,0,362.027
+                               c99.968,99.977,262.067,99.977,362.035,0C536.994,337.054,536.994,174.955,437.018,74.987z M418.918,418.914
+                               c-89.984,89.967-235.853,89.967-325.837,0c-89.967-89.975-89.967-235.844,0-325.828c89.984-89.967,235.853-89.967,325.837,0
+                               C508.885,183.07,508.885,328.939,418.918,418.914z"/>
+                       </g>
+                   </g>
+                   <g>
+                       <g>
+                           <path d="M256,115.204c-77.756,0-140.8,63.044-140.8,140.8H76.8l51.2,51.2l51.2-51.2h-38.4c0-63.624,51.576-115.2,115.2-115.2
+                               s115.2,51.567,115.2,115.2c0,63.633-51.575,115.2-115.2,115.2v25.6c77.764,0,140.8-63.044,140.8-140.8
+                               C396.8,178.24,333.756,115.204,256,115.204z"/>
+                       </g>
+                   </g>
+                   </svg>
+                        <span class="filter-button-flip" data-text="{{__('_clear')}}">{{__('_clear')}}</span>
+                    </button>
+
+
                     @foreach ($childCategories as $category)
                             @php
                                 $id = data_get($category, 'id');
@@ -262,11 +324,7 @@
                  </div>
             @endif
             <!-- filter-buttons end -->
-            <div class="clear_btn_container">
-                <button wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small {{$filter == null ? 'active' : ''}}" data-filter="*">
-                    <span class="filter-button-flip" data-text="{{__('_clear')}}">{{__('_clear')}}</span>
-                </button>
-            </div>
+
             <!-- works start -->
             <div wire:ignore class="works">
 
