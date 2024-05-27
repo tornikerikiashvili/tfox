@@ -8,7 +8,7 @@
         }
 
        .active_brand {
-         border: 2px solid #f05523;
+         background-color: #f05523;
        }
 
        .brand_logo_container.active_brand img {
@@ -17,6 +17,8 @@
 
        .brand_logo_container {
         cursor: pointer;
+        border: 1px solid white;
+        transition: 0.5s ease;
        }
 
        .brand_logo_container img {
@@ -24,9 +26,14 @@
          transition: 0.5s ease-in-out;
        }
 
-       .brand_logo_container img:hover {
+       .brand_logo_container:hover img {
         opacity: 1;
        }
+
+       .brand_logo_container:hover {
+        background-color: #f05523;
+       }
+
 
         .product_parent_category .filter-button-flip {
             font-size: 21px;
