@@ -42,8 +42,12 @@ class Products extends AbstractComponent
         $currentCat = ContentResource::collection(ProductCategory::where('id', $this->category)->get())->response()->getData()->data;
 
         $brandIds = data_get(Arr::first($currentCat), 'metadata.brands');
+        if($brandIds){
+            $this->brands = ContentResource::collection(Tag::whereIn('id', $brandIds)->get())->response()->getData()->data;
+        } else {
+            $this->brands = [];
+        }
 
-        $this->brands = ContentResource::collection(Tag::whereIn('id', $brandIds)->get())->response()->getData()->data;
 
 
     }
