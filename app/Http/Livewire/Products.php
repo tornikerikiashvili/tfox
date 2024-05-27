@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Arr;
 use App\Models\ProductCategory;
+use Palindroma\Core\Models\Tag;
 use App\Models\Ecommerce\Product;
 use Illuminate\Support\Facades\App;
 use Palindroma\Core\Http\Resources\ContentResource;
@@ -20,7 +21,9 @@ class Products extends AbstractComponent
     public $children;
     public $childCategories = [];
     public $filter;
-    protected $queryString = ['category','children','filter'];
+    public $brands;
+    public $brand;
+    protected $queryString = ['category','children','filter', 'brand'];
 
     public function mount(){
         $this->currentCategory = ContentResource::collection(ProductCategory::where('id', $this->category)->orderBy('order')->get())->response()->getData()->data;
@@ -31,10 +34,27 @@ class Products extends AbstractComponent
 
         if(!empty($this->childCategories)){
             $childCatIds = collect($this->childCategories)->pluck('id');
-            $this->products = ContentResource::collection(Product::whereIn('category_id', $childCatIds)->where('metadata->is_published', true)->get())->response()->getData()->data;
+            $this->products = ContentResource::collection(Product::whereIn('category_id', $childCatIds)->where('brand_id', $this->brand)->where('metadata->is_published', true)->get())->response()->getData()->data;
         } else {
-            $this->products = ContentResource::collection(Product::whereIn('category_id', $catIds)->where('metadata->is_published', true)->get())->response()->getData()->data;
+            $this->products = ContentResource::collection(Product::whereIn('category_id', $catIds)->where('brand_id', $this->brand)->where('metadata->is_published', true)->get())->response()->getData()->data;
         }
+
+        $currentCat = ContentResource::collection(ProductCategory::where('id', $this->category)->get())->response()->getData()->data;
+
+        $brandIds = data_get(Arr::first($currentCat), 'metadata.brands');
+
+        $this->brands = ContentResource::collection(Tag::whereIn('id', $brandIds)->get())->response()->getData()->data;
+
+
+    }
+
+    public function setBrandId($id){
+        $this->brand = $id;
+        return redirect(env('APP_URL') .'/'. App::getlocale() . '/products?' . http_build_query([
+            'category' => $this->category,
+            'children' => $this->children,
+            'brand' => $this->brand
+        ]));
     }
 
 
@@ -47,21 +67,18 @@ class Products extends AbstractComponent
         return redirect(env('APP_URL') .'/'. App::getlocale() . '/products?' . http_build_query([
             'category' => $this->category,
             'children' => $this->children,
+            'brand' => $this->brand
         ]));
     }
 
-    // public function filterByType($uuid){
-    //     $this->link_department = $uuid;
+    public function clearFilter(){
+        return redirect(env('APP_URL') .'/'. App::getlocale() . '/products?' . http_build_query([
+            'category' => $this->category,
+            'children' => $this->children,
+            'brand' => null
+        ]));
+    }
 
-    //     return redirect(env('APP_URL') .'/'. App::getlocale() . '/announcements?' . http_build_query([
-    //         'sort' => $this->sort,
-    //         'type' => $uuid,
-    //         'cat' => $this->cat,
-    //         'loc' => $this->loc,
-    //         'keyword' => $this->keyword,
-    //         'val' => $this->val
-    //     ]));
-    // }
 
     public function render()
     {

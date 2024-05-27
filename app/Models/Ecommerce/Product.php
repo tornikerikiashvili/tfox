@@ -3,6 +3,7 @@
 namespace App\Models\Ecommerce;
 
 use App\Models\ProductCategory;
+use Palindroma\Core\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Palindroma\Core\Models\ContentModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -47,5 +48,10 @@ class Product extends ContentModel
     public function category(): BelongsTo
     {
         return $this->belongsTo(ProductCategory::class, 'category_id', 'id');
+    }
+
+    public function brand(): BelongsTo
+    {
+        return $this->belongsTo(Tag::class, 'brand_id');
     }
 }

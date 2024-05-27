@@ -7,8 +7,10 @@ use Filament\Tables;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use App\Models\ProductCategory;
+use Palindroma\Core\Models\Tag;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Select;
 use Palindroma\Core\Filament\Resource;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Tabs\Tab;
@@ -73,7 +75,9 @@ class ProductCategoryResource extends ContentResource
     public static function metaFields(Card $card): Card
     {
         return $card->schema([
-
+            Select::make('metadata.brands')->label('Choose Brands')
+            ->options(fn() => Tag::where('type', 'product_brand_category')->pluck('name', 'id'))
+            ->searchable()->multiple(),
         ]);
     }
 

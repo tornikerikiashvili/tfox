@@ -1,8 +1,44 @@
 	@push('headStyles')
        <style>
+
+        .work-title-overlay:before {
+          background-color: #f05523;
+        }
+
+       .active_brand {
+         border: 2px solid #f05523;
+       }
+
+       .brand_logo_container.active_brand img {
+        opacity: 1;
+       }
+
+       .brand_logo_container {
+        cursor: pointer;
+       }
+
+       .brand_logo_container img {
+         opacity: 0.6;
+         transition: 0.5s ease-in-out;
+       }
+
+       .brand_logo_container img:hover {
+        opacity: 1;
+       }
+
         .product_parent_category .filter-button-flip {
             font-size: 21px;
         }
+
+        /* .filter_cats {
+            background-color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .filter_cats:before {
+            color:#f05523!important;
+        } */
 
         .page_cover {
             height: 150px;
@@ -60,6 +96,17 @@
         .page_cover_title_mobile {
                 display:none;
             }
+
+        /* .all_cat_button {
+            margin-bottom:30px;
+            font-weight: bold;
+        } */
+
+        .clear_btn_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
             @media screen and (max-width: 991px) {
                 .page_cover_title {
@@ -146,33 +193,41 @@
             </div>
 
 
-                {{-- <div class="brands_list">
+                <div class="brands_list">
 
-                    <div class="brand_logo_container">
-                        <img src="/assets/images/brands/webermt.png">
-                    </div>
-                    <div class="brand_logo_container">
-                        <img src="/assets/images/brands/thrakon.png">
-                    </div>
-                    <div class="brand_logo_container">
-                        <img src="/assets/images/brands/weha.png">
-                    </div>
-                </div> --}}
+                 @if ($brands)
+                  @foreach ($brands as $item)
+
+                        <div wire:click="setBrandId({{data_get($item, 'id')}})" class="brand_logo_container {{data_get($item, 'id') == $brand ? 'active_brand' : ''}}">
+                            <img src="{{'/storage/' . data_get($item, 'metadata.logo')}}">
+                        </div>
+
+                  @endforeach
+                  @endif
+                </div>
 
 
             <!-- filter-buttons start -->
             @if(empty($childCategories))
                 <div class="filter-buttons">
-                        <button wire:click="setCatCat({{'null'}})" class="all_cat_button filter-button-box pointer-small {{$filter == null ? 'active' : ''}}" data-filter="*">
-                            <span class="filter-button-flip" data-text="{{__('_all')}}">{{__('_all')}}</span>
-                        </button>
+
+
+
                     @foreach ($categories as $category)
+                    @php
+                       $id = data_get($category, 'id');
+                       $categories = array_column($products, 'category_id');
+                       $idExists = in_array($id, $categories);
+                    @endphp
+                     @if ($idExists)
                         <button wire:click="setCatCat({{data_get($category, 'id')}})" class="filter-button-box pointer-small {{$filter == data_get($category, 'id') ? 'active' : ''}}" data-filter=".{{data_get($category, 'id')}}">
-                            <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
+                            <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
                         </button>
                         @if (!$loop->last)
-                        <div class="filter_cat_divider"></div>
-                      @endif
+                          <div class="filter_cat_divider"></div>
+                        @endif
+                     @endif
+
                     @endforeach
                 </div>
             @endif
@@ -181,31 +236,40 @@
                     <div wire:ignore class="filter-buttons product_parent_category">
 
                         @foreach ($categories as $category)
-                            <a href="{{App::getLocale() . '/products?category=' . request()->query('category') . '&children=' . data_get($category, 'id')}}" class=" {{$children == data_get($category, 'id') ? 'active' : ''}} animsition-link pointer-large filter-button-box pointer-small">
+                            <a href="{{App::getLocale() . '/products?category=' . request()->query('category') . '&children=' . data_get($category, 'id') . '&brand=' . request()->query('brand')}}" class=" {{$children == data_get($category, 'id') ? 'active' : ''}} animsition-link pointer-large filter-button-box pointer-small">
                                 <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
                             </a>
                         @endforeach
                     </div>
 
                 <div class="filter-buttons">
-                    <button class="filter-button-box pointer-small active" data-filter="*">
-                        <span class="filter-button-flip" data-text="{{__('_all')}}">{{__('_all')}}</span>
-                    </button>
                     @foreach ($childCategories as $category)
-                        <button class="filter-button-box pointer-small" data-filter=".{{data_get($category, 'id')}}">
-                            <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
-                        </button>
-                        @if (!$loop->last)
-                          <div class="filter_cat_divider"></div>
+                            @php
+                                $id = data_get($category, 'id');
+                                $categories = array_column($products, 'category_id');
+                                $idExists = in_array($id, $categories);
+                            @endphp
+                            @if ($idExists)
+                            <button class="filter-button-box pointer-small" data-filter=".{{data_get($category, 'id')}}">
+                                <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
+                            </button>
+                            @if (!$loop->last)
+                                <div class="filter_cat_divider"></div>
+                            @endif
                         @endif
 
                     @endforeach
                  </div>
             @endif
             <!-- filter-buttons end -->
-
+            <div class="clear_btn_container">
+                <button wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small {{$filter == null ? 'active' : ''}}" data-filter="*">
+                    <span class="filter-button-flip" data-text="{{__('_clear')}}">{{__('_clear')}}</span>
+                </button>
+            </div>
             <!-- works start -->
             <div wire:ignore class="works">
+
                 @foreach ($products as $product)
                     <a href="{{App::getLocale() . '/product/' . data_get($product, 'id')}}" class="animsition-link grid-item {{data_get($product, 'category_id')}}">
                         <div class="product_item work_item pointer-large hover-box hidden-box">

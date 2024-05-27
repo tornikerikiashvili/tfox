@@ -80,8 +80,23 @@ class ProductsResource extends SimpleResource
             Forms\Components\Checkbox::make('metadata.is_published')->label('Published'),
             Forms\Components\Select::make('category_id')
             ->relationship('category', 'title'),
+
+            Forms\Components\Select::make('brand_id')
+                ->relationship('brand', 'name', fn($query) => $query->where('type', 'product_brand_category'))
+                ->createOptionForm([
+                    Forms\Components\TextInput::make('name')->required(),
+                    Forms\Components\Hidden::make('type')->default('product_brand_category')->required(),
+                ])
+                ->createOptionAction(function (Forms\Components\Actions\Action $action) {
+                    return $action
+                        ->modalHeading('Create Category')
+                        ->modalButton('Create Category')
+                        ->modalWidth('md');
+                }),
             Forms\Components\DateTimePicker::make('published_at')->label('Published At'),
         ]);
+
+
     }
 
     public static function table(Table $table): Table
@@ -95,7 +110,7 @@ class ProductsResource extends SimpleResource
 
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
 
             ])
             ->filters([
@@ -109,7 +124,7 @@ class ProductsResource extends SimpleResource
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
-            ]);
+            ])->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array
