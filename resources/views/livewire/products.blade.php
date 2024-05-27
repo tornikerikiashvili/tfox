@@ -189,6 +189,10 @@
             opacity: 0.7;
         }
 
+        .all_cat_button {
+            padding-bottom: 20px;
+        }
+
         .filter-buttons {
             text-align: center;
             margin-bottom: 30px;
