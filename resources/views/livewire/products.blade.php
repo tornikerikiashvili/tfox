@@ -1,6 +1,8 @@
 	@push('headStyles')
        <style>
-
+        .filter-button-box {
+            margin-bottom:0!important;
+        }
         .work-title-overlay:before {
           background-color: #f05523;
         }
@@ -130,9 +132,20 @@
             color:#f15922;
         }
 
+        .all_cat_button span:before {
+            text-decoration: underline;
+
+        }
+
         .all_cat_button:hover span:before {
             color:#f15922;
+
         }
+
+
+
+
+
 
 
 
