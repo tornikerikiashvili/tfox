@@ -228,7 +228,7 @@
         .brand_logo_container {
             padding: 10px;
             width: auto;
-            height: 30px;
+            height: 20px;
             margin-bottom: 25px;
         }
 
