@@ -32,11 +32,20 @@ class Products extends AbstractComponent
 
         $this->childCategories = ContentResource::collection(ProductCategory::where('parent_id', $this->children)->get())->response()->getData()->data;
 
-        if(!empty($this->childCategories)){
-            $childCatIds = collect($this->childCategories)->pluck('id');
-            $this->products = ContentResource::collection(Product::whereIn('category_id', $childCatIds)->where('brand_id', $this->brand)->where('metadata->is_published', true)->get())->response()->getData()->data;
+        if($this->brand){
+            if(!empty($this->childCategories)){
+                $childCatIds = collect($this->childCategories)->pluck('id');
+                $this->products = ContentResource::collection(Product::whereIn('category_id', $childCatIds)->where('brand_id', $this->brand)->where('metadata->is_published', true)->get())->response()->getData()->data;
+            } else {
+                $this->products = ContentResource::collection(Product::whereIn('category_id', $catIds)->where('brand_id', $this->brand)->where('metadata->is_published', true)->get())->response()->getData()->data;
+            }
         } else {
-            $this->products = ContentResource::collection(Product::whereIn('category_id', $catIds)->where('brand_id', $this->brand)->where('metadata->is_published', true)->get())->response()->getData()->data;
+            if(!empty($this->childCategories)){
+                $childCatIds = collect($this->childCategories)->pluck('id');
+                $this->products = ContentResource::collection(Product::whereIn('category_id', $childCatIds)->where('metadata->is_published', true)->get())->response()->getData()->data;
+            } else {
+                $this->products = ContentResource::collection(Product::whereIn('category_id', $catIds)->where('metadata->is_published', true)->get())->response()->getData()->data;
+            }
         }
 
         $currentCat = ContentResource::collection(ProductCategory::where('id', $this->category)->get())->response()->getData()->data;
