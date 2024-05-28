@@ -316,7 +316,7 @@
                     @endphp
                      @if ($idExists)
                         <button wire:click="setCatCat({{data_get($category, 'id')}})" class="filter-button-box pointer-small {{$filter == data_get($category, 'id') ? 'active' : ''}}" data-filter=".{{data_get($category, 'id')}}">
-                            <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
+                            <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'slide_title.one')}}">{{data_get($category, 'title')}}</span>
                         </button>
                         @if (!$loop->last)
                           <div class="filter_cat_divider"></div>
@@ -332,7 +332,7 @@
 
                         @foreach ($categories as $category)
                             <a href="{{App::getLocale() . '/products?category=' . request()->query('category') . '&children=' . data_get($category, 'id') . '&brand=' . request()->query('brand')}}" class=" {{$children == data_get($category, 'id') ? 'active' : ''}} animsition-link pointer-large filter-button-box pointer-small">
-                                <span class="filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
+                                <span class="filter-button-flip" data-text="{{data_get($category, 'slide_title.one')}}">{{data_get($category, 'title')}}</span>
                             </a>
                         @endforeach
                     </div>
@@ -371,7 +371,7 @@
                             @endphp
                             @if ($idExists)
                             <button class="filter-button-box pointer-small" data-filter=".{{data_get($category, 'id')}}">
-                                <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'title')}}">{{data_get($category, 'title')}}</span>
+                                <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'slide_title.one')}}">{{data_get($category, 'title')}}</span>
                             </button>
                             @if (!$loop->last)
                                 <div class="filter_cat_divider"></div>
