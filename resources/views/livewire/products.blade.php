@@ -150,10 +150,19 @@
         }
 
 
+        .parent_filter_category {
+            font-size: 28px!important;
+        }
 
+         .active_parent {
+            background-color:white;
+            padding: 4px 8px;
+            border-radius: 3px;
+        }
 
-
-
+        .active_parent span:before {
+            color: black!important;
+        }
 
 
         .all_cat_button span {
@@ -331,16 +340,15 @@
                     <div wire:ignore class="filter-buttons product_parent_category">
 
                         @foreach ($categories as $category)
-                            <a href="{{App::getLocale() . '/products?category=' . request()->query('category') . '&children=' . data_get($category, 'id') . '&brand=' . request()->query('brand')}}" class=" {{$children == data_get($category, 'id') ? 'active' : ''}} animsition-link pointer-large filter-button-box pointer-small">
-                                <span class="filter-button-flip" data-text="{{data_get($category, 'slide_title.one')}}">{{data_get($category, 'slide_title.one')}}</span>
+                            <a href="{{App::getLocale() . '/products?category=' . request()->query('category') . '&children=' . data_get($category, 'id') . '&brand=' . request()->query('brand')}}" class=" {{$children == data_get($category, 'id') ? 'active_parent' : ''}} animsition-link pointer-large filter-button-box pointer-small">
+                                <span class="parent_filter_category filter-button-flip" data-text="{{data_get($category, 'slide_title.one')}}">{{data_get($category, 'slide_title.one')}}</span>
                             </a>
                         @endforeach
                     </div>
 
                 <div class="filter-buttons">
 
-                    <div wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small" data-filter="*">
-
+                <div wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small" data-filter="*">
                         <svg fill="white" height="21px" width="21px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         viewBox="0 0 512 512" xml:space="preserve">
                    <g>
