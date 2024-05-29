@@ -89,7 +89,7 @@ class ProductCategoryResource extends ContentResource
                 ->square()
                 ->width(150)
                 ->height(100),
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('title')->searchable(),
             ])
             ->filters([
                 //
