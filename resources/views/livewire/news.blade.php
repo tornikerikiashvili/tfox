@@ -109,7 +109,7 @@
                     <div class="light-bg-2">
                         <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="pointer-large animsition-link hover-box d-block">
                             <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
-                                <img class="hover-img" src="{{data_get($item, 'cover_image.url')}}" alt="blog img">
+                                <img class="hover-img" src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="blog img">
                             </div>
                             <div class="content-padding-l-r-20" >
                                 <h3 class="main_news_title title-style text-color-1 top-margin-30 blog-title">
@@ -172,7 +172,7 @@
                                 <!-- recent-entry start -->
                                     <div class="recent-entry">
                                         <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="recent-entry-img-box pointer-large animsition-link">
-                                            <img src="{{data_get($item, 'cover_image.url')}}" alt="title">
+                                            <img src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="title">
                                         </a>
                                         <div class="recent-desc">
                                             <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>

@@ -72,8 +72,8 @@
 					<div class="eight-columns">
 						<!-- single-post-content start -->
 						<div class="light-bg-2">
-							<a class="photo-popup pointer-zoom" href="{{data_get($news, 'cover_image.url')}}">
-								<img src="{{data_get($news, 'cover_image.url')}}" alt="title">
+							<a class="photo-popup pointer-zoom" href="{{'/storage/' . data_get($news, 'cover_image')}}">
+								<img src="{{'/storage/' . data_get($news, 'cover_image')}}" alt="title">
 							</a>
 							<!-- content-margin-block start -->
 							<div class="content-margin-block">
@@ -81,9 +81,21 @@
                                     <span class="hover-content" >{{data_get($news, 'title')}}</span>
                                 </h3>
 								<!-- entry-content start -->
-								<article class="entry-content">
-									{!!data_get($news, 'content')!!}
-								</article><!-- entry-content end -->
+                                    <article class="entry-content">
+                                        {!!data_get($news, 'content')!!}
+                                    </article>
+                                <!-- entry-content end -->
+
+                                	<!-- post-img-flex start -->
+									<div class="post-img-flex">
+                                        @foreach (data_get($news, 'inner_cover_image') as $img)
+                                            <a  class="post-img-box photo-popup" href="{{data_get($img, 'url')}}">
+                                                <div class="pointer-zoom">
+                                                    <img src="{{data_get($img, 'url')}}" alt="title">
+                                                </div>
+                                            </a>
+                                        @endforeach
+									</div><!-- post-img-flex end -->
 
 								<!-- post-share start -->
 								<div class="post-share">
@@ -123,7 +135,7 @@
                                 <!-- recent-entry start -->
                                     <div class="recent-entry">
                                         <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="recent-entry-img-box pointer-large animsition-link">
-                                            <img src="{{data_get($item, 'cover_image.url')}}" alt="title">
+                                            <img src="{{'/storage/' . data_get($news, 'cover_image')}}" alt="title">
                                         </a>
                                         <div class="recent-desc">
                                             <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>

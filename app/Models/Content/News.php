@@ -15,6 +15,7 @@ class News extends ContentModel
         'title',
         'teaser',
         'content',
+        'cover_image',
     ];
 
     protected $fillable = [

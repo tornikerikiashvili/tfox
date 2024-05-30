@@ -12,6 +12,8 @@ use Filament\Forms\Components\Tabs;
 use FilamentTiptapEditor\TiptapEditor;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Tabs\Tab;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\FileUpload;
 use Palindroma\Core\Filament\Tables\MediaColumn;
 use Palindroma\Core\Forms\Components\MediaPicker;
 use App\Filament\Resources\Content\BlogResource\Pages;
@@ -48,10 +50,8 @@ class BlogResource extends ContentResource
                     ]
                 )->columnSpan(1),
                 Forms\Components\Section::make('Media')->schema([
-                    MediaPicker::make('cover_image')->label('Cover Image'),
                     Forms\Components\Grid::make()->schema([
-                        MediaPicker::make('inner_cover_image.mob')->label('Cover Image Mobile (Inner Page)'),
-                        MediaPicker::make('inner_cover_image.desk')->label('Cover Image Desktop (Inner Page)'),
+                        MediaPicker::make('inner_cover_image')->label('gallery')->multiple(),
                         ])
                 ])->columnSpan(2),
             ]);
@@ -63,6 +63,7 @@ class BlogResource extends ContentResource
             Forms\Components\TextInput::make('title')->label('Project Name'),
             Forms\Components\Textarea::make('teaser'),
             TiptapEditor::make('content'),
+            FileUpload::make('cover_image')->label('Cover Image')->image(),
         ]);
     }
 
@@ -90,7 +91,7 @@ class BlogResource extends ContentResource
     {
         return $table
             ->columns([
-                MediaColumn::make('cover_image')
+                ImageColumn::make('cover_image')
                 ->square()
                 ->width(150)
                 ->height(100),
