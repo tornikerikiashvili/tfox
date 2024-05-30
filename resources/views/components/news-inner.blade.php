@@ -29,6 +29,11 @@
         font-family: 'Open Sans', sans-serif;
         color: #262626;
     }
+
+    .entry-content p img {
+       height: auto;
+    }
+
     .entry-content blockquote {
         margin-top: 30px;
         padding: 20px;
@@ -67,7 +72,7 @@
 					<div class="eight-columns">
 						<!-- single-post-content start -->
 						<div class="light-bg-2">
-							<a class="photo-popup pointer-zoom" href="assets/images/blog/bodypaint-female-girl-50595.jpg">
+							<a class="photo-popup pointer-zoom" href="{{data_get($news, 'cover_image.url')}}">
 								<img src="{{data_get($news, 'cover_image.url')}}" alt="title">
 							</a>
 							<!-- content-margin-block start -->
