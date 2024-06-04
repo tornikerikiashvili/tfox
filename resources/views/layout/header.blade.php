@@ -1,3 +1,4 @@
+
  <!-- header start -->
  <header class="fixed-header">
     <!-- header-flex-box start -->
@@ -23,9 +24,15 @@
 
         <!-- logo end -->
 
+        <div class="main_search">
+            <button class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></button>
+        </div>
+
         <!-- menu-open start -->
         <div class="menu-open pointer-large">
             <span class="hamburger"></span>
         </div><!-- menu-open end -->
     </div><!-- header-flex-box end -->
 </header><!-- header end -->
+
+

@@ -9,7 +9,6 @@
         <meta charset="utf-8">
         <base href={{ config('app.url') }}/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/bower_components/archyedt-thin/css/archyedt-thin.min.css">
 
         @yield('meta')
 
@@ -86,6 +85,13 @@
     </div>
 
 
+
+    <div id="myOverlay" class="search_overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+        <livewire:search-form />
+      </div>
+
+
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
     @stack('bodyScripts')
@@ -94,6 +100,15 @@
             $('.lang-li').css('opacity', '0')
         })
     </script>
+    <script>
+        function openSearch() {
+          document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function closeSearch() {
+          document.getElementById("myOverlay").style.display = "none";
+        }
+        </script>
     @livewireScripts
   </body>
 </html>
