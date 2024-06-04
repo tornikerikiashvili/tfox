@@ -52,7 +52,7 @@
                 <article class="content-right-margin-20 light-bg-2" data-animation-container>
                     <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="pointer-large animsition-link hover-box d-block">
                         <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
-                            <img class="hover-img" src="{{data_get($item, 'cover_image.url')}}" alt="blog img">
+                            <img class="hover-img" src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="blog img">
                         </div>
                         <h3 class="news_component_title title-style text-color-1 top-margin-30 blog-title content-padding-l-r-20">
                             <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay01" data-animation="overlay-anim2">{{data_get($item, 'title')}}</span>
