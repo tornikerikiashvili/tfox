@@ -36,8 +36,8 @@ html:lang(ka) h2 span {
 }
 
 html:lang(ka) p, html:lang(ka) .border-btn, html:lang(ka) .scroll-btn-flip,
-html:lang(ka) .flip-btn, .footer-menu li a, .inner_content ul li,
-.footer-information a, #contact_form label, #contact_form input, .under_construction p {
+html:lang(ka) .flip-btn,html:lang(ka)  .footer-menu li a, html:lang(ka)  .inner_content ul li,
+html:lang(ka) .footer-information a,html:lang(ka) #contact_form label,html:lang(ka) #contact_form input,html:lang(ka) .under_construction p,html:lang(ka) .result_title span{
     font-family: "bpg-le-studio", sans-serif;
 }
 
