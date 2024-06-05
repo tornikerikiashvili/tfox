@@ -6,8 +6,6 @@
           url('../webfonts/archyedt-thin-webfont.woff') format('woff'),
           url('../webfonts/archyedt-thin-webfont.eot') format('eot'),
           url('../webfonts/archyedt-thin-webfont.ttf') format('truetype');
-          font-style: normal;
-          font-weight: 900;
 }
 
 @font-face {
