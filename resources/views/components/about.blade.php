@@ -32,7 +32,7 @@
 				  				<h3 class="large_font text-color-4">
 									<span class="page_cover_title_line_two overlay-loading2 overlay-light-bg-1 tr-delay04">{{data_get($content, 'page_cover_title_one')}}</span>
 								</h3>
-                                <h2 class="overlay-loading2 tr-delay03 medium-title red-color">{{data_get($content, 'page_cover_title_two')}}</h2>
+                                <h2 class="overlay-loading2 tr-delay03 large_font red-color">{{data_get($content, 'page_cover_title_two')}}</h2>
 				  			</div>
 			  			</div><!-- column end -->
 		  			</div><!-- flex-container end -->
@@ -111,7 +111,7 @@
         <!-- container start -->
         <div class="container small top-bottom-padding-120">
             <!-- medium-title start -->
-            <h2 data-animation-container class="medium-title">
+            <h2 data-animation-container class="large_font">
                 <span data-animation-child class="title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_one')}}">{{data_get($content, 'partners_title_one')}}</span><br>
                 <span data-animation-child class="title-fill tr-delay01" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_two')}}">{{data_get($content, 'partners_title_two')}}</span><br>
                 <span data-animation-child class="title-fill tr-delay02" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_three')}}">{{data_get($content, 'partners_title_three')}}</span>
@@ -139,7 +139,7 @@
 				<div data-animation-container class="container small bottom-padding-60">
 
 					<div class="about_text top-margin-30">
-						<h2 data-animation-child class=" text-color-2 medium-title fade-anim-box tr-delay01" data-animation="fade-anim">{{data_get($content, 'about_title')}}</h2>
+						<h2 data-animation-child class=" text-color-2 large_font fade-anim-box tr-delay01" data-animation="fade-anim">{{data_get($content, 'about_title')}}</h2>
 						<p data-animation-child class="p-style-large text-color-1 fade-anim-box tr-delay02" data-animation="fade-anim">{!!data_get($content, 'about_text')!!}</p>
 
 

@@ -17,7 +17,7 @@
 
 		<!-- styles -->
         <link href="assets/css/plugins.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css?v1.0.0" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css?v1.0.1" rel="stylesheet" type="text/css">
         <link href="assets/css/custom.css?v1.1.4" rel="stylesheet" type="text/css">
         @stack('headStyles')
         <style>
