@@ -1,7 +1,7 @@
 
     <div class="overlay-content">
         <form action="/action_page.php">
-          <input wire:model="keyword" type="text" placeholder="{{__('_search')}}" name="search">
+          <input wire:ignore wire:model="keyword" type="text" placeholder="{{__('_search')}}" name="search">
         </form>
         <div class="search_results">
           <ul>

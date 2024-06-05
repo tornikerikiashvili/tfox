@@ -262,6 +262,9 @@ input:-webkit-autofill {
 
 
   @media screen and (max-width: 768px) {
+    .overlay-content {
+        width: 100%;
+    }
 
     html:lang(ka) .logo {
         width: 130px;
