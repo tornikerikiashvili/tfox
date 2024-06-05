@@ -83,7 +83,7 @@
 
 <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
     <div wire:ignore class="page_cover_title text-center">
-        <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
+        <h2 class="large_font text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
     </div>
     <div class="overlay"></div>
 </div>
@@ -94,7 +94,7 @@
 <div id="down" class="blog container bottom-padding-30 top-padding-120 light-bg-1" data-midnight="black">
 
     <div wire:ignore class="bottom-padding-60 page_cover_title_mobile text-center">
-        <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
+        <h2 class="large_font text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
     </div>
     <!-- flex-container start -->
     <div class="flex-container">
@@ -112,7 +112,7 @@
                                 <img class="hover-img" src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="blog img">
                             </div>
                             <div class="content-padding-l-r-20" >
-                                <h3 class="main_news_title title-style text-color-1 top-margin-30 blog-title">
+                                <h3 class="main_news_title  text-color-1 top-margin-30 blog-title">
                                     <span class=" hover-content" >{{data_get($item, 'title')}}</span>
                                 </h3>
                                 <p  class="hover-content p-style-medium text-color-2" >{{data_get($item, 'teaser')}}</p>

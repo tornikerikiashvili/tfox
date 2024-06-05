@@ -23,7 +23,7 @@
 
     <!-- container start -->
     <div data-animation-container class="container small bottom-padding-60 text-center">
-        <h2 data-animation-child class="large-title text-height-10 text-color-1 overlay-anim-box2" data-animation="overlay-anim2">{{data_get($content, 'projects_title')}}</h2><br>
+        <h2 data-animation-child class="large_font text-height-10 text-color-1 overlay-anim-box2" data-animation="overlay-anim2">{{data_get($content, 'projects_title')}}</h2><br>
         <p data-animation-child class="fade-anim-box tr-delay02 text-color-1 xsmall-title-oswald top-margin-5" data-animation="fade-anim">{{data_get($content, 'projects_teaser')}}</p>
     </div><!-- container end -->
 @foreach ($projects as $project)
@@ -41,7 +41,7 @@
                     <div data-animation-container class="six-columns">
                         <div class="content-right-margin-40">
                             <span class="small-title-oswald red-color overlay-anim-box2" data-animation="overlay-anim2">{{data_get($project, 'type')}}</span>
-                            <h3 class="project_item_title title-style text-color-1">
+                            <h3 class="project_item_title text-color-1">
                                 <span data-animation-child class="overlay-anim-box2 light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($project, 'title')}}</span>
                             </h3>
                             <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
@@ -81,7 +81,7 @@
                     <div data-animation-container class="six-columns">
                         <div class="content-left-margin-40">
                             <span class="small-title-oswald red-color overlay-anim-box2" data-animation="overlay-anim2">{{data_get($project, 'type')}}</span>
-                            <h3 class="project_item_title title-style text-color-1">
+                            <h3 class="project_item_title text-color-1">
                                 <span data-animation-child class="overlay-anim-box2 light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($project, 'title')}}</span>
                             </h3>
                             <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
@@ -109,7 +109,7 @@
                     <div data-animation-container class="six-columns">
                         <div class="content-right-margin-40">
                             <span class="small-title-oswald red-color overlay-anim-box2" data-animation="overlay-anim2">{{data_get($project, 'type')}}</span>
-                            <h3 class="project_item_title title-style text-color-1">
+                            <h3 class="project_item_title text-color-1">
                                 <span data-animation-child class="overlay-anim-box2 light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($project, 'title')}}</span>
                             </h3>
                             <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>
@@ -149,7 +149,7 @@
                     <div data-animation-container class="six-columns">
                         <div class="content-left-margin-40">
                             <span class="small-title-oswald red-color overlay-anim-box2" data-animation="overlay-anim2">{{data_get($project, 'type')}}</span>
-                            <h3 class="project_item_title title-style text-color-1">
+                            <h3 class="project_item_title text-color-1">
                                 <span data-animation-child class="overlay-anim-box2 light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($project, 'title')}}</span>
                             </h3>
                             <p data-animation-child class="p-style-small text-color-2 fade-anim-box tr-delay04" data-animation="fade-anim">{{data_get($project, 'teaser')}}</p>

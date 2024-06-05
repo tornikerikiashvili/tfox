@@ -12,7 +12,7 @@
         <!-- container start -->
         <div class="container small top-bottom-padding-120">
             <!-- medium-title start -->
-            <h2 data-animation-container class="medium-title">
+            <h2 data-animation-container class="large_font">
                 <span data-animation-child class="title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_one')}}">{{data_get($content, 'partners_title_one')}}</span><br>
                 <span data-animation-child class="title-fill tr-delay01" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_two')}}">{{data_get($content, 'partners_title_two')}}</span><br>
                 <span data-animation-child class="title-fill tr-delay02" data-animation="title-fill-anim" data-text="{{data_get($content, 'partners_title_three')}}">{{data_get($content, 'partners_title_three')}}</span>
@@ -40,7 +40,7 @@
     <div class="container">
         <!-- text-center start -->
         <div data-animation-container class="text-center">
-            <h2 data-animation-child class="large-title text-height-10 text-color-1 overlay-anim-box2" data-animation="overlay-anim2">{{data_get($content, 'news_title')}}</h2><br>
+            <h2 data-animation-child class="large_font text-height-10 text-color-1 overlay-anim-box2" data-animation="overlay-anim2">{{data_get($content, 'news_title')}}</h2><br>
             <p data-animation-child class="fade-anim-box tr-delay02 text-color-1 xsmall-title-oswald top-margin-5" data-animation="fade-anim">{{data_get($content, 'news_teaser')}}</p>
         </div><!-- text-center end -->
 
@@ -54,7 +54,7 @@
                         <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
                             <img class="hover-img" src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="blog img">
                         </div>
-                        <h3 class="news_component_title title-style text-color-1 top-margin-30 blog-title content-padding-l-r-20">
+                        <h3 class="news_component_title text-color-1 top-margin-30 blog-title content-padding-l-r-20">
                             <span data-animation-child class="overlay-anim-box2 hover-content overlay-dark-bg-2 tr-delay01" data-animation="overlay-anim2">{{data_get($item, 'title')}}</span>
                         </h3>
                     </a>

@@ -34,7 +34,7 @@
                       <!-- column start -->
                       @if (data_get($slide, 'metadata.red') == true)
                         <div class="six-columns">
-                            <h2 class="large-title-bold">
+                            <h2 class="large_font">
                                 @if (data_get($slide, 'title.one'))
                                   <span class="slider-title-fill slider-tr-delay01" data-text="{{data_get($slide, 'title.one')}}">{{data_get($slide, 'title.one')}}</span><br>
                                 @endif
@@ -58,7 +58,7 @@
                       @else
                       <div class="six-columns six-offset">
                           <div class="content-left-margin-40">
-                              <h2 class="large-title-bold">
+                              <h2 class="large_font">
                                 @if (data_get($slide, 'title.one'))
                                   <span class="slider-title-fill slider-tr-delay01" data-text="{{data_get($slide, 'title.one')}}">{{data_get($slide, 'title.one')}}</span><br>
                                 @endif

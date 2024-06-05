@@ -1,7 +1,7 @@
 /* Georgian Fonts */
 
 @font-face {
-    font-family: 'ArchyEDT-Thin';
+    font-family: 'archyedt-thin';
      src: url('../webfonts/archyedt-thin-webfont.woff2') format('woff2'),
           url('../webfonts/archyedt-thin-webfont.woff') format('woff'),
           url('../webfonts/archyedt-thin-webfont.eot') format('eot'),
@@ -20,7 +20,7 @@
 
 html:lang(ka) h2, html:lang(ka) .nav-box a span, html:lang(ka) span.filter-button-flip, html:lang(ka) .page_cover_title_line_two,
 html:lang(ka) .main_news_title {
-    font-family: "ArchyEDT-Thin", sans-serif;
+    font-family: "archyedt-thin", sans-serif!important;
     letter-spacing: 1px;
     font-weight: 700;
 }
@@ -50,6 +50,13 @@ html:lang(ka) article h3, html:lang(ka) h3 {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.large_font {
+    font-size: 65px;
+	line-height: 1;
+	font-weight: 600;
+	letter-spacing: -2px;
 }
 
 
@@ -266,6 +273,10 @@ input:-webkit-autofill {
      .search_results ul {
         width: 940px;
     }
+
+    .large_font {
+        font-size: 55px;
+    }
 }
 
 
@@ -277,6 +288,10 @@ input:-webkit-autofill {
 
      .search_results ul {
         width: 740px;
+    }
+
+    .large_font {
+        font-size: 35px;
     }
 }
 

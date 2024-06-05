@@ -126,7 +126,7 @@
 <div>
     <div class="page_cover" style="background-image: url({{'/storage/' . data_get($content, 'page_cover')}})">
         <div wire:ignore class="page_cover_title text-center">
-            <h2 class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
+            <h2 class="large_font text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'page_cover_title')}}">{{data_get($content, 'page_cover_title')}}</h2><br>
         </div>
         <div class="overlay"></div>
     </div>
@@ -143,15 +143,15 @@
                 <!-- column start -->
                 <div class="four-columns bottom-padding-60">
                     <div data-animation-container class="content-right-margin-20">
-                        <p class="contact-infos title-style text-color-4">
+                        <p class="contact-infos  text-color-4">
                             <span>{{__('_phone')}}:</span>
                             <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay01" data-animation="overlay-anim2">{{data_get($content, 'contact_phone')}}</span>
                         </p>
-                        <p class="contact-infos title-style text-color-4">
+                        <p class="contact-infos  text-color-4">
                             <span>{{__('_email')}}:</span>
                             <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($content, 'contact_email')}}</span>
                         </p>
-                        <p class="contact-infos title-style text-color-4">
+                        <p class="contact-infos  text-color-4">
                             <span>{{__('_address')}}:</span>
                             <span data-animation-child class="overlay-anim-box2 overlay-light-bg-1 tr-delay02" data-animation="overlay-anim2">{{data_get($content, 'contact_address')}}</span>
                         </p>
@@ -191,7 +191,7 @@
                     <div class="popup-icon">
                         <i class="fas fa-check"></i>
                     </div>
-                    <div class="popup-alert title-style text-color-4">
+                    <div class="popup-alert  text-color-4">
                         Thank you!<br>
                         Your submission<br>
                         has been received!
@@ -208,7 +208,7 @@
                     <div class="popup-icon">
                         <i class="fas fa-times"></i>
                     </div>
-                    <div class="popup-alert title-style text-color-4">Error</div>
+                    <div class="popup-alert  text-color-4">Error</div>
                     <div class="flip-btn-box js-popup-close">
                         <div class="flip-btn pointer-large" data-text="Close">Close</div>
                     </div>

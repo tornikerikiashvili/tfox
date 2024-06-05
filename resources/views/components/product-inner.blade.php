@@ -80,7 +80,7 @@
 
 						<div class="inner_content twelve-columns bottom-padding-60">
 							<div >
-                                <h2 class="title-style text-color-4">
+                                <h2 class="text-color-4">
                                     {{data_get($product, 'name')}}
                                 </h2>
                                </br>

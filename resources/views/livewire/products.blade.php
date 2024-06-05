@@ -250,7 +250,7 @@
             height: 100%;
         }
 
-       .product_item .title-style span {
+       .product_item  span {
             font-size: 21px!important;
             line-height: 1.5!important;
         }
@@ -400,7 +400,7 @@
                             <img class="hover-img" src="{{data_get($product, 'cover_image.url', '/assets/images/news/noimage.webp')}}" alt="">
                             <div class="works-content">
                                 {{-- <span class="small-title-oswald red-color work-title-overlay">{{"Brand Name"}}</span> --}}
-                                <h3 class="title-style text-color-4">
+                                <h3 class="text-color-4">
                                     <span class="work-title-overlay work-title-delay01">{{data_get($product, 'name')}}</span>
                                 </h3>
                             </div>

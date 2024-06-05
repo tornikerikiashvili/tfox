@@ -29,7 +29,7 @@
 			  			<div class="six-columns six-offset">
 				  			<div class="content-left-margin-40">
 
-				  				<h3 class="large-title-bold text-color-4">
+				  				<h3 class="large_font text-color-4">
 									<span class="page_cover_title_line_two overlay-loading2 overlay-light-bg-1 tr-delay04">{{data_get($content, 'page_cover_title_one')}}</span>
 								</h3>
                                 <h2 class="overlay-loading2 tr-delay03 medium-title red-color">{{data_get($content, 'page_cover_title_two')}}</h2>
@@ -61,7 +61,7 @@
 							<!-- column start -->
 							<div class="four-columns">
 								<div class="content-right-margin-20">
-									<h2 data-animation-child class="goals_title title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_mission_title')}}">{{data_get($content, 'about_mission_title')}}</h2>
+									<h2 data-animation-child class="goals_title  title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_mission_title')}}">{{data_get($content, 'about_mission_title')}}</h2>
 								</div>
 							</div>
 							<div class="eight-columns">
@@ -75,7 +75,7 @@
 							<!-- column start -->
 							<div class="four-columns">
 								<div class="content-right-margin-20">
-									<h2 data-animation-child class="goals_title title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_goal_title')}}">{{data_get($content, 'about_goal_title')}}</h2>
+									<h2 data-animation-child class="goals_title  title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_goal_title')}}">{{data_get($content, 'about_goal_title')}}</h2>
 								</div>
 							</div>
 							<div class="eight-columns">
@@ -89,7 +89,7 @@
 							<!-- column start -->
 							<div class="four-columns">
 								<div class="content-right-margin-20">
-									<h2 data-animation-child class="goals_title title-style title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_values_title')}}">{{data_get($content, 'about_values_title')}}</h2>
+									<h2 data-animation-child class="goals_title  title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'about_values_title')}}">{{data_get($content, 'about_values_title')}}</h2>
 								</div>
 							</div>
 							<div class="eight-columns">

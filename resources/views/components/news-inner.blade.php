@@ -77,7 +77,7 @@
 							</a>
 							<!-- content-margin-block start -->
 							<div class="content-margin-block">
-                                <h3 class="main_news_title title-style text-color-1 top-margin-30 blog-title">
+                                <h3 class="main_news_title text-color-1 top-margin-30 blog-title">
                                     <span class="hover-content" >{{data_get($news, 'title')}}</span>
                                 </h3>
 								<!-- entry-content start -->

@@ -32,7 +32,7 @@
        <section id="down" class="dark-bg-1 top-bottom-padding-120">
         <!-- container start -->
         <div data-animation-container class="text-center container small">
-            <h2 data-animation-child class="large-title text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'product_title')}}">{{data_get($content, 'product_title')}}</h2><br>
+            <h2 data-animation-child class="large_font text-height-10 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'product_title')}}">{{data_get($content, 'product_title')}}</h2><br>
             @if (data_get($content, 'product_subtitle'))
               <p data-animation-child class="tr-delay02 xsmall-title-oswald top-margin-5 title-fill" data-animation="title-fill-anim" data-text="{{data_get($content, 'product_subtitle')}}">{{data_get($content, 'product_subtitle')}}</p><br>
             @endif
@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="portfolio-slider2-content">
-                                <h2 class="title-style text-color-4">
+                                <h2 class="text-color-4">
                                     <span class="hidden-box d-block text-height-10">
                                         <span class="portfolio-slider-fade portfolio-slider-tr-01">{{data_get($category, 'slide_title.one')}}</span>
                                     </span>
