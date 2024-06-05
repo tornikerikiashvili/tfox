@@ -12,7 +12,7 @@
                             <img src="{{data_get($item, 'cover_image.url')}}">
                         </div>
                         <div class="result_title">
-                            <span>{{data_get($item, 'title.one')}}</span>
+                            <span>{{data_get($item, 'name')}}</span>
                         </div>
                     </a>
                </li>
