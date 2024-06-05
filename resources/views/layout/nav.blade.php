@@ -72,7 +72,7 @@
         <!-- nav-box start -->
         <li class="nav-box nav-bg-change">
             <a href="{{App::getLocale() . data_get($item, 'data.url')}}" class="animsition-link pointer-large nav-link">
-                <span class="large_font nav-btn" data-text="{{data_get($item, 'data.title')}}">{{data_get($item, 'data.title')}}</span>
+                <span class="nav-btn" data-text="{{data_get($item, 'data.title')}}">{{data_get($item, 'data.title')}}</span>
             </a>
             <div class="nav-bg" style="background-image: url({{'/storage/' . data_get($item, 'data.image')}});"></div>
         </li><!-- nav-box end -->
