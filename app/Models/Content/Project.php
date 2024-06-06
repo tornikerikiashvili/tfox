@@ -14,7 +14,6 @@ class Project extends ContentModel
         'teaser',
         'type',
         'content_top',
-        'options',
         'content_bottom',
 
     ];
@@ -24,7 +23,6 @@ class Project extends ContentModel
         'teaser',
         'type',
         'content_top',
-        'options',
         'content_bottom',
         'cover_image',
         'gallery',
@@ -42,9 +40,7 @@ class Project extends ContentModel
     protected $casts = [
         'title' => 'json',
         'teaser' => 'json',
-        'options' => 'json',
         'content_top' => 'json',
-        'options' => 'json',
         'content_bottom' => 'json',
         'gallery' => 'json',
         'published_at' => 'datetime',
