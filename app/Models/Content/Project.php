@@ -14,7 +14,6 @@ class Project extends ContentModel
         'teaser',
         'type',
         'content_top',
-        'content_bottom',
 
     ];
 
@@ -23,7 +22,6 @@ class Project extends ContentModel
         'teaser',
         'type',
         'content_top',
-        'content_bottom',
         'cover_image',
         'gallery',
         'is_published',
@@ -41,7 +39,6 @@ class Project extends ContentModel
         'title' => 'json',
         'teaser' => 'json',
         'content_top' => 'json',
-        'content_bottom' => 'json',
         'gallery' => 'json',
         'published_at' => 'datetime',
         'category_id' => 'integer',
