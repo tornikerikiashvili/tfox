@@ -56,14 +56,14 @@ class HomePage extends ContentComponentBlock
                     ->searchable()->multiple(),
                 ])->columns(1),
 
-                Section::make('Partners')->schema([
+                Section::make('Clients')->schema([
                     Fieldset::make('Title')
                     ->schema([
                         TextInput::make('partners_title_one')->label('Line One'),
                         TextInput::make('partners_title_two')->label('Line Two'),
                         TextInput::make('partners_title_three')->label('Line Three'),
                     ])->columns(3),
-                    Select::make('partners')->label('Choose Partners')
+                    Select::make('partners')->label('Choose Clients')
                     ->options(fn() => Partner::all()->pluck('title', 'id'))
                     ->searchable()->multiple(),
                 ])->columns(1),
