@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Cache;
 
 class SearchForm extends Component
 {
-    public $keyword;
+    public $keyword = null;
     public $products;
 
     public function mount(){
@@ -26,14 +26,19 @@ class SearchForm extends Component
 
     public function render()
     {
-        $filteredProducts = collect($this->products)
-        ->sortByDesc('published_at')
-        ->when($this->keyword !== null, function ($collection){
-            return $collection->filter(function ($value) {
-                return str_contains(strtolower($value['name']), strtolower($this->keyword));
-            });
-        })
-        ->all();
+        if($this->keyword){
+            $filteredProducts = collect($this->products)
+            ->sortByDesc('published_at')
+            ->when(!empty($this->keyword), function ($collection) {
+                return $collection->filter(function ($value) {
+                    return str_contains(strtolower($value['name']), strtolower($this->keyword));
+                });
+            })
+            ->all();
+        } else {
+            $filteredProducts = [];
+        }
+
 
         return view('livewire.search-form', ['filteredProducts' => $filteredProducts]);
     }

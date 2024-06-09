@@ -109,10 +109,17 @@
                 display:none;
             }
 
-        /* .all_cat_button {
-            margin-bottom:30px;
-            font-weight: bold;
-        } */
+        .all_cat_button {
+            background-color: white;
+            padding: 5px;
+            border-radius: 3px;
+            transition: 0.5s ease;
+        }
+
+        .all_cat_button:hover {
+            background-color: #f15922;
+        }
+
 
         .clear_btn_container {
             display: flex;
@@ -140,7 +147,7 @@
         }
 
         .all_cat_button span:before {
-            text-decoration: underline;
+            color: black!important;
 
         }
 
@@ -226,6 +233,7 @@
         .all_cat_button {
             margin-bottom:17px;
             font-weight: bold;
+
         }
         .page_cover_title {
             display:none;
@@ -254,6 +262,7 @@
             font-size: 21px!important;
             line-height: 1.5!important;
         }
+
 
 
        </style>
@@ -296,7 +305,7 @@
 
                     <div wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small" data-filter="*">
 
-                        <svg fill="white" height="21px" width="21px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        <svg fill="black" height="21px" width="21px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         viewBox="0 0 512 512" xml:space="preserve">
                    <g>
                        <g>
