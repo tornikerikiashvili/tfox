@@ -110,7 +110,7 @@
             }
 
         .all_cat_button {
-            background-color: white;
+            background-color: #f05523;
             padding: 5px;
             border-radius: 3px;
             transition: 0.5s ease;
@@ -139,6 +139,7 @@
         .all_cat_button svg {
             float:left;
             transition:0.5s ease;
+            fill:white;
         }
 
         .all_cat_button:hover svg {
@@ -147,7 +148,7 @@
         }
 
         .all_cat_button span:before {
-            color: black!important;
+            color: white!important;
 
         }
 
