@@ -29,7 +29,7 @@ class Projects extends ContentComponentBlock
 
                 Section::make('Projects')->schema([
                     Select::make('projects')->label('Choose products')
-                    ->options(fn() => Project::all()->pluck('title.main', 'id'))
+                    ->options(fn() => Project::all()->pluck('title', 'id'))
                     ->searchable()->multiple(),
                 ])->columns(1),
 

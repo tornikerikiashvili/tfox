@@ -23,11 +23,6 @@ class Products extends ContentComponentBlock
                     FileUpload::make('page_cover')->label('Cover Image'),
                 ])->columns(1),
 
-                Section::make('Products')->schema([
-                    Select::make('products')->label('Choose products')
-                    ->options(fn() => Product::all()->pluck('name', 'id'))
-                    ->searchable()->multiple(),
-                ])->columns(1),
 
 
 

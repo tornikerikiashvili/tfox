@@ -52,7 +52,7 @@ class HomePage extends ContentComponentBlock
                     TextInput::make('projects_title')->label('Block Title'),
                     TextInput::make('projects_teaser')->label('Block Teaser'),
                     Select::make('projects')->label('Choose Projects')
-                    ->options(fn() => Project::all()->pluck('title.main', 'id'))
+                    ->options(fn() => Project::all()->pluck('title', 'id'))
                     ->searchable()->multiple(),
                 ])->columns(1),
 
@@ -73,7 +73,7 @@ class HomePage extends ContentComponentBlock
                     TextInput::make('news_title')->label('Block Title'),
                     TextInput::make('news_teaser')->label('Block Title'),
                     Select::make('news')->label('Choose News')
-                    ->options(fn() => News::all()->pluck('title.main', 'id'))
+                    ->options(fn() => News::all()->pluck('title', 'id'))
                     ->searchable()->multiple(),
                 ])->columns(1),
 
