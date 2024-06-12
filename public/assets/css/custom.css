@@ -19,7 +19,7 @@
 
 
 html:lang(ka) h2, html:lang(ka) .nav-box a span, html:lang(ka) span.filter-button-flip, html:lang(ka) .page_cover_title_line_two,
-html:lang(ka) .main_news_title {
+html:lang(ka) .main_news_title, html:lang(ka) .back_btn {
     font-family: "archyedt-thin", sans-serif!important;
     letter-spacing: 1px;
     font-weight: 700;

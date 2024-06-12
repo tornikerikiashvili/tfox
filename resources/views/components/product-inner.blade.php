@@ -96,7 +96,7 @@
 
             <div class="text-center red-bg" data-midnight="black">
 				<a href="{{App::getLocale() . '/products?category=' . data_get($categories, data_get($product, 'category_id')) . '&filter=' . data_get($product, 'category_id')}}" class="pointer-large animsition-link overlay-btn-box">
-					<span class="overlay-btn" data-text="{{__('_back')}}">{{__('_back')}}</span>
+					<span class="back_btn overlay-btn" data-text="{{__('_back_products')}}">{{__('_back_products')}}</span>
 				</a>
 			</div>
 </div>

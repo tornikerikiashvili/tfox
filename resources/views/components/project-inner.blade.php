@@ -48,7 +48,7 @@
 </div><!-- light-bg-1 end -->
 <div class="text-center red-bg" data-midnight="black">
     <a href="{{App::getLocale() . '/projects'}}" class="pointer-large animsition-link overlay-btn-box">
-        <span class="overlay-btn" data-text="{{__('_all')}}">{{__('_all')}}</span>
+        <span class="back_btn overlay-btn" data-text="{{__('_back_projects')}}">{{__('_back_projects')}}</span>
     </a>
 </div>
 
