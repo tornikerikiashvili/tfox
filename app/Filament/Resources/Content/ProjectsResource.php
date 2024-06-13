@@ -7,6 +7,7 @@ use Filament\Tables;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use App\Models\Content\Project;
+use App\Filament\SimpleResource;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Tabs;
 use FilamentTiptapEditor\TiptapEditor;
@@ -25,7 +26,7 @@ use Palindroma\Core\Filament\Resources\ContentResource;
 use App\Filament\Resources\Content\ProjectsResource\Pages;
 use App\Filament\Resources\Content\ProjectsResource\RelationManagers;
 
-class ProjectsResource extends ContentResource
+class ProjectsResource extends SimpleResource
 {
     protected static ?string $model = Project::class;
 

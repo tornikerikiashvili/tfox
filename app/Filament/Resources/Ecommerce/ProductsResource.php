@@ -17,6 +17,7 @@ use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
+use Palindroma\Core\Forms\Components\SEOForm;
 use Palindroma\Core\Filament\Tables\MediaColumn;
 use Palindroma\Core\Forms\Components\MediaPicker;
 use Palindroma\Core\Filament\Resources\ContentResource;
@@ -69,7 +70,10 @@ class ProductsResource extends SimpleResource
                         Forms\Components\TextInput::make('title.two')->label('Line Two'),
                         Forms\Components\TextInput::make('title.three')->label('Line Three'),
                     ])->columns(3),
-            RichEditor::make('content')
+            RichEditor::make('content'),
+            Forms\Components\Section::make('SEO Settings')->schema([
+                SEOForm::make('seo_settings'),
+            ])
 
         ]);
     }

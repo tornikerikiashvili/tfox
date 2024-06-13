@@ -7,6 +7,7 @@ use Filament\Tables;
 use App\Models\Content\News;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
+use App\Filament\SimpleResource;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Tabs;
 use FilamentTiptapEditor\TiptapEditor;
@@ -14,12 +15,13 @@ use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
+use Palindroma\Core\Forms\Components\SEOForm;
 use Palindroma\Core\Filament\Tables\MediaColumn;
 use Palindroma\Core\Forms\Components\MediaPicker;
 use App\Filament\Resources\Content\BlogResource\Pages;
 use Palindroma\Core\Filament\Resources\ContentResource;
 
-class BlogResource extends ContentResource
+class BlogResource extends SimpleResource
 {
     protected static ?string $model = News::class;
 
@@ -64,6 +66,9 @@ class BlogResource extends ContentResource
             Forms\Components\Textarea::make('teaser'),
             TiptapEditor::make('content'),
             FileUpload::make('cover_image')->label('Cover Image')->image(),
+            Forms\Components\Section::make('SEO Settings')->schema([
+                SEOForm::make('seo_settings'),
+            ])
         ]);
     }
 

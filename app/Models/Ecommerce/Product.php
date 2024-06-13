@@ -22,7 +22,6 @@ class Product extends ContentModel
     protected $fillable = [
         'name',
         'title',
-        'slug',
         'content',
         'category_id',
         'cover_image',
@@ -38,7 +37,6 @@ class Product extends ContentModel
     protected $casts = [
         'name' => 'json',
         'title' => 'json',
-        'slug' => 'string',
         'name' => 'content',
         'gallery' => 'json',
         'category_id' => 'integer',
