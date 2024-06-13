@@ -315,6 +315,24 @@
             @if(empty($childCategories))
                 <div class="filter-buttons">
 
+
+
+                    @foreach ($categories as $category)
+                    @php
+                       $id = data_get($category, 'id');
+                       $categories = array_column($products, 'category_id');
+                       $idExists = in_array($id, $categories);
+                    @endphp
+                     @if ($idExists)
+                        <button wire:click="setCatCat({{data_get($category, 'id')}})" class="filter-button-box pointer-small {{$filter == data_get($category, 'id') ? 'active' : ''}}" data-filter=".{{data_get($category, 'id')}}">
+                            <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'slide_title.one')}}">{{data_get($category, 'slide_title.one')}}</span>
+                        </button>
+                        @if (!$loop->last)
+                          <div class="filter_cat_divider"></div>
+                        @endif
+                     @endif
+
+                    @endforeach
                     <div wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small" data-filter="*">
 
                         <svg fill="black" height="21px" width="21px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -337,23 +355,6 @@
                    </svg>
                         <span class="filter-button-flip" data-text="{{__('_clear')}}">{{__('_clear')}}</span>
                 </div>
-
-                    @foreach ($categories as $category)
-                    @php
-                       $id = data_get($category, 'id');
-                       $categories = array_column($products, 'category_id');
-                       $idExists = in_array($id, $categories);
-                    @endphp
-                     @if ($idExists)
-                        <button wire:click="setCatCat({{data_get($category, 'id')}})" class="filter-button-box pointer-small {{$filter == data_get($category, 'id') ? 'active' : ''}}" data-filter=".{{data_get($category, 'id')}}">
-                            <span class="filter_cats filter-button-flip" data-text="{{data_get($category, 'slide_title.one')}}">{{data_get($category, 'slide_title.one')}}</span>
-                        </button>
-                        @if (!$loop->last)
-                          <div class="filter_cat_divider"></div>
-                        @endif
-                     @endif
-
-                    @endforeach
                 </div>
             @endif
 
