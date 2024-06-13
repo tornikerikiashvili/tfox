@@ -58,7 +58,7 @@
 
                             <div class="hidden-box">
                                 <div class="slide_overlay"></div>
-                                <img class="hover-img" src="{{data_get($category, 'metadata.cover_image.url', '/assets/images/backgrounds/business-calligraphy-chinese-lanterns-1455969.jpg')}}" alt="project">
+                                <img loading="lazy" class="hover-img" src="{{data_get($category, 'metadata.cover_image.url', '/assets/images/backgrounds/business-calligraphy-chinese-lanterns-1455969.jpg')}}" alt="project">
                             </div>
 
                             <div class="portfolio-slider2-content">
