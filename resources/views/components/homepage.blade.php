@@ -70,10 +70,7 @@
                             <li class="p-letter-style pointer-small hover-color"><a href="#">template</a></li>
                             <li class="p-letter-style pointer-small hover-color"><a href="#">post formats</a></li>
                         </ul> --}}
-                        <div data-animation-child class="blog-autor-date top-margin-30 fade-anim-box tr-delay06 text-color-1" data-animation="fade-anim">
-                            <a style="visibility:hidden" class="xsmall-title-oswald pointer-small hover-color" href="#">Balanchaev Balancha</a>
-                            <a class="xsmall-title-oswald pointer-small hover-color" href="#">{{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('d')}} {{__(\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('M'))}}, {{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('Y')}}</a>
-                        </div>
+
                     </div>
                 </article>
             </div><!-- column end -->

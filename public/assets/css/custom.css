@@ -299,7 +299,7 @@ input:-webkit-autofill {
 
 @media screen and (max-width: 999px) {
     .page-head-bg {
-        opacity: 0.3;
+        opacity: 0.1;
     }
 
     .home-slider h2 .slider-title-fill {

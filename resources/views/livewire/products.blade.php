@@ -1,7 +1,7 @@
 	@push('headStyles')
        <style>
         .filter-buttons div, .filter-buttons button {
-            margin-bottom:10px!important;
+            margin-bottom:10px;
         }
         .work-title-overlay:before {
           background-color: #f05523;
@@ -202,13 +202,24 @@
 
         @media screen and (max-width: 767px) {
 
+            .parent_filter_category {
+    font-size: 21px !important;
+
+    }
+
+    html:lang(ka) span.filter-button-flip {
+    font-size: 16px;
+}
+
         .product_item img {
             opacity: 0.7;
         }
 
         .all_cat_button {
-            padding-bottom: 20px;
+            margin-bottom: 20px!important;
         }
+
+
 
         .filter-buttons {
             text-align: center;
