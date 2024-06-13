@@ -39,7 +39,7 @@ class InnersController extends Controller
         return view('product', ['product' => $product, 'page' => $page, 'categories' => $categories]);
     }
 
-    public function news($locale,$id){
+    public function news($locale,$slug){
         $additional = [];
         $additional['navigations'] = NavigationResource::collection(Navigation::all());
         $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
@@ -49,7 +49,7 @@ class InnersController extends Controller
 
         $page = PageResource::make($page)->additional($additional)->response()->getData();
 
-        $news = Arr::first(ContentResource::collection(News::where('id', $id)->get())->response()->getData()->data);
+        $news = Arr::first(ContentResource::collection(News::where('metadata->slug', $slug)->get())->response()->getData()->data);
 
         $categories = ContentResource::collection(Tag::where('type', 'blog_category')->get())->response()->getData()->data;
 
@@ -68,7 +68,7 @@ class InnersController extends Controller
 
 
 
-    public function project($locale,$id){
+    public function project($locale,$slug){
         $additional = [];
         $additional['navigations'] = NavigationResource::collection(Navigation::all());
         $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
@@ -78,7 +78,7 @@ class InnersController extends Controller
 
         $page = PageResource::make($page)->additional($additional)->response()->getData();
 
-        $project = Arr::first(ContentResource::collection(Project::where('id', $id)->get())->response()->getData()->data);
+        $project = Arr::first(ContentResource::collection(Project::where('metadata->slug', $slug)->get())->response()->getData()->data);
 
         $categories = ContentResource::collection(Tag::where('type', 'blog_category')->get())->response()->getData()->data;
 

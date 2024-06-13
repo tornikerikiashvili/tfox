@@ -50,7 +50,7 @@
             <!-- column start -->
             <div class="four-columns bottom-padding-90">
                 <article class="content-right-margin-20 light-bg-2" data-animation-container>
-                    <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="pointer-large animsition-link hover-box d-block">
+                    <a href="{{App::getLocale() . '/article/' . data_get($item, 'metadata.slug')}}" class="pointer-large animsition-link hover-box d-block">
                         <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
                             <img loading="lazy" class="hover-img" src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="blog img">
                         </div>

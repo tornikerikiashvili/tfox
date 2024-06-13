@@ -107,7 +107,7 @@
                 <!-- blog-entry start -->
                 <article class="bottom-padding-90">
                     <div class="light-bg-2">
-                        <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="pointer-large animsition-link hover-box d-block">
+                        <a href="{{App::getLocale() . '/article/' . data_get($item, 'metadata.slug')}}" class="pointer-large animsition-link hover-box d-block">
                             <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
                                 <img class="hover-img" src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="blog img">
                             </div>
@@ -171,11 +171,11 @@
                             @foreach ($recentnews as $item)
                                 <!-- recent-entry start -->
                                     <div class="recent-entry">
-                                        <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="recent-entry-img-box pointer-large animsition-link">
+                                        <a href="{{App::getLocale() . '/article/' . data_get($item, 'metadata.slug')}}" class="recent-entry-img-box pointer-large animsition-link">
                                             <img src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="title">
                                         </a>
                                         <div class="recent-desc">
-                                            <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>
+                                            <a href="{{App::getLocale() . '/article/' . data_get($item, 'metadata.slug')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>
                                             <div class="p-style-xsmall text-color-4 text-height-10 top-margin-5">{{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('d')}} {{__(\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('M'))}}, {{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('Y')}}</div>
                                         </div>
                                     </div>

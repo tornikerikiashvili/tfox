@@ -79,6 +79,8 @@ class ProjectsResource extends ContentResource
     public static function metaFields(Card $card): Card
     {
         return $card->schema([
+            Forms\Components\TextInput::make('metadata.slug')->unique(column: 'metadata->slug', ignoreRecord: true)
+            ->required(),
             Forms\Components\DateTimePicker::make('published_at')->label('Published At'),
         ]);
     }
