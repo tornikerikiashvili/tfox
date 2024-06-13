@@ -55,7 +55,7 @@
 	<body class="loader">
 		<!-- loading start -->
 		<div class="loading">
-		    <img class="logo-loading" src="assets/images/logo/logo-loader.png" alt="logo">
+		    <img class="logo-loading" src="assets/images/logo/logo-loader.webp" alt="logo">
 	    </div><!-- loading end -->
 
 		{{-- <!-- pointer start -->

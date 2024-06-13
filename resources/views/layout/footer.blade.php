@@ -5,7 +5,7 @@
         <!-- column start -->
         <div class="two-columns bottom-padding-60">
             <div class="content-right-margin-10 footer-center-mobile">
-                <img class="footer-logo" src="assets/images/logo/logo-white.png" alt="logo">
+                <img class="footer-logo" src="assets/images/logo/logo-white.webp" alt="logo">
             </div>
         </div><!-- column end -->
         <!-- column start -->

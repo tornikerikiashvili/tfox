@@ -20,11 +20,11 @@
     <!-- nav-logo start -->
     @if (App::getLocale() == 'ka')
     <div class="nav-logo">
-        <img src="assets/images/logo/logo-white-ge.png" alt="logo">
+        <img src="assets/images/logo/logo-white-ge.webp" alt="logo">
     </div>
     @else
         <div class="nav-logo">
-            <img src="assets/images/logo/logo-white.png" alt="logo">
+            <img src="assets/images/logo/logo-white.webp" alt="logo">
         </div>
     @endif
 
