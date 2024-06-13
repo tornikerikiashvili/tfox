@@ -405,7 +405,7 @@
             <div wire:ignore class="works">
 
                 @foreach ($products as $product)
-                    <a href="{{App::getLocale() . '/product/' . data_get($product, 'id')}}" class="animsition-link grid-item {{data_get($product, 'category_id')}}">
+                    <a href="{{App::getLocale() . '/product/' . data_get($product, 'metadata.slug')}}" class="animsition-link grid-item {{data_get($product, 'category_id')}}">
                         <div class="product_item work_item pointer-large hover-box hidden-box">
                             <img class="hover-img" src="{{data_get($product, 'cover_image.url', '/assets/images/news/noimage.webp')}}" alt="">
                             <div class="works-content">

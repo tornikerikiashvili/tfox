@@ -22,7 +22,7 @@ use RyanChandler\FilamentNavigation\Models\Navigation;
 
 class InnersController extends Controller
 {
-    public function product($locale,$id){
+    public function product($locale,$slug){
         $additional = [];
         $additional['navigations'] = NavigationResource::collection(Navigation::all());
         $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
@@ -32,7 +32,7 @@ class InnersController extends Controller
 
         $page = PageResource::make($page)->additional($additional)->response()->getData();
 
-        $product = Arr::first(ContentResource::collection(Product::where('id', $id)->get())->response()->getData()->data);
+        $product = Arr::first(ContentResource::collection(Product::where('metadata->slug', $slug)->get())->response()->getData()->data);
 
         $categories = collect(ContentResource::collection(ProductCategory::all())->response()->getData()->data)->pluck('parent_id', 'id');
 
