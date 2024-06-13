@@ -80,7 +80,7 @@
             @foreach ($projects as $project)
                 <!-- column start -->
                 <div class="four-columns bottom-padding-60">
-                    <a data-animation-container href="{{App::getLocale() . '/project/' . data_get($project, 'slug')}}" class="animsition-link content-right-margin-20 hover-box pointer-large d-block light-bg-2">
+                    <a data-animation-container href="{{App::getLocale() . '/project/' . data_get($project, 'id')}}" class="animsition-link content-right-margin-20 hover-box pointer-large d-block light-bg-2">
                         <div data-animation-child class="overlay-anim-box2 overlay-dark-bg-2 expertise-img-box" data-animation="overlay-anim2">
                             <img class="hover-img" src="{{data_get($project, 'cover_image.url')}}" alt="Digital products">
                         </div>

@@ -77,6 +77,7 @@ class ProductsResource extends SimpleResource
     public static function metaFields(Card $card): Card
     {
         return $card->schema([
+            Forms\Components\TextInput::make('slug'),
             Forms\Components\Checkbox::make('metadata.is_published')->label('Published'),
             Forms\Components\Select::make('category_id')
             ->relationship('category', 'title'),
