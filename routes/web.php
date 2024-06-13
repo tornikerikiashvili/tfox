@@ -30,9 +30,9 @@ Route::prefix('/{locale}')
     ->where(['locale' => '[a-zA-Z]{2}'])
     ->middleware(SetAppLocale::class)
     ->group(function () {
-        Route::get('/product/{id}', [InnersController::class, 'product']);
-        Route::get('/article/{id}', [InnersController::class, 'news']);
-        Route::get('/project/{id}', [InnersController::class, 'project']);
+        Route::get('/product/{slug}', [InnersController::class, 'product']);
+        Route::get('/article/{slug}', [InnersController::class, 'news']);
+        Route::get('/project/{slug}', [InnersController::class, 'project']);
         Route::get('/{slug?}', PageController::class)->where('slug', '.*');
     });
 

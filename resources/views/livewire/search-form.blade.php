@@ -7,7 +7,7 @@
           <ul>
             @foreach ($filteredProducts as $item)
                <li class="result_box">
-                    <a href="{{App::getLocale() . '/product/' . data_get($item, 'id') }}">
+                    <a href="{{App::getLocale() . '/product/' . data_get($item, 'slug') }}">
                         <div class="result_box_img">
                             <img loading="lazy" src="{{data_get($item, 'cover_image.url')}}">
                         </div>

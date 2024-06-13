@@ -13,6 +13,20 @@
           opacity: 0.3;
         }
 
+        .slide_mob {
+            display:none;
+        }
+
+        @media (max-width: 767px) {
+            .slide_mob {
+            display:inline-block;
+        }
+
+        .slide_desk {
+            display:none;
+        }
+        }
+
     </style>
 @endpush
 <section class="home-slider" id="up">
@@ -24,7 +38,10 @@
           <div class="swiper-slide flex-min-height-box home-slide {{data_get($slide, 'metadata.red') == true ? 'red-slide' : ''}}">
               <!-- slide-bg -->
 
-              <div class="slide-bg overlay-loading2 overlay-dark-bg-1" style="background-image:url('{{data_get($slide, 'images.desk.url')}}')">
+              <div class="slide_desk slide-bg overlay-loading2 overlay-dark-bg-1" style="background-image:url('{{data_get($slide, 'images.desk.url')}}')">
+                <div class="slider_overlay"></div>
+            </div>
+            <div class="slide_mob slide-bg overlay-loading2 overlay-dark-bg-1" style="background-image:url('{{data_get($slide, 'images.mob.url')}}')">
                 <div class="slider_overlay"></div>
             </div>
               <!-- home-slider-content start -->

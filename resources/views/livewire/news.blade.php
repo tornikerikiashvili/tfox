@@ -107,7 +107,7 @@
                 <!-- blog-entry start -->
                 <article class="bottom-padding-90">
                     <div class="light-bg-2">
-                        <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="pointer-large animsition-link hover-box d-block">
+                        <a href="{{App::getLocale() . '/article/' . data_get($item, 'slug')}}" class="pointer-large animsition-link hover-box d-block">
                             <div class="overlay-anim-box2 overlay-dark-bg-2" data-animation="overlay-anim2">
                                 <img class="hover-img" src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="blog img">
                             </div>
