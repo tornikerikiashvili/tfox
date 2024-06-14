@@ -41,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        View::addNamespace('sitemap', base_path('resources/views/vendor/sitemap'));
 
         Filament::serving(function () {
             FilamentNavigation::addItemType('External Link', [
