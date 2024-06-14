@@ -41,7 +41,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::addNamespace('sitemap', base_path('resources/views/vendor/sitemap'));
+        View::addNamespace('sitemap', base_path('vendor/spatie/laravel-sitemap/resources/views/sitemap'));
+
+
 
         Filament::serving(function () {
             FilamentNavigation::addItemType('External Link', [
