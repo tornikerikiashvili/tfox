@@ -39,3 +39,20 @@ Route::prefix('/{locale}')
 Route::get("/", function () {
     return redirect('/ka');
 });
+
+
+Route::get('/ru/shop/{any?}', function () {
+    return redirect('/');
+})->where('any', '.*');
+
+Route::get('/en/shop/{any?}', function () {
+    return redirect('/');
+})->where('any', '.*');
+
+Route::get('/en/product-category/{any?}', function () {
+    return redirect('/');
+})->where('any', '.*');
+
+Route::get('/ru/product-category/{any?}', function () {
+    return redirect('/');
+})->where('any', '.*');
