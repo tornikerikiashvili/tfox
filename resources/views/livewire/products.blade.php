@@ -391,6 +391,7 @@
 
                         @endforeach
                     @endif
+                    @if (count($childCategories) > 1 && !empty($brands) )
                     <div wire:click="clearFilter" class="all_cat_button filter-button-box pointer-small" data-filter="*">
                         <svg fill="white" height="21px" width="21px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         viewBox="0 0 512 512" xml:space="preserve">
@@ -412,6 +413,7 @@
                    </svg>
                         <span class="filter-button-flip" data-text="{{__('_clear')}}">{{__('_clear')}}</span>
                 </div>
+                @endif
                  </div>
             @endif
             <!-- filter-buttons end -->
