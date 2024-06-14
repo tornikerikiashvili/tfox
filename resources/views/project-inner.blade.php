@@ -9,6 +9,7 @@
 
   <meta name="title" property="title" content="{{data_get($project, 'seo_settings.meta_title', data_get($project, 'title.main'))}}"/>
   <meta name="description"  property="description" content="{{data_get($project, 'seo_settings.meta_description')}}"/>
+  <meta name="keywords" content="{{data_get($project, 'seo_settings.meta_keywords')}}">
   <meta property='pageUrl' content='{{url()->current()}}'/>
   <meta property='url' content='{{url()->current()}}'/>
 

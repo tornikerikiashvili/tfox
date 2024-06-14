@@ -11,6 +11,7 @@
 
   <meta name="title" property="title" content="{{data_get($page, 'data.blocks.0.data.resource.seo_settings.meta_title', data_get($page, 'data.blocks.0.data.resource.title', data_get($page, 'data.seo_settings.meta_title')))}}"/>
   <meta name="description"  property="description" content="{{data_get($page, 'data.blocks.0.data.resource.seo_settings.meta_description', data_get($page, 'data.blocks.0.data.resource.teaser', data_get($page, 'data.seo_settings.meta_description')))}}"/>
+  <meta name="keywords"  property="keywords" content="{{data_get($page, 'data.blocks.0.data.resource.seo_settings.meta_keywords', data_get($page, 'data.blocks.0.data.resource.teaser', data_get($page, 'data.seo_settings.meta_keywords')))}}"/>
   <meta property='pageUrl' content='{{url()->current()}}'/>
   <meta property='url' content='{{url()->current()}}'/>
 

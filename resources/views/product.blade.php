@@ -9,6 +9,7 @@
 
   <meta name="title" property="title" content="{{data_get($product, 'seo_settings.meta_title', data_get($product, 'name'))}}"/>
   <meta name="description"  property="description" content="{{data_get($product, 'seo_settings.meta_description')}}"/>
+  <meta name="keywords" content="{{data_get($product, 'seo_settings.meta_keywords')}}">
   <meta property='pageUrl' content='{{url()->current()}}'/>
   <meta property='url' content='{{url()->current()}}'/>
 
