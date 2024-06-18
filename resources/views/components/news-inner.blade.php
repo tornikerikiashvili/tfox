@@ -135,7 +135,7 @@
                                 <!-- recent-entry start -->
                                     <div class="recent-entry">
                                         <a href="{{App::getLocale() . '/article/' . data_get($item, 'metadata.slug')}}" class="recent-entry-img-box pointer-large animsition-link">
-                                            <img src="{{'/storage/' . data_get($news, 'cover_image')}}" alt="title">
+                                            <img src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="title">
                                         </a>
                                         <div class="recent-desc">
                                             <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>
