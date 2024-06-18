@@ -2,14 +2,11 @@
 
 namespace App\Models\Content;
 
-
-use Palindroma\Core\Models\Tag;
 use Palindroma\Core\Models\ContentModel;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class News extends ContentModel
+class BlogTwo extends ContentModel
 {
-    protected $table = 'content_blog';
+    protected $table = 'content_blog_two';
 
     public array $translatable = [
         'title',
@@ -26,7 +23,6 @@ class News extends ContentModel
         'inner_cover_image',
         'is_published',
         'published_at',
-        'category_id',
     ];
 
     public static array $mediaAttributes = [
@@ -44,5 +40,4 @@ class News extends ContentModel
         'published_at' => 'datetime',
         'category_id' => 'integer',
     ];
-
 }

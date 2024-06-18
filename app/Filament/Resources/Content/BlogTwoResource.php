@@ -4,30 +4,31 @@ namespace App\Filament\Resources\Content;
 
 use Filament\Forms;
 use Filament\Tables;
-use App\Models\Content\News;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
-use App\Filament\SimpleResource;
+use App\Models\Content\BlogTwo;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Tabs;
 use FilamentTiptapEditor\TiptapEditor;
-use Filament\Forms\Components\Fieldset;
+use Palindroma\Core\Filament\Resource;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
+use Illuminate\Database\Eloquent\Builder;
 use Palindroma\Core\Forms\Components\SEOForm;
-use Palindroma\Core\Filament\Tables\MediaColumn;
 use Palindroma\Core\Forms\Components\MediaPicker;
-use App\Filament\Resources\Content\BlogResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Palindroma\Core\Filament\Resources\ContentResource;
+use App\Filament\Resources\Content\BlogTwoResource\Pages;
+use App\Filament\Resources\Content\BlogTwoResource\RelationManagers;
 
-class BlogResource extends SimpleResource
+class BlogTwoResource extends ContentResource
 {
-    protected static ?string $model = News::class;
+    protected static ?string $model = BlogTwo::class;
 
-    protected static ?string $slug = 'content/news';
+    protected static ?string $slug = 'content/blog';
 
-    protected static ?string $navigationLabel = 'News';
+    protected static ?string $navigationLabel = 'Blog';
 
     protected static ?string $navigationGroup = 'News & Media';
 
@@ -78,18 +79,6 @@ class BlogResource extends SimpleResource
             Forms\Components\TextInput::make('metadata.slug')->unique(column: 'metadata->slug', ignoreRecord: true)
             ->required(),
             Forms\Components\Checkbox::make('is_published')->label('featured'),
-            // Forms\Components\Select::make('category_id')
-            //     ->relationship('category', 'name', fn($query) => $query->where('type', 'blog_category'))
-            //     ->createOptionForm([
-            //         Forms\Components\TextInput::make('name')->required(),
-            //         Forms\Components\Hidden::make('type')->default('blog_category')->required(),
-            //     ])
-            //     ->createOptionAction(function (Forms\Components\Actions\Action $action) {
-            //         return $action
-            //             ->modalHeading('Create Category')
-            //             ->modalButton('Create Category')
-            //             ->modalWidth('md');
-            //     }),
             Forms\Components\DateTimePicker::make('published_at')->label('Published At'),
         ]);
     }
@@ -121,13 +110,12 @@ class BlogResource extends SimpleResource
             ]);
     }
 
-
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBlogs::route('/'),
-            'create' => Pages\CreateBlog::route('/create'),
-            'edit' => Pages\EditBlog::route('/{record}/edit'),
+            'index' => Pages\ListBlogTwos::route('/'),
+            'create' => Pages\CreateBlogTwo::route('/create'),
+            'edit' => Pages\EditBlogTwo::route('/{record}/edit'),
         ];
     }
 }
