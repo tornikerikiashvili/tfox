@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Arr;
 use App\Models\Content\News;
 use Illuminate\Http\Request;
+use App\Models\Content\BlogTwo;
 use App\Models\Content\Project;
 use App\Models\ProductCategory;
 use Palindroma\Core\Models\Tag;
@@ -64,6 +65,35 @@ class InnersController extends Controller
         })->all();
 
         return view('news-inner', ['news' => $news, 'page' => $page, 'categories' => $categories, 'recentnews' => $recentnews]);
+    }
+
+
+
+    public function blogs($locale,$slug){
+        $additional = [];
+        $additional['navigations'] = NavigationResource::collection(Navigation::all());
+        $additional['communications'] = app(CommunicationsSettings::class)->toArrayForFrontend();
+        $additional['settings'] = app(GeneralSettings::class)->toArrayForFrontend();
+
+        $page = Page::first();
+
+        $page = PageResource::make($page)->additional($additional)->response()->getData();
+
+        $news = Arr::first(ContentResource::collection(BlogTwo::where('metadata->slug', $slug)->get())->response()->getData()->data);
+
+        $categories = ContentResource::collection(Tag::where('type', 'blog_category')->get())->response()->getData()->data;
+
+
+        if(!cache::get('blogs_' . App::getLocale())){
+            Cache::put('blogs_' . App::getLocale(), ContentResource::collection(ModelNews::orderBy('published_at')->get())->response()->getData()->data, 3000);
+        }
+
+
+        $recentnews = collect(cache::get('blogs_' . App::getLocale()))->filter(function ($item) {
+            return data_get($item, 'is_published') === true;
+        })->all();
+
+        return view('blog-inner', ['blog' => $news, 'page' => $page, 'categories' => $categories, 'recentnews' => $recentnews]);
     }
 
 
