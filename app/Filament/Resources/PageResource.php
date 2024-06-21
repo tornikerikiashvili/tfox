@@ -54,10 +54,10 @@ class PageResource extends \Z3d0X\FilamentFabricator\Resources\PageResource
             ->toString());
     }
 
-//     public static function canCreate(): bool
-//    {
-//       return false;
-//    }
+    public static function canCreate(): bool
+   {
+      return false;
+   }
 
 
     public static function getModel(): string
