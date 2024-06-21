@@ -85,7 +85,7 @@ class InnersController extends Controller
 
 
         if(!cache::get('blogs_' . App::getLocale())){
-            Cache::put('blogs_' . App::getLocale(), ContentResource::collection(ModelNews::orderBy('published_at')->get())->response()->getData()->data, 3000);
+            Cache::put('blogs_' . App::getLocale(), ContentResource::collection(BlogTwo::orderBy('published_at')->get())->response()->getData()->data, 3000);
         }
 
 
