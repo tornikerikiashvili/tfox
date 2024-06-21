@@ -7,6 +7,7 @@ use Filament\Tables;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use App\Models\Content\BlogTwo;
+use App\Filament\SimpleResource;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\Tabs;
 use FilamentTiptapEditor\TiptapEditor;
@@ -22,7 +23,7 @@ use Palindroma\Core\Filament\Resources\ContentResource;
 use App\Filament\Resources\Content\BlogTwoResource\Pages;
 use App\Filament\Resources\Content\BlogTwoResource\RelationManagers;
 
-class BlogTwoResource extends ContentResource
+class BlogTwoResource extends SimpleResource
 {
     protected static ?string $model = BlogTwo::class;
 
