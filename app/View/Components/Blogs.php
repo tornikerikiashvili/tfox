@@ -31,7 +31,7 @@ class Blogs extends Component
 
         $this->newsList = cache::get('blogs_' . App::getLocale());
 
-        $this->recentnews = collect(cache::get('news_' . App::getLocale()))->filter(function ($item) {
+        $this->recentnews = collect(cache::get('blogs_' . App::getLocale()))->filter(function ($item) {
             return data_get($item, 'is_published') === true;
         })->all();
     }

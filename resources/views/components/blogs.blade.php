@@ -164,7 +164,7 @@
 
                     <!-- recent posts start -->
                     <div class="bottom-padding-30 top-padding-30">
-                        <h4 class="p-style-bold-up red-color">{{__('_recent_news')}}</h4>
+                        <h4 class="p-style-bold-up red-color">{{__('_recent_blogs')}}</h4>
                         <!-- recent posts content start -->
                         <div class="top-margin-30">
 
