@@ -40,12 +40,19 @@
             <span></span>
         </div>
     </div><!-- dropdown-close-box end -->
+@php
 
+$fullPath = Request::path();
+$segments = explode('/', $fullPath);
+array_shift($segments);
+$pathAfterLanguageKey = implode('/', $segments);
+
+@endphp
     <!-- nav-menu start -->
     <ul class="nav-menu dark-bg-1">
         <li style="color:white" class="lang-li">
-            <a class="lang-link nav-link" style="{{App::getLocale() == 'en' ? 'color:#f15922' : 'white'}}" href="en/{{data_get(Route::getCurrentRoute()->parameters(), 'slug')}}">{{'EN'}}</a>/
-            <a class="lang-link nav-link" style="{{App::getLocale() == 'ka' ? 'color:#f15922' : 'white'}}" href="ka/{{data_get(Route::getCurrentRoute()->parameters(), 'slug')}}">{{'GE'}}</a>
+            <a class="lang-link nav-link" style="{{App::getLocale() == 'en' ? 'color:#f15922' : 'white'}}" href="en/{{$pathAfterLanguageKey}}">{{'EN'}}</a>/
+            <a class="lang-link nav-link" style="{{App::getLocale() == 'ka' ? 'color:#f15922' : 'white'}}" href="ka/{{$pathAfterLanguageKey}}">{{'GE'}}</a>
         </li>
         <!-- nav-box start -->
    @foreach (data_get($page, 'navigations.0.items') as $item)
