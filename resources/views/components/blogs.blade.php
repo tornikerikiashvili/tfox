@@ -76,6 +76,9 @@
             }
             }
 
+            .blog-autor-date .xsmall-title-oswald {
+                display:none;
+            }
 
 
  </style>
