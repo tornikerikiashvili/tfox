@@ -15,9 +15,9 @@
   <meta property="og:title" content="{{data_get($blog, 'seo_settings.og_title', data_get($blog, 'title'))}}">
   <meta property="og:description" content="{{data_get($blog, 'seo_settings.og_description')}}">
   @if (data_get($blog, 'seo_settings.image'))
-  <meta property="og:image" content="{{'/storage/' . data_get($blog, 'seo_settings.image')}}">
+  <meta property="og:image" content="{{env('APP_URL') . '/storage/' . data_get($blog, 'seo_settings.image')}}">
   @else
-  <meta property="og:image" content="{{data_get($blog, 'cover_image.url')}}">
+  <meta property="og:image" content="{{env('APP_URL') . '/storage/' . data_get($blog, 'cover_image')}}">
   @endif
 
   <meta property="og:url" content="{{url()->current()}}">
