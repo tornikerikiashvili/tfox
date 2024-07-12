@@ -4,6 +4,7 @@ use App\Models\Post;
 use Spatie\Sitemap\Sitemap;
 use App\Models\Content\News;
 use Spatie\Sitemap\Tags\Url;
+use App\Models\Content\BlogTwo;
 use App\Models\Content\Project;
 use Illuminate\Console\Command;
 use Palindroma\Core\Models\Tag;
@@ -146,6 +147,46 @@ class GenerateSitemap extends Command
              );
          });
      });
+
+
+
+     // Process Blogs for English language
+
+     $apsitmapEN = Sitemap::create();
+     BlogTwo::all()->each(function (BlogTwo $blog) use ($apsitmapEN, $mergedSitemap) {
+      $apsitmapEN->add(
+          Url::create("/en/blog/{$blog->metadata->slug}")
+              ->setPriority(0.9)
+              ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+      );
+
+      // Add English news URL to the merged sitemap
+      $mergedSitemap->add(
+          Url::create("/en/blog/{$blog->metadata->slug}")
+              ->setPriority(0.9)
+              ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+      );
+
+
+
+      // Process Blogs for Georgian language
+      $apsitmapKA = Sitemap::create();
+      BlogTwo::all()->each(function (BlogTwo $blog) use ($apsitmapKA, $mergedSitemap) {
+          $apsitmapKA->add(
+              Url::create("/ka/blog/{$blog->metadata->slug}")
+                  ->setPriority(0.9)
+                  ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+          );
+
+          // Add Georgian news URL to the merged sitemap
+          $mergedSitemap->add(
+              Url::create("/ka/blog/{$blog->metadata->slug}")
+                  ->setPriority(0.9)
+                  ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+          );
+      });
+  });
+
 
 
 
