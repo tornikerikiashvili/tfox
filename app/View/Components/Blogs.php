@@ -29,11 +29,17 @@ class Blogs extends Component
             Cache::put('blogs_' . App::getLocale(), ContentResource::collection(ModelBlogs::orderBy('published_at')->get())->response()->getData()->data, 3000);
         }
 
-        $this->newsList = cache::get('blogs_' . App::getLocale());
+        $newsList = cache::get('blogs_' . App::getLocale());
+
+        if ($newsList) {
+            // Sort the collection by 'published_at'
+            $this->newsList = collect($newsList)->sortByDesc('published_at')->values()->all();
+        }
 
         $this->recentnews = collect(cache::get('blogs_' . App::getLocale()))->filter(function ($item) {
             return data_get($item, 'is_published') === true;
         })->all();
+
     }
 
     /**
