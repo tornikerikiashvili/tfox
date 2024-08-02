@@ -94,7 +94,7 @@ class BlogTwoResource extends SimpleResource
                 ->height(100),
 
                 Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('created_at')
+                Tables\Columns\TextColumn::make('published_at')
                     ->dateTime(),
 
             ])
