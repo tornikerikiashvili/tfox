@@ -138,7 +138,7 @@
                                             <img src="{{'/storage/' . data_get($item, 'cover_image')}}" alt="title">
                                         </a>
                                         <div class="recent-desc">
-                                            <a href="{{App::getLocale() . '/article/' . data_get($item, 'id')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>
+                                            <a href="{{App::getLocale() . '/article/' . data_get($item, 'metadata.slug')}}" class="xsmall-title-oswald text-color-4 pointer-large animsition-link">{{data_get($item, 'title')}}</a>
                                             <div class="p-style-xsmall text-color-4 text-height-10 top-margin-5">{{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('d')}} {{__(\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('M'))}}, {{\Carbon\Carbon::parse(data_get($item, 'published_at'))->format('Y')}}</div>
                                         </div>
                                     </div>

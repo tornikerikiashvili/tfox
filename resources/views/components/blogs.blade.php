@@ -172,6 +172,7 @@
                         <div class="top-margin-30">
 
                             @foreach ($recentnews as $item)
+
                                 <!-- recent-entry start -->
                                     <div class="recent-entry">
                                         <a href="{{App::getLocale() . '/blog/' . data_get($item, 'metadata.slug')}}" class="recent-entry-img-box pointer-large animsition-link">
